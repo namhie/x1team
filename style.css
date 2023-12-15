@@ -339,7 +339,7 @@ input:-webkit-autofill:focus {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  padding: 10px;
+  padding: 30px;
   font-size: 1rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -356,7 +356,7 @@ input:-webkit-autofill:focus {
 }
 
 .swiper-button-prev::after {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 27 44'%3E%3Cpath d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z' fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 27 44'%3E%3Cpath d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z' fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") !important;
 }
 
 .swiper-button-next::after {

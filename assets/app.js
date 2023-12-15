@@ -203,11 +203,11 @@ modalItem.forEach(modal => {
   if(modal) {
       modal.addEventListener('show.bs.modal', function (e) {
         autoVideoShow(this.querySelector('.iframe'))
-        console.log(this)
+        console.log(this.querySelector('.iframe'))
       })
       modal.addEventListener('hidden.bs.modal', function (e) {
         autoVideoHide(this.querySelector('.iframe'))
-        console.log(this)
+        console.log(this.querySelector('.iframe'))
       })
   }
 })
