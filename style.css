@@ -213,6 +213,21 @@ input:-webkit-autofill:focus {
   margin: 0 5px;
 }
 
+.modal .modal-body .slider__images {
+  width: 100vw;
+  height: 100%;
+}
+
+.modal .modal-body .slider__images .swiper-wrapper {
+  min-height: 100%;
+}
+
+.modal .modal-body .slider__images .swiper-wrapper .swiper-slide {
+  max-height: 100%;
+  height: 100%;
+  align-items: center;
+}
+
 .count .minus.min {
   background-color: var(--secondary);
 }
@@ -522,7 +537,7 @@ iframe {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
-  opacity: 0.8;
+  opacity: 0.1;
   z-index: 1;
 }
 
@@ -1029,6 +1044,15 @@ nav[aria-label=breadcrumb] {
             column-gap: 2px;
   }
 
+  .modal .modal-body .slider__images .swiper-wrapper {
+    min-height: 100%;
+    align-items: center;
+  }
+
+  .modal .modal-body .slider__images {
+    max-height: 100%;
+  }
+  
   .logo,
   .offcanvas-title img {
     width: 12.5vw;
