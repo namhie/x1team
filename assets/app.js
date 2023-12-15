@@ -201,14 +201,17 @@ function sliderModals(modal) {
 
 modalItem.forEach(modal => {
   if(modal) {
-      modal.addEventListener('show.bs.modal', function (e) {
-        autoVideoShow(this.querySelector('.iframe'))
-        console.log(this.querySelector('.iframe'))
-      })
-      modal.addEventListener('hidden.bs.modal', function (e) {
-        autoVideoHide(this.querySelector('.iframe'))
-        console.log(this.querySelector('.iframe'))
-      })
+    const sw = document.querySelectorAll('.swiper-slide')
+    sw.forEach(el => {
+      if (el.getAttribute('data-slider', '1')) {
+        modal.addEventListener('show.bs.modal', function (e) {
+          autoVideoShow(this.querySelector('.iframe'))
+        })
+        modal.addEventListener('hidden.bs.modal', function (e) {
+          autoVideoHide(this.querySelector('.iframe'))
+        })
+      }
+    })
   }
 })
 
