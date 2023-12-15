@@ -105,10 +105,11 @@ function sliderThumbActive(images, thumbs) {
                 sliderItem.classList.add('slider-vertical')
                 sliderThumbs.changeDirection(getDirection())
                 sliderThumbs.wrapperEl.classList.add('slider-grid')
+                console.log(this.activeIndex)
                 if (this.activeIndex === 0) {
                   clicked = false
                   sliderThumbs.changeDirection(getDirection())
-                  slider.classList.remove('slider-vertical')
+                  sliderItem.classList.remove('slider-vertical')
                   sliderThumbs.wrapperEl.classList.remove('slider-grid')
                   youtubes.forEach(el => el.classList.remove('ratio-16x9'))
                 }
@@ -202,9 +203,11 @@ modalItem.forEach(modal => {
   if(modal) {
       modal.addEventListener('show.bs.modal', function (e) {
         autoVideoShow(this.querySelector('.iframe'))
+        console.log(this)
       })
       modal.addEventListener('hidden.bs.modal', function (e) {
         autoVideoHide(this.querySelector('.iframe'))
+        console.log(this)
       })
   }
 })
