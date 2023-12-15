@@ -67,28 +67,168 @@
         </div>
     </div>
   </footer>
-  <div class="modal fade" id="staticBackdropVidio" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-      <div class="modal-content contact-form">
-        <div class="modal-header position-fixed top-0 end-0 border-0 z-3">
-          <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-0">
-          <iframe width="1536" height="864" src="" frameborder="0" allowfullscreen style="border: none;"></iframe>
+  <div class="modal fade" id="backdrop-1" tabindex="-1" role="dialog" aria-labelledby="backdrop-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="modal fade" id="staticBackdrop" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-      <div class="modal-content contact-form">
-        <div class="modal-header position-fixed top-0 end-0 border-0 z-3">
-          <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal fade" id="backdrop-2" tabindex="-1" role="dialog" aria-labelledby="backdrop-2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image01.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body mx-auto"><img class="img-fluid" src="" alt="image"></div>
       </div>
-    </div>
-  </div>
+      <div class="modal fade" id="backdrop-3" tabindex="-1" role="dialog" aria-labelledby="backdrop-3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image01.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <!-- To top button -->
 <a href="#" class="btn btn-primary shadow top-button position-fixed zi-1020"><i class="fa-solid fa-chevron-up"></i><span class="visually-hidden-focusable">To top</span></a>
