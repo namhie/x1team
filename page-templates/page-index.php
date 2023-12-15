@@ -427,102 +427,102 @@ get_header(); // Вставляем заголовок сайта
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="youtube object-fit-contain ratio ratio-16x9">
-                          <iframe class="iframe" width="720" height="405" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH?modestbranding=1&amp;color=white" frameborder="0" allowfullscreen></iframe>
+                      <div class="swiper-slide" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0">
+                        <div class="youtube ratio ratio-16x9">
+                          <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="overlay d-md-none d-block" data-bs-toggle="modal" data-bs-target="#staticBackdropVidio" data-bs-gallery="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH?modestbranding=1&amp;color=white?transparent=0"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdropVidio" data-bs-gallery="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH?modestbranding=1&amp;color=white?transparent=0" title="увеличить окно просмотра"> 
+                        <div class="overlay"></div>
+                        <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR?rel=0&amp;autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="увеличить окно просмотра" frameborder="0"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg">
+                      <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="img/slider/image06.jpg">
                         <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg"> 
+                        <div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg"> 
+                      <div class="swiper-slide" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg"> 
+                      <div class="swiper-slide" data-slider="4" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="4" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" id="6" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg"> 
+                      <div class="swiper-slide" data-slider="5" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="5" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg">
+                      <div class="swiper-slide" data-slider="6" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" title="увеличить окно просмотра">
                         <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg"> 
+                        <div class="fullscrin" data-slider="6" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg">
+                      <div class="swiper-slide" data-slider="7" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" title="увеличить окно просмотра">
                         <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg"> 
+                        <div class="fullscrin" data-slider="7" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg">
+                      <div class="swiper-slide" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра">
                         <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg"> 
+                        <div class="fullscrin" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg"> 
+                      <div class="swiper-slide" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg"> 
+                      <div class="swiper-slide" data-slider="10" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="10" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
-                        <div class="fullscrin" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg"> 
+                      <div class="swiper-slide" data-slider="11" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" title="увеличить окно просмотра">
+                        <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                        <div class="fullscrin" data-slider="11" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -533,11 +533,15 @@ get_header(); // Вставляем заголовок сайта
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-lg-0 px-2">
+                  <div class="slider-thumb d-flex px-lg-0 px-2 mt-1">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide youtube ratio mb-lg-2 slide-horizontal">
-                          <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe>
+                          <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
+                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
+                          </video>
+                          <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
                         </div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="thumb"></div>
@@ -545,8 +549,8 @@ get_header(); // Вставляем заголовок сайта
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                         <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                       </div>
@@ -557,7 +561,7 @@ get_header(); // Вставляем заголовок сайта
             </div>
             <div class="col-xxl-5 col-lg-6">
               <div class="card card-body shadow bg-body-tertiary rounded p-3 h-100">
-                <div class="d-flex justify-content-end align-items-end mb-md-0 mb-3 mt-md-0 mt-4">
+                <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                 <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                   <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                     <div class="d-flex"></div>
@@ -584,7 +588,7 @@ get_header(); // Вставляем заголовок сайта
                         <li class="breadcrumb-item"><a href="#">Услуги</a></li>
                       </ol>
                     </nav>
-                    <h2 class="mt-3 d-md-block d-none">Как установить Minecraft TLauncher</h2>
+                    <h1 class="mt-3 d-md-block d-none fs-md-1">Как установить Minecraft TLauncher</h1>
                     <div class="mb-3"></div><span>Установка TLauncher за&#160;1 минуту. Ниже ссылки для скачивания. Не&#160;забудь указать свой НИК на&#160;сайте как НИК в&#160;TLauncher...<a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample"><span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span></a></span>
                     <div class="collapse" id="more">
                       <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
@@ -605,7 +609,8 @@ get_header(); // Вставляем заголовок сайта
                               <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
                             </svg><span>в корзину</span></a></div>
                       </div>
-                      <div class="soc-button d-flex flex-nowrap gap-2"><a class="btn btn-outline-primary btn-lg" href=""> 
+                      <div class="soc-button d-flex flex-nowrap gap-2">
+                        <a class="btn btn-outline-primary btn-lg" href=""> 
                           <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"> </path>
                           </svg></a><a class="btn btn-outline-success btn-lg" href=""> 
@@ -614,12 +619,14 @@ get_header(); // Вставляем заголовок сайта
                           </svg></a><a class="btn btn-outline-secondary btn-lg" href=""> 
                           <svg class="bi bi-subtract" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"></path>
-                          </svg></a></div>
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>            
             <!-- слайдер с табами изображениями -  КОНЕЦ -->
            
             <div class="col-12">
