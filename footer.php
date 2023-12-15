@@ -82,34 +82,34 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/mg/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                 </div>
                 <div class="swiper-button-prev text-white rounded"></div>
@@ -134,37 +134,37 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image01.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                 </div>
                 <div class="swiper-button-prev text-white rounded"></div>
@@ -189,37 +189,37 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image01.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image06.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image03.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="img/slider/image04.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                   </div>
                 </div>
                 <div class="swiper-button-prev text-white rounded"></div>
