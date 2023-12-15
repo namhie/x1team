@@ -4,6 +4,11 @@ const sliderItem = document.querySelector('.slider')
 const swiperMain = document.querySelector('.swiper')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
+const youtubes = document.querySelectorAll('.swiper-slide.youtube')
+const modalItem = document.querySelectorAll('.modal')
+const sliderImagesModals = document.querySelectorAll('.slider__images--modal') 
+const videoSrc = document.querySelector('.iframe').getAttribute("src")
+const videos = document.querySelectorAll('.iframe')
 
 const mediaQuery = window.matchMedia('(min-width: 769px)')
 
@@ -11,6 +16,7 @@ let clicked = false
 let msnrySlider
 let isMobileWidth = window.innerWidth < 769
 let sliderThumbs
+let swiperModal
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
@@ -20,15 +26,9 @@ function sliderThumbActive(images, thumbs) {
       speed: 600,
       grabCursor: true,
       spaceBetween: 6,
-      // navigation: {
-      //   nextEl: '.slider-next',
-      //   prevEl: '.slider-prev'
-      // },
       on: {
         click: function () {
           clicked = true
-          const youtubes = document.querySelectorAll('.swiper-slide.youtube')
-        
           if (mediaQuery.matches) {
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
@@ -38,7 +38,6 @@ function sliderThumbActive(images, thumbs) {
             })
             if (this.clickedSlide.classList.contains('ratio-16x9')) {
               clicked = false
-              
               sliderThumbs.changeDirection(getDirection())
               sliderItem.classList.remove('slider-vertical')
               sliderThumbs.wrapperEl.classList.remove('slider-grid')
@@ -58,6 +57,7 @@ function sliderThumbActive(images, thumbs) {
           spaceBetween: 4,
           allowSlideNext: true,
           allowSlidePrev: true,
+          slideToClickedSlide: true,
         },
         768: {
           allowSlideNext: false,
@@ -77,6 +77,7 @@ function sliderThumbActive(images, thumbs) {
       spaceBetween: 24,
       speed: 600,
       mousewheel: true, 
+      grabCursor: true,
       navigation: {
         nextEl: '.swiper-button-next', 
         prevEl: '.swiper-button-prev',
@@ -86,11 +87,31 @@ function sliderThumbActive(images, thumbs) {
       allowTouchMove: true,
       on: {
         slideChange: function () {
+          modalItem.forEach(modal => {
+            if(modal) {
+              modal.addEventListener('shown.bs.modal', function (e) {
+                let invoker = e.relatedTarget
+                sliderImagesModals.forEach(slider => {
+                  sliderModals(slider)
+                  swiperModal.update()
+                  swiperModal.slideTo(invoker.getAttribute('data-slider') - 1)
+                  swiperModal.update()
+                })
+              })
+            }
+          })
           if (mediaQuery.matches) {
               clicked = true
                 sliderItem.classList.add('slider-vertical')
                 sliderThumbs.changeDirection(getDirection())
                 sliderThumbs.wrapperEl.classList.add('slider-grid')
+                if (this.activeIndex === 0) {
+                  clicked = false
+                  sliderThumbs.changeDirection(getDirection())
+                  slider.classList.remove('slider-vertical')
+                  sliderThumbs.wrapperEl.classList.remove('slider-grid')
+                  youtubes.forEach(el => el.classList.remove('ratio-16x9'))
+                }
                 if (document.querySelector('.slider-grid')) {
                   masonrySlider()
                 } else {
@@ -140,14 +161,67 @@ const sliderImagesSquer = new Swiper(images, {
     prevEl: '.swiper-button-prev' 
   },
   grabCursor: true, 
-  breakpoints: { 
-    0: { 
-      direction: 'horizontal', 
-      autoHeight: false,
-    }
-  }
 })
 }
+
+function sliderModals(modal) {
+  swiperModal = new Swiper(modal, {
+    direction: 'horizontal',
+      slidesPerView: 1,
+      spaceBetween: 24,
+      speed: 600,
+      mousewheel: true, 
+      grabCursor: true,
+      navigation: {
+        nextEl: '.swiper-button-next', 
+        prevEl: '.swiper-button-prev',
+        hideOnClick: true,
+      },
+      freeMode: true,
+      allowTouchMove: true,
+      on: {
+        slideChange: function () {
+          modalItem.forEach(modal => {
+            autoVideoHide(modal.querySelector('.iframe'))
+            modal.addEventListener('hidden.bs.modal', function (e) {
+              autoVideoHide(this.querySelector('.iframe'))
+            })
+          })
+        }
+      },
+      breakpoints: { 
+        0: { 
+          autoHeight: true,
+          mousewheel: false, 
+        }
+      },
+  })
+} 
+
+modalItem.forEach(modal => {
+  if(modal) {
+      modal.addEventListener('show.bs.modal', function (e) {
+        autoVideoShow(this.querySelector('.iframe'))
+      })
+      modal.addEventListener('hidden.bs.modal', function (e) {
+        autoVideoHide(this.querySelector('.iframe'))
+      })
+  }
+})
+
+function autoVideoShow(modalIframe) {
+  let src
+  src = "?rel=0&autoplay=1"
+  console.log(src)
+  modalIframe.setAttribute('src', videoSrc+src)
+  console.log(src)
+  console.log(videoSrc)
+}
+
+function autoVideoHide(modalIframe) {
+  modalIframe.setAttribute('src', videoSrc)
+}
+
 
 if (isMobileWidth) {
   sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
