@@ -6,7 +6,7 @@
  */
 
  
-get_header(); // Вставляем заголовок сайта
+get_header("myaccount"); // Вставляем заголовок сайта
 
 ?>
 <main class="main my-3 mt-md-0 registration-form">

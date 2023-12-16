@@ -41,8 +41,12 @@ if (!defined('ABSPATH')) {
       <div class="login">
 
       <?php endif; ?>
-
-      <h5 class="fw-bold text-center mb-3"><?php esc_html_e('Login', 'woocommerce'); ?></h5>
+      <?php
+if ( function_exists( 'wptelegram_login' ) ) {
+    wptelegram_login();
+}
+?>
+      <!-- <h5 class="fw-bold text-center mb-3"><?php esc_html_e('Login', 'woocommerce'); ?></h5> -->
 
       <div class="col">
 
