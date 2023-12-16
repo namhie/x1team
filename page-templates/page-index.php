@@ -1242,6 +1242,168 @@ get_header(); // Вставляем заголовок сайта
           </div>
         </div>
       </main>
+      <div class="modal fade" id="backdrop-1" tabindex="-1" role="dialog" aria-labelledby="backdrop-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/mg/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="backdrop-2" tabindex="-1" role="dialog" aria-labelledby="backdrop-2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="backdrop-3" tabindex="-1" role="dialog" aria-labelledby="backdrop-3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content position-relative">
+            <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+              <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
+              <div class="swiper slider__images slider__images--modal">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev text-white rounded"></div>
+                <div class="swiper-button-next text-white rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 <?php
 get_footer(); // Вставляем подвал сайта
 ?>
