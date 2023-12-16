@@ -338,6 +338,10 @@ input:-webkit-autofill:focus {
   opacity: 1;
 }
 
+.swiper-button-next.swiper-button-hidden, .swiper-button-prev.swiper-button-hidden {
+  opacity: 1;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   padding: 30px;
