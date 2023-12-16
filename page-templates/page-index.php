@@ -543,16 +543,16 @@ get_header(); // Вставляем заголовок сайта
                           </video>
                           <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
                         </div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="swiper-slide swiper-item mb-lg-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
                       </div>
                     </div>
                   </div>
