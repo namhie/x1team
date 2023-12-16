@@ -942,12 +942,12 @@ nav[aria-label=breadcrumb] {
 }
 
 @media (max-width: 980px) {
-    .wptelegram-login-output-wrap {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
-    }
-} 
+  .body .wptelegram-login-output-wrap, .body-home .wptelegram-login-output-wrap {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+}
 
 @media (max-width: 768px) {
   .slider {

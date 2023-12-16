@@ -32,7 +32,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class("body"); ?>>
+<body <?php body_class("body-register"); ?>>
 
 <?php wp_body_open(); ?>
     <header class="header py-md-2 pt-lg-3"> 
