@@ -915,6 +915,7 @@ nav[aria-label=breadcrumb] {
     padding: 0;
     max-width: 190px;
     min-width: 190px;
+    text-align: center;
     line-height: 1;
 }
 

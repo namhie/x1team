@@ -48,15 +48,15 @@ if ( function_exists( 'wptelegram_login' ) ) {
 ?>
       <!-- <h5 class="fw-bold text-center mb-3"><?php esc_html_e('Login', 'woocommerce'); ?></h5> -->
 
-      <div class="col">
+      <div class="col mt-3">
 
-        <form class="mb-5" method="post">
+        <form class="mb-3" method="post">
             
           <?php do_action('woocommerce_login_form_start'); ?>
             
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide mb-3">
               
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : 'логин, ник игрока, телефон, email'; ?>" /><?php // @codingStandardsIgnoreLine 
                                                                                                                                                                                                                                                                         ?>
           </div>
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide position-relative mb-3">
