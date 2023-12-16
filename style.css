@@ -214,6 +214,7 @@ input:-webkit-autofill:focus {
 }
 
 .modal .modal-body .slider__images {
+  margin-bottom: 0;
   width: 100vw;
   height: 100%;
 }
@@ -1059,7 +1060,6 @@ nav[aria-label=breadcrumb] {
 
   .modal .modal-body .slider__images {
     max-height: 100%;
-    margin-bottom: 0;
   }
   
   .logo,
