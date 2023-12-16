@@ -1059,6 +1059,7 @@ nav[aria-label=breadcrumb] {
 
   .modal .modal-body .slider__images {
     max-height: 100%;
+    margin-bottom: 0;
   }
   
   .logo,
