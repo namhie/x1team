@@ -953,6 +953,10 @@ nav[aria-label=breadcrumb] {
     display: none;
   }
 
+  .slider {
+    max-height: 100%;
+  }
+
   .slider__images {
     margin-bottom: 0;
   }
