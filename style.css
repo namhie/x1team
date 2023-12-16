@@ -219,6 +219,10 @@ input:-webkit-autofill:focus {
   height: 100%;
 }
 
+.modal .modal-body .slider__images .youtube {
+  height: 100%;
+}
+
 .modal .modal-body .slider__images .swiper-wrapper {
   min-height: 100%;
 }
