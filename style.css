@@ -913,6 +913,10 @@ nav[aria-label=breadcrumb] {
     .slider__images .youtube {
         min-height: 400px;
     }
+    
+    .slider {
+      max-height: 505px;
+    }
 }
 
 @media (max-width: 1240px) {
