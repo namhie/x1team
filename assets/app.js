@@ -183,7 +183,7 @@ function sliderModals(modal) {
       on: {
         slideChange: function () {
           modalItem.forEach(modal => {
-            autoVideoHide(this.querySelector('.iframe'))
+            autoVideoHide(modal.querySelector('.iframe'))
             // modal.addEventListener('shown.bs.modal', function (e) {
             //   autoVideoHide(this.querySelector('.iframe'))
             // })
