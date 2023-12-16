@@ -207,9 +207,9 @@ modalItem.forEach(modal => {
     const sw = document.querySelectorAll('.swiper-slide')
     sw.forEach(el => {
       if (el.getAttribute('data-slider', '1')) {
-        modal.addEventListener('show.bs.modal', function (e) {
-          autoVideoShow(this.querySelector('.iframe'))
-        })
+        // modal.addEventListener('show.bs.modal', function (e) {
+        //   autoVideoShow(this.querySelector('.iframe'))
+        // })
         modal.addEventListener('hidden.bs.modal', function (e) {
           autoVideoHide(this.querySelector('.iframe'))
         })
