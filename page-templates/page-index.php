@@ -536,7 +536,7 @@ get_header(); // Вставляем заголовок сайта
                   <div class="slider-thumb d-flex px-lg-0 px-2">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide youtube ratio mb-lg-2 slide-horizontal">
+                        <div class="swiper-slide youtube ratio slide-horizontal">
                           <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
