@@ -187,6 +187,9 @@ function sliderModals(modal) {
             // modal.addEventListener('shown.bs.modal', function (e) {
             //   autoVideoHide(this.querySelector('.iframe'))
             // })
+            modal.addEventListener('hidden.bs.modal', function (e) {
+              autoVideoHide(this.querySelector('.iframe'))
+            })
           })
         }
       },
