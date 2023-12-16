@@ -533,7 +533,7 @@ get_header(); // Вставляем заголовок сайта
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-lg-0 px-2 mt-1">
+                  <div class="slider-thumb d-flex px-lg-0 px-2">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide youtube ratio mb-lg-2 slide-horizontal">
@@ -959,7 +959,7 @@ get_header(); // Вставляем заголовок сайта
                           <div class="swiper-button-prev text-white rounded"></div>
                           <div class="swiper-button-next text-white rounded"></div>
                         </div>
-                        <div class="slider-thumb d-flex mt-1">
+                        <div class="slider-thumb d-flex">
                           <div class="swiper slider-thumb__images slider-thumb__images--offer01" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide youtube ratio swiper-item mb-2">
@@ -1130,7 +1130,7 @@ get_header(); // Вставляем заголовок сайта
                           <div class="swiper-button-prev text-white rounded"></div>
                           <div class="swiper-button-next text-white rounded"></div>
                         </div>
-                        <div class="slider-thumb d-flex mt-1">
+                        <div class="slider-thumb d-flex">
                           <div class="swiper slider-thumb__images slider-thumb__images--offer02" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide youtube ratio swiper-item mb-2">
