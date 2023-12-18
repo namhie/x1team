@@ -409,9 +409,9 @@ input:-webkit-autofill:focus {
 }
 
 .slider-vertical .slider__images .swiper-slide {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100%;
   border-radius: 5px;
 }
