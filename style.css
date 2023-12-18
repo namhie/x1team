@@ -417,6 +417,7 @@ input:-webkit-autofill:focus {
 }
 
 .slider-vertical .slider__images .swiper-slide .image-4x3 {
+  position: relative;
   width: 100%;
 }
 
