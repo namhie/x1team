@@ -493,9 +493,9 @@ get_header(); // Вставляем заголовок сайта
                           </svg>
                         </div>
                       </div>
-                      <div class="swiper-slide" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра">
-                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                        <div class="fullscrin" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" title="увеличить окно просмотра"> 
+                      <div class="swiper-slide" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb05.png" title="увеличить окно просмотра">
+                        <div class="ratio ratio-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
+                        <div class="fullscrin" data-slider="8" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb05.png" title="увеличить окно просмотра"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -549,7 +549,7 @@ get_header(); // Вставляем заголовок сайта
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                        <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
@@ -918,7 +918,7 @@ get_header(); // Вставляем заголовок сайта
                                 </svg>
                               </div>
                             </div>
-                            <div class="swiper-slide" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-2" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg">
+                            <div class="swiper-slide" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-2" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb05.png">
                               <div class="image-4x3"><img class="d-block w-100 object-fit-fill" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg" alt="image"></div>
                               <div class="fullscrin" data-slider="9"
                               data-bs-toggle="modal" data-bs-target="#backdrop-2" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg"> 
@@ -976,7 +976,7 @@ get_header(); // Вставляем заголовок сайта
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                              <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                              <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
@@ -1090,9 +1090,9 @@ get_header(); // Вставляем заголовок сайта
                                 </svg>
                               </div>
                             </div>
-                            <div class="swiper-slide" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-3" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg">
-                              <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                              <div class="fullscrin" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-3" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb02.jpg"> 
+                            <div class="swiper-slide" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-3" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb05.png">
+                              <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
+                              <div class="fullscrin" data-slider="9" data-bs-toggle="modal" data-bs-target="#backdrop-3" data-bs-gallery="<?= get_stylesheet_directory_uri(); ?>/img/slider/thumb05.png"> 
                                 <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                   <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                                   <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -1147,7 +1147,7 @@ get_header(); // Вставляем заголовок сайта
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="thumb"></div>
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
-                                <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                                <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
                                 <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
@@ -1275,7 +1275,7 @@ get_header(); // Вставляем заголовок сайта
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/mg/slider/image03.jpg" alt="image"></div>
@@ -1330,7 +1330,7 @@ get_header(); // Вставляем заголовок сайта
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
@@ -1385,7 +1385,7 @@ get_header(); // Вставляем заголовок сайта
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
                   </div>
                   <div class="swiper-slide">
                     <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
