@@ -1249,10 +1249,10 @@ get_header(); // Вставляем заголовок сайта
                     </div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3"><img class="img-fluid" src="img/slider/image06.jpg" alt="..."></div>
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3"><img class="img-fluid" src="img/slider/image03.jpg" alt="..."></div>
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                     <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
