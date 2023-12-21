@@ -30,9 +30,7 @@ if (!defined('ABSPATH')) {
 $product_tabs = apply_filters('woocommerce_product_tabs', array());
 
 if (!empty($product_tabs)) : ?>
-<div class="col-12">
-  <div class="description card card-body shadow bg-body-tertiary rounded">
-  
+  <div class="description card card-body shadow bg-body-tertiary rounded w-100">
     <div class="row">
     <?php foreach ($product_tabs as $key => $product_tab) : ?>
       <div class="col">
@@ -66,7 +64,6 @@ if (!empty($product_tabs)) : ?>
       
     </div>
   </div>
-</div>
 
 <?php do_action('woocommerce_product_after_tabs'); ?>
 
