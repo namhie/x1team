@@ -30,9 +30,43 @@ if (!defined('ABSPATH')) {
 $product_tabs = apply_filters('woocommerce_product_tabs', array());
 
 if (!empty($product_tabs)) : ?>
-<div>123</div>
+  <div class="col-12">
+    <div class="description card card-body shadow bg-body-tertiary rounded">
+      <div class="row">
+      <?php foreach ($product_tabs as $key => $product_tab) : ?>
+        <div class="col">
+          <?php
+          if (isset($product_tab['callback'])) {
+            call_user_func($product_tab['callback'], $key, $product_tab);
+          }
+          ?>
+          <h2 class="block-title text-nowrap">Описание</h2>
+          <p>Установка TLauncher за&#160;1 минуту. Ниже ссылки для скачивания. Не&#160;забудь указать свой НИК на&#160;сайте как НИК в&#160;TLauncher</p>
+          <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
+          <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p>
+          <p>Ниже идет полное описание выводится следом за&#160;кратким, через отступ. Заголовок Описание не&#160;выводим.</p>
+          <p>Полное описание, его лучше не&#160;разгонять. Всю интересную информацию, но&#160;объёмную лучше перенести вниз в&#160;проектчат. Там она будет структурированная по&#160;оглавлению/категориям чатов. Там&#160;же можно отзывы, картинки, шаблоны исполнительной документации, карточек нарядов и&#160;т.&#160;д.</p>
+          <p>Добавляем, ключевые слова в&#160;полное описание. Но&#160;заполняем их&#160;в&#160;карточке товара в&#160;поле SEO</p>
+          <p>Ставим внизу полного описание, это пригодится для SEO и&#160;важно при выгрузке товаров на&#160;маркетплейсы. Там это тоже поднимает товар в&#160;поиске.</p>
+          <p>В&#160;полном описании можно с&#160;помощью текстового редактора вставлять фотки</p>
+        </div>
+        <div class="col"> 
+          <h2 class="block-title text-nowrap">Характеристики</h2>
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+            <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
+          </ul><a class="d-block delivery py-2" href="" role="button">Доставка и оплата</a><a class="d-block conditions py-2" href="" role="button">Условия продажи</a>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
   <div class="woocommerce-tabs wc-tabs-wrapper">
-    <div class="tab-scroller d-flex overflow-auto">
+    <!-- <div class="tab-scroller d-flex overflow-auto">
       <ul class="wc-tabs nav nav-tabs mb-4 flex-grow-1" role="tablist">
         <?php foreach ($product_tabs as $key => $product_tab) : ?>
           <li class="nav-item <?php echo esc_attr($key); ?>_tab" id="tab-title-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
@@ -51,7 +85,7 @@ if (!empty($product_tabs)) : ?>
         }
         ?>
       </div>
-    <?php endforeach; ?>
+    <?php endforeach; ?> -->
 
     <?php do_action('woocommerce_product_after_tabs'); ?>
   </div>
