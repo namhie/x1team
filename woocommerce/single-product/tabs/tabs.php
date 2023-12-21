@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
 $product_tabs = apply_filters('woocommerce_product_tabs', array());
 
 if (!empty($product_tabs)) : ?>
-
+<div>123</div>
   <div class="woocommerce-tabs wc-tabs-wrapper">
     <div class="tab-scroller d-flex overflow-auto">
       <ul class="wc-tabs nav nav-tabs mb-4 flex-grow-1" role="tablist">
