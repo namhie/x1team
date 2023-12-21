@@ -1240,47 +1240,47 @@ get_header(); // Вставляем заголовок сайта
             <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
               <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
-              <div class="swiper slider__images slider__images--modal">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
+            <div class="modal-body p-0">
+              <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-1">
+                <div class="carousel-inner">
+                  <div class="carousel-item bg-white active">
                     <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay;" frameborder="0" allowfullscreen></iframe>
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/mg/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
                 </div>
-                <div class="swiper-button-prev text-white rounded"></div>
-                <div class="swiper-button-next text-white rounded"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
               </div>
             </div>
           </div>
@@ -1292,50 +1292,47 @@ get_header(); // Вставляем заголовок сайта
             <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
               <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
-              <div class="swiper slider__images slider__images--modal">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
+            <div class="modal-body p-0">
+              <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-2">
+                <div class="carousel-inner">
+                  <div class="carousel-item active bg-white">
                     <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
                 </div>
-                <div class="swiper-button-prev text-white rounded"></div>
-                <div class="swiper-button-next text-white rounded"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-2" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-2" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
               </div>
             </div>
           </div>
@@ -1347,50 +1344,47 @@ get_header(); // Вставляем заголовок сайта
             <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
               <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body mx-auto p-0 z-1 fullscrin-swipper">
-              <div class="swiper slider__images slider__images--modal">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
+            <div class="modal-body p-0"> 
+              <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-3">
+                <div class="carousel-inner">
+                  <div class="carousel-item active bg-white">
                     <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="image"></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="image-4x3"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="image"></div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
                 </div>
-                <div class="swiper-button-prev text-white rounded"></div>
-                <div class="swiper-button-next text-white rounded"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-3" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-3" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
               </div>
             </div>
           </div>

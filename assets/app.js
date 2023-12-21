@@ -1,14 +1,14 @@
 (()=>{"use strict";
 
 const sliderItem = document.querySelector('.slider')
-const swiperMain = document.querySelector('.swiper')
+// const swiperMain = document.querySelector('.swiper')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
 const youtubes = document.querySelectorAll('.swiper-slide.youtube')
 const modalItem = document.querySelectorAll('.modal')
 const sliderImagesModals = document.querySelectorAll('.slider__images--modal') 
 const videoSrc = document.querySelector('.iframe').getAttribute("src")
-const videos = document.querySelectorAll('.iframe')
+// const videos = document.querySelectorAll('.iframe')
 
 const mediaQuery = window.matchMedia('(min-width: 769px)')
 
@@ -16,7 +16,8 @@ let clicked = false
 let msnrySlider
 let isMobileWidth = window.innerWidth < 769
 let sliderThumbs
-let swiperModal
+// let swiperModal
+let carousel
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
@@ -81,25 +82,11 @@ function sliderThumbActive(images, thumbs) {
       navigation: {
         nextEl: '.swiper-button-next', 
         prevEl: '.swiper-button-prev',
-        hideOnClick: true,
       },
       freeMode: true,
       allowTouchMove: true,
       on: {
         slideChange: function () {
-          modalItem.forEach(modal => {
-            if(modal) {
-              modal.addEventListener('shown.bs.modal', function (e) {
-                let invoker = e.relatedTarget
-                sliderImagesModals.forEach(slider => {
-                  sliderModals(slider)
-                  swiperModal.update()
-                  swiperModal.slideTo(invoker.getAttribute('data-slider') - 1)
-                  swiperModal.update()
-                })
-              })
-            }
-          })
           if (mediaQuery.matches) {
               clicked = true
                 sliderItem.classList.add('slider-vertical')
@@ -165,76 +152,6 @@ const sliderImagesSquer = new Swiper(images, {
 })
 }
 
-function sliderModals(modal) {
-  swiperModal = new Swiper(modal, {
-    direction: 'horizontal',
-      slidesPerView: 1,
-      spaceBetween: 24,
-      speed: 600,
-      mousewheel: true, 
-      grabCursor: true,
-      navigation: {
-        nextEl: '.swiper-button-next', 
-        prevEl: '.swiper-button-prev',
-        hideOnClick: true,
-      },
-      freeMode: true,
-      allowTouchMove: true,
-      on: {
-        slideChange: function () {
-          modalItem.forEach(modal => {
-            autoVideoHide(modal.querySelector('.iframe'))
-            // modal.addEventListener('shown.bs.modal', function (e) {
-            //   autoVideoHide(this.querySelector('.iframe'))
-            // })
-            modal.addEventListener('hidden.bs.modal', function (e) {
-              autoVideoHide(this.querySelector('.iframe'))
-            })
-          })
-        }
-      },
-      breakpoints: { 
-        0: { 
-          autoHeight: true,
-          mousewheel: false, 
-        }
-      },
-  })
-} 
-
-modalItem.forEach(modal => {
-  if(modal) {
-    modal.addEventListener('hidden.bs.modal', function (e) {
-      autoVideoHide(this.querySelector('.iframe'))
-    })
-    // const sw = document.querySelectorAll('.swiper-slide')
-    // sw.forEach(el => {
-    //   if (el.getAttribute('data-slider', '1')) {
-    //     // modal.addEventListener('show.bs.modal', function (e) {
-    //     //   autoVideoShow(this.querySelector('.iframe'))
-    //     // })
-    //     modal.addEventListener('hidden.bs.modal', function (e) {
-    //       autoVideoHide(this.querySelector('.iframe'))
-    //     })
-    //   }
-    // })
-  }
-})
-
-function autoVideoShow(modalIframe) {
-  let src
-  src = "?rel=0&autoplay=1"
-  console.log(src)
-  modalIframe.setAttribute('src', videoSrc+src)
-  console.log(src)
-  console.log(videoSrc)
-}
-
-function autoVideoHide(modalIframe) {
-  modalIframe.setAttribute('src', videoSrc)
-}
-
-
 if (isMobileWidth) {
   sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
   sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
@@ -248,6 +165,57 @@ if (sliderSquer || sliderImageHorizont) {
   sliderImageActive('.slider__image-horizont')
 }
 
+//modals
+function sliderModals(modal) {
+  carousel = new bootstrap.Carousel(modal, {
+    touch: true
+  })
+}
+
+let src
+let srcUrl
+let videoURL
+let videoIFrame
+let iframeUrl
+
+modalItem.forEach(modal => {
+  if(modal) {
+    modal.addEventListener('show.bs.modal', function (e) {
+      iframeUrl = this.querySelector('.iframe')
+      videoURL = iframeUrl.getAttribute('src')
+      src = "?rel=0&autoplay=1"
+      srcUrl = videoURL+src
+      iframeUrl.setAttribute('src', srcUrl)
+
+      let invoker = e.relatedTarget
+
+      sliderImagesModals.forEach(slider => {
+        sliderModals(slider)
+        carousel.to(invoker.getAttribute('data-slider') - 1) 
+        slider.addEventListener('slid.bs.carousel', function(e) {
+         
+          var currentSlide = this.querySelector('.carousel-item')
+          if (currentSlide) {
+            videoIFrame = this.querySelector('.iframe')
+            console.log(videoIFrame)
+            videoURL = videoIFrame.setAttribute('src', videoSrc);
+            if (videoURL === videoIFrame.setAttribute('src', srcUrl)) {
+              videoIFrame.setAttribute('src', videoSrc)
+            } 
+            if (videoIFrame && videoIFrame.setAttribute('src', videoSrc)) {
+              videoIFrame.setAttribute('src', srcUrl)
+            }
+          }
+      })
+    })
+    modal.addEventListener('hidden.bs.modal', function(e) {
+      iframeUrl = this.querySelector('.iframe')
+      iframeUrl.setAttribute('src', videoSrc)
+    });
+  }) 
+    
+  }
+})
 //togglepassword
 if (document.querySelector('.registration-form')) {
   const togglePassword = document.querySelector('#togglePassword');
