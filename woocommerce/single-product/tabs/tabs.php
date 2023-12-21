@@ -32,6 +32,7 @@ $product_tabs = apply_filters('woocommerce_product_tabs', array());
 if (!empty($product_tabs)) : ?>
 <div class="col-12">
   <div class="description card card-body shadow bg-body-tertiary rounded">
+  
     <div class="row">
     <?php foreach ($product_tabs as $key => $product_tab) : ?>
       <div class="col">
@@ -50,6 +51,7 @@ if (!empty($product_tabs)) : ?>
         <p>Ставим внизу полного описание, это пригодится для SEO и&#160;важно при выгрузке товаров на&#160;маркетплейсы. Там это тоже поднимает товар в&#160;поиске.</p>
         <p>В&#160;полном описании можно с&#160;помощью текстового редактора вставлять фотки</p> -->
       </div>
+      <?php endforeach; ?>
       <div class="col"> 
         <h2 class="block-title text-nowrap">Характеристики</h2>
         <ul class="list-group list-group-flush mb-4">
@@ -61,12 +63,12 @@ if (!empty($product_tabs)) : ?>
           <li class="list-group-item d-flex px-0 pt-1 pb-2"><span class="text-nowrap">Название</span><span class="line mx-2"></span><span class="text-nowrap">Название</span></li>
         </ul><a class="d-block delivery py-2" href="" role="button">Доставка и оплата</a><a class="d-block conditions py-2" href="" role="button">Условия продажи</a>
       </div>
-      <?php endforeach; ?>
+      
     </div>
   </div>
 </div>
-<div class="col-12">
-  <?php do_action('woocommerce_product_after_tabs'); ?>
-</div>
+
+<?php do_action('woocommerce_product_after_tabs'); ?>
+
   
 <?php endif; ?>
