@@ -1246,34 +1246,34 @@ get_header(); // Вставляем заголовок сайта
                     </div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image05.png" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image02.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                    <div class="image-4x3 h-100"><img class="img-fluid h-100 p-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
+                    <div class="image-4x3 h-100"><img class="img-fluid h-100 py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
