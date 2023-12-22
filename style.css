@@ -943,7 +943,7 @@ nav[aria-label=breadcrumb] {
   .slider .slider-thumb {
     height: 108px;
   }
-  
+
   .slider-vertical .slider-thumb {
     height: auto;
   }
@@ -960,6 +960,10 @@ nav[aria-label=breadcrumb] {
 
     .slider-vertical .slider__images .swiper-slide .image-4x3 {
       max-height: 34.7rem;
+    }
+
+    .img-fluid {
+      max-height: 620px;
     }
 }
 

@@ -74,7 +74,7 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 600,
-      mousewheel: true, 
+      mousewheel: false, 
       grabCursor: true,
       navigation: {
         nextEl: '.swiper-button-next', 
@@ -115,6 +115,7 @@ function sliderThumbActive(images, thumbs) {
         0: { 
           direction: 'horizontal', 
           autoHeight: true,
+          mousewheel: true,
           keyboard: true,
           allowSlidePrev: true,
           allowSlideNext: true
