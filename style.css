@@ -263,6 +263,12 @@ input:-webkit-autofill:focus {
 }
 
 .slider__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 76%;
   width: 100%;
   border-radius: 5px;
@@ -379,12 +385,6 @@ input:-webkit-autofill:focus {
 }
 
 .slider-vertical .slider__images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   height: 100%;
   margin-bottom: 0;
 }
@@ -981,6 +981,7 @@ nav[aria-label=breadcrumb] {
   }
 
   .slider__images {
+    padding: 10px;
     margin-bottom: 0;
   }
 
