@@ -191,9 +191,8 @@ modalItem.forEach(modal => {
       videoURL = iframeUrl.getAttribute('src')
       src = "?rel=0&autoplay=1"
       srcUrl = videoURL+src
-      if (invoker.setAttribute('data-slider', '1')) {
-        iframeUrl.setAttribute('src', srcUrl)
-      }
+      iframeUrl.setAttribute('src', srcUrl)
+      
 
       sliderImagesModals.forEach(slider => {
         console.log(slider)
