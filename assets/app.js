@@ -184,13 +184,14 @@ let iframeUrl
 modalItem.forEach(modal => {
   if(modal) {
     modal.addEventListener('show.bs.modal', function (e) {
+      let invoker = e.relatedTarget
       iframeUrl = this.querySelector('.iframe')
       videoURL = iframeUrl.getAttribute('src')
       src = "?rel=0&autoplay=1"
       srcUrl = videoURL+src
-      iframeUrl.setAttribute('src', srcUrl)
-
-      let invoker = e.relatedTarget
+      if (invoker.setAttribute('data-slider', '1')) {
+        iframeUrl.setAttribute('src', srcUrl)
+      }
 
       sliderImagesModals.forEach(slider => {
         sliderModals(slider)
