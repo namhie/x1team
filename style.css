@@ -935,8 +935,11 @@ nav[aria-label=breadcrumb] {
   .slider__images {
     height: 80%;
   }
-  .slider-vertical .slider-thumb {
+  .slider .slider-thumb {
     height: 108px;
+  }
+  .slider-vertical .slider-thumb {
+    height: auto;
   }
 }
 
