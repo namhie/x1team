@@ -935,7 +935,7 @@ nav[aria-label=breadcrumb] {
   .slider__images {
     height: 80%;
   }
-  .slider .slider-thumb {
+  .slider-vertical .slider-thumb {
     height: 108px;
   }
 }
