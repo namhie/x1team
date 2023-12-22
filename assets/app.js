@@ -185,6 +185,8 @@ modalItem.forEach(modal => {
   if(modal) {
     modal.addEventListener('show.bs.modal', function (e) {
       let invoker = e.relatedTarget
+      console.log(modal)
+      console.log(invoker)
       iframeUrl = this.querySelector('.iframe')
       videoURL = iframeUrl.getAttribute('src')
       src = "?rel=0&autoplay=1"
@@ -201,7 +203,6 @@ modalItem.forEach(modal => {
           var currentSlide = this.querySelector('.carousel-item')
           if (currentSlide) {
             videoIFrame = this.querySelector('.iframe')
-            console.log(videoIFrame)
             videoURL = videoIFrame.setAttribute('src', videoSrc);
             if (videoURL === videoIFrame.setAttribute('src', srcUrl)) {
               videoIFrame.setAttribute('src', videoSrc)
