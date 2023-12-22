@@ -1301,6 +1301,9 @@ get_header(); // Вставляем заголовок сайта
                     <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="..."></div>
+                  </div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                     <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
@@ -1351,6 +1354,9 @@ get_header(); // Вставляем заголовок сайта
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                     <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
+                  </div>
+                  <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                    <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="..."></div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                     <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
