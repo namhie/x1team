@@ -75,13 +75,16 @@ function sliderThumbActive(images, thumbs) {
       spaceBetween: 24,
       speed: 600,
       mousewheel: false, 
-      grabCursor: true,
+      keyboard: false,
+      allowSlidePrev: false,
+      allowSlideNext: false,
+      // grabCursor: true,
       navigation: {
         nextEl: '.swiper-button-next', 
         prevEl: '.swiper-button-prev',
       },
       freeMode: true,
-      allowTouchMove: true,
+      // allowTouchMove: true,
       on: {
         slideChange: function () {
           if (mediaQuery.matches) {
@@ -107,7 +110,6 @@ function sliderThumbActive(images, thumbs) {
           }
         }
       },
-      grabCursor: false, 
       thumbs: { 
         swiper: sliderThumbs 
       },
