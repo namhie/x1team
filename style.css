@@ -266,9 +266,9 @@ input:-webkit-autofill:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   height: 76%;
   width: 100%;
   border-radius: 5px;
@@ -385,6 +385,9 @@ input:-webkit-autofill:focus {
 }
 
 .slider-vertical .slider__images {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   margin-bottom: 0;
 }
@@ -926,6 +929,15 @@ nav[aria-label=breadcrumb] {
     min-width: 190px;
     text-align: center;
     line-height: 1;
+}
+
+@media (min-width: 1559px) {
+  .slider__images {
+    height: 80%;
+  }
+  .slider .slider-thumb {
+    height: 108px;
+  }
 }
 
 @media (max-width: 1440px) {
