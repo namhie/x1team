@@ -196,6 +196,7 @@ modalItem.forEach(modal => {
       }
 
       sliderImagesModals.forEach(slider => {
+        console.log(slider)
         sliderModals(slider)
         carousel.to(invoker.getAttribute('data-slider') - 1) 
         slider.addEventListener('slid.bs.carousel', function(e) {
