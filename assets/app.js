@@ -192,7 +192,7 @@ modalItem.forEach(modal => {
       src = "?rel=0&autoplay=1"
       srcUrl = videoURL+src
       iframeUrl.setAttribute('src', srcUrl)
-      
+      console.log(this.querySelector('.iframe'))
 
       sliderImagesModals.forEach(slider => {
         console.log(slider)
