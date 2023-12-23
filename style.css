@@ -600,10 +600,8 @@ iframe {
   height: 100%;
   transition: none;
 }
-.modal-body .carousel-inner .youtube .iframe {
-  /* top: 100%; */
-  /* top: 50%;
-  transform: translateY(-50%); */
+.modal-body .carousel-inner .youtube {
+  height: 100%;
 }
 
 .modal-body .carousel-inner .ratio-16x9 {
