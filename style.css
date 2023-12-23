@@ -587,8 +587,12 @@ iframe {
   height: 100%;
 }
 
-.modal-body .carousel-inner .carousel-item {
+.modal-body .carousel-inner {
   height: 100vh;
+}
+
+.modal-body .carousel-inner .carousel-item {
+  min-height: 100%;
   transition: none;
 }
 .modal-body .carousel-inner .youtube {
