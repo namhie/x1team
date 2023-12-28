@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-// get_header( 'shop' );
+get_header( 'shop' );
 
 $_product = wc_get_product( get_the_ID() );
 // var_dump($_product);
@@ -1264,6 +1264,6 @@ get_footer(); // Вставляем подвал сайта
 
 
 <?php
-// get_footer( 'shop' );
+get_footer( 'shop' );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
