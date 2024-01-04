@@ -24,6 +24,7 @@ get_header("home"); // Вставляем заголовок сайта
           </div>
         </div>
     </main>
+    
 <?php
 get_footer("home"); // Вставляем подвал сайта
 ?>
