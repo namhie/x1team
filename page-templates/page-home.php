@@ -9,7 +9,6 @@
 get_header("home"); // Вставляем заголовок сайта
 
 ?>
-
     <main class="main main-home mb-md-3 my-5">
         <div class="container d-flex flex-column h-100">
           <div class="row justify-content-end">
@@ -25,3 +24,6 @@ get_header("home"); // Вставляем заголовок сайта
           </div>
         </div>
     </main>
+<?php
+get_footer("home"); // Вставляем подвал сайта
+?>
