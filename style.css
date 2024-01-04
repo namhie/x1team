@@ -1226,6 +1226,10 @@ nav[aria-label=breadcrumb] {
     width: 100%;
     margin-right: 15px;
   }
+
+  .email-mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 1030px) and (min-width: 990px) {

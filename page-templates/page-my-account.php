@@ -5,7 +5,9 @@
  * @package Bootscore
  */
 
- 
+if ( is_user_logged_in() && isset($_GET['blocklyfile'] ) ) {
+  wp_redirect('/blockly?blocklyfile=' . $_GET['blocklyfile']);
+}
 get_header("myaccount"); // Вставляем заголовок сайта
 
 ?>
