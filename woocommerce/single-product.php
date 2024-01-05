@@ -36,8 +36,8 @@ $_product = wc_get_product( get_the_ID() );
 get_header(); // Вставляем заголовок сайта
 
 ?>
-    <main class="main">
-      <div class="container-sm container-fluid">
+    <main class="main pb-5">
+      <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
             <h1 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h1>
             <!-- без слайдера - НАЧАЛО -->
