@@ -36,10 +36,10 @@ $_product = wc_get_product( get_the_ID() );
 get_header(); // Вставляем заголовок сайта
 
 ?>
-    <main class="main">
-      <div class="container-sm container-fluid">
+    <main class="main pb-5">
+      <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
-            <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
+            <h1 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h1>
             <!-- без слайдера - НАЧАЛО -->
               <!--<div class="col">-->
               <!--  <div class="d-flex justify-content-end align-items-end mb-3 mt-xl-0 mt-4">-->
