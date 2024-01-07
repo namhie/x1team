@@ -58,8 +58,8 @@ function sliderThumbActive(images, thumbs) {
           slideToClickedSlide: true,
         },
         768: {
-          allowSlideNext: false,
-          allowSlidePrev: false,
+          // allowSlideNext: false,
+          // allowSlidePrev: false,
         }
       }
     })
