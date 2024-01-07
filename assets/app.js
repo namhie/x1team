@@ -23,6 +23,7 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 'auto',
       speed: 600,
       grabCursor: true,
+      mousewheel: false,
       spaceBetween: 6,
       on: {
         click: function () {
