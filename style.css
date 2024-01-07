@@ -380,6 +380,9 @@ input:-webkit-autofill:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -424,6 +427,10 @@ input:-webkit-autofill:focus {
   height: auto;
   width: 100%;
   max-width: 244px;
+}
+
+.slider-vertical .swiper-wrapper {
+  transform: translate3d(0px, 0px, 0px)!important;
 }
 
 .slider-vertical .slider-thumb .swiper-overlay {
