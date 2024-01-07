@@ -429,8 +429,8 @@ input:-webkit-autofill:focus {
   max-width: 244px;
 }
 
-.slider-vertical .swiper-wrapper {
-  transform: translate3d(0px, 0px, 0px)!important;
+.slider-vertical .slider-thumb .slider-thumb__images .swiper-wrapper {
+  transform: translate3d(0px, 0px, 0px) !important;
 }
 
 .slider-vertical .slider-thumb .swiper-overlay {
@@ -953,7 +953,7 @@ nav[aria-label=breadcrumb] {
   }
 
   .slider__images {
-    height: 80%;
+    height: 79%;
   }
 
   .slider .slider-thumb {
