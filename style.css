@@ -429,9 +429,9 @@ input:-webkit-autofill:focus {
   max-width: 244px;
 }
 
-/* .slider-vertical .slider-thumb .slider-thumb__images .swiper-wrapper {
+.slider-vertical .slider-thumb .slider-thumb__images .swiper-wrapper {
   transform: translate3d(0px, 0px, 0px) !important;
-} */
+}
 
 .slider-vertical .slider-thumb .swiper-overlay {
   display: none;
@@ -444,7 +444,7 @@ input:-webkit-autofill:focus {
 }
 
 .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
-  height: 100% !important;
+  /* height: 100% !important; */
   overflow-y: scroll;
   overflow-x: hidden;
 }
