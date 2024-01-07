@@ -445,6 +445,7 @@ input:-webkit-autofill:focus {
 
 .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
   /* height: 100% !important; */
+  max-height: 600px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
