@@ -36,6 +36,12 @@ $_product = wc_get_product( get_the_ID() );
 get_header(); // Вставляем заголовок сайта
 
 ?>
+<?php
+
+$gallery_attachment_ids = $_product->get_gallery_image_ids();
+$product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+
+?>
     <main class="main pb-5">
       <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
@@ -451,12 +457,6 @@ get_header(); // Вставляем заголовок сайта
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-xxl-7 col-lg-6">
               <div class="row justify-content-center h-100">
-                <?php
-
-                  $gallery_attachment_ids = $_product->get_gallery_image_ids();
-                  $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
-
-                ?>
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
                     <div class="swiper-wrapper">
@@ -1111,8 +1111,7 @@ get_header(); // Вставляем заголовок сайта
                       <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                     </div>
                   </div>
-                <?php 
-                  }
+                <?php }
                   if ( $gallery_attachment_ids) {
                     foreach ($gallery_attachment_ids as $gallery_attachment_id) {
                     ?>
