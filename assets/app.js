@@ -185,24 +185,21 @@ modalItem.forEach(modal => {
   if(modal) {
     modal.addEventListener('show.bs.modal', function (e) {
       let invoker = e.relatedTarget
-      console.log(modal)
-      console.log(invoker)
-      iframeUrl = this.querySelector('.iframe')
-      videoURL = iframeUrl.getAttribute('src')
-      src = "?rel=0&autoplay=1"
-      srcUrl = videoURL+src
-      if(iframeUrl) {
+      if (this.querySelector('.iframe')) {
+        iframeUrl = this.querySelector('.iframe')
+        videoURL = iframeUrl.getAttribute('src')
+        src = "?rel=0&autoplay=1"
+        srcUrl = videoURL+src
         iframeUrl.setAttribute('src', srcUrl)
       }
 
       sliderImagesModals.forEach(slider => {
-        console.log(slider)
         sliderModals(slider)
         carousel.to(invoker.getAttribute('data-slider') - 1) 
         slider.addEventListener('slid.bs.carousel', function(e) {
          
-          var currentSlide = this.querySelector('.carousel-item')
-          if (currentSlide) {
+        let currentSlide = this.querySelector('.carousel-item')
+          if (currentSlide && this.querySelector('.iframe')) {
             videoIFrame = this.querySelector('.iframe')
             videoURL = videoIFrame.setAttribute('src', videoSrc);
             if (videoURL === videoIFrame.setAttribute('src', srcUrl)) {
