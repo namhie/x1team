@@ -577,14 +577,17 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     <h1 class="mt-3 d-md-block d-none fs-md-1"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>
-                        <?php echo get_the_excerpt( ) ?>
+                        <?php echo get_the_excerpt() ?>
                         <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
                           <span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span>
                         </a> -->
                       </span>
                     <div class="collapse" id="more">
-                      <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
-                      <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p>
+                      <?php
+                        $full_description = the_content();
+                      ?>
+                      <!-- <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
+                      <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p> -->
                     </div>
                   </div>
                   <div class="col">
@@ -1112,7 +1115,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     </div>
                   </div>
                 <?php }
-                  if ( $gallery_attachment_ids) {
+                  if ( $gallery_attachment_ids ) {
                     foreach ($gallery_attachment_ids as $gallery_attachment_id) {
                     ?>
                     <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
