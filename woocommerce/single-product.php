@@ -584,7 +584,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                       </span>
                     <div class="collapse" id="more">
                       <?php
-                        $full_description = the_content();
+                        $full_description = the_excerpt();
                       ?>
                       <!-- <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
                       <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p> -->
