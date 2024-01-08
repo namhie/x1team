@@ -75,16 +75,16 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 600,
-      mousewheel: false, 
-      keyboard: false,
-      allowSlidePrev: false,
-      allowSlideNext: false,
+      // mousewheel: false, 
+      // keyboard: false,
+      // allowSlidePrev: false,
+      // allowSlideNext: false,
       // grabCursor: true,
       navigation: {
         nextEl: '.swiper-button-next', 
         prevEl: '.swiper-button-prev',
       },
-      freeMode: true,
+      // freeMode: true,
       // allowTouchMove: true,
       on: {
         slideChange: function () {
@@ -93,7 +93,6 @@ function sliderThumbActive(images, thumbs) {
                 sliderItem.classList.add('slider-vertical')
                 sliderThumbs.changeDirection(getDirection())
                 sliderThumbs.wrapperEl.classList.add('slider-grid')
-                console.log(this.activeIndex)
                 if (this.activeIndex === 0) {
                   clicked = false
                   sliderThumbs.changeDirection(getDirection())
@@ -118,7 +117,7 @@ function sliderThumbActive(images, thumbs) {
         0: { 
           direction: 'horizontal', 
           autoHeight: true,
-          mousewheel: true,
+          // mousewheel: true,
           keyboard: true,
           allowSlidePrev: true,
           allowSlideNext: true
