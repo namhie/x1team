@@ -1103,27 +1103,15 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
           <div class="modal-body p-0">
             <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-1">
               <div class="carousel-inner">
-                <?php
-                  if ( $product_video) {
-                ?>
-                  <div class="carousel-item bg-white active">
-                    <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
-                    </div>
+              <div class="carousel-item active bg-white">
+                  <div class="youtube ratio ratio-16x9">
+                    <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                   </div>
-                <?php }
-                  if ( $gallery_attachment_ids) {
-                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                    ?>
-                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
-                    </div>
-                    <?php
-                    }
-                  }
-                
-                ?>
-                <!-- <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                </div>
+                <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                  <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="..."></div>
+                </div>
+                <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                   <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="..."></div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
@@ -1149,7 +1137,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 </div>
                 <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                   <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
-                </div> -->
+                </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
