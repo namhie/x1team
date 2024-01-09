@@ -949,12 +949,13 @@ nav[aria-label=breadcrumb] {
 }
 
 @media (min-width: 1440px) {
-  .slider {
-    max-height: 590px;
-  }
 
   .slider__images {
     height: 79%;
+  }
+
+  .slider-vertical .slider__images {
+    height: auto;
   }
 
   .slider .slider-thumb {
@@ -971,10 +972,6 @@ nav[aria-label=breadcrumb] {
     .slider__images .youtube {
         min-height: 400px;
     }
-    
-    .slider {
-      max-height: 516px;
-    }
 
     .slider-vertical .slider__images .swiper-slide .image-4x3 {
       max-height: 34.7rem;
@@ -988,10 +985,20 @@ nav[aria-label=breadcrumb] {
       height: 100%;
     }
     
-
     .img-fluid {
       max-height: 620px;
     }
+}
+
+@media (max-width: 1367px) {
+  .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
+    max-height: 523px;
+  }
+
+  .slider-vertical .slider__images .swiper-wrapper {
+    min-height: 523px;
+  }
+
 }
 
 @media (max-width: 1240px) {
@@ -1028,16 +1035,7 @@ nav[aria-label=breadcrumb] {
     display: none;
   }
 
-  .slider {
-    max-height: 100%;
-  }
-
   .slider__images {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: auto;
-    /* padding: 10px; */
     margin-bottom: 0;
   }
 
@@ -1045,11 +1043,11 @@ nav[aria-label=breadcrumb] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 69px;
+    height: 80px;
   }
 
   .slider-thumb__images {
-    max-height: 48px;
+    max-height: 80px;
   }
 
   .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {
@@ -1062,9 +1060,11 @@ nav[aria-label=breadcrumb] {
     border-radius: 0;
   }
 
-  .slider__images .youtube {
-    min-height: 0;
+  .slider__images .swiper-slide .image-4x3 img {
+    padding-top: .8rem;
+    max-height: 500px;
   }
+
   .img-flex-card {
     width: 50px;
     height: 50px;
@@ -1165,6 +1165,11 @@ nav[aria-label=breadcrumb] {
     height: auto;
   }
 
+  .slider__images .swiper-slide .image-4x3 img {
+    padding-top: 0;
+    max-height: 100%;
+  }
+  
   .btn-mobile {
     margin-left: 10px;
     width: 75%;
