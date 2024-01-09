@@ -961,6 +961,10 @@ nav[aria-label=breadcrumb] {
     height: 108px;
   }
 
+  .slider-vertical .slider-thumb {
+    height: 100%;
+  }
+
 }
 
 @media (max-width: 1440px) {
