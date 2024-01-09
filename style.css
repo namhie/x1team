@@ -961,9 +961,6 @@ nav[aria-label=breadcrumb] {
     height: 108px;
   }
 
-  .slider-vertical .slider__images, .slider-vertical .slider-thumb {
-    height: 100%;
-  }
 }
 
 @media (max-width: 1440px) {
@@ -972,12 +969,21 @@ nav[aria-label=breadcrumb] {
     }
     
     .slider {
-      max-height: 505px;
+      max-height: 516px;
     }
 
     .slider-vertical .slider__images .swiper-slide .image-4x3 {
       max-height: 34.7rem;
     }
+
+    .slider-vertical .slider__images {
+      height: 100%;
+    }
+
+    .slider-vertical .slider-thumb {
+      height: 100%;
+    }
+    
 
     .img-fluid {
       max-height: 620px;
