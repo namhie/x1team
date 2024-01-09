@@ -313,6 +313,7 @@ input:-webkit-autofill:focus {
 }
 
 .slider-thumb__images {
+  margin-top: 15px;
   height: 100%;
   overflow-x: scroll;
 }
