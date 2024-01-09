@@ -78,17 +78,11 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 600,
-      // mousewheel: false, 
-      // keyboard: false,
-      // allowSlidePrev: false,
-      // allowSlideNext: false,
-      // grabCursor: true,
+      autoHeight: false,
       navigation: {
         nextEl: '.swiper-button-next', 
         prevEl: '.swiper-button-prev',
       },
-      // freeMode: true,
-      // allowTouchMove: true,
       on: {
         slideChange: function () {
           if (mediaQuery.matches) {
