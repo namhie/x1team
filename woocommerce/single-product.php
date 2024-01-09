@@ -498,7 +498,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-lg-0 px-2">
+                  <div class="slider-thumb d-flex px-md-0 px-2 mt-lg-0 mt-1">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
                       <?php
