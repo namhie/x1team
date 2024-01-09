@@ -32,7 +32,7 @@ function sliderThumbActive(images, thumbs) {
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
-            this.mousewheel.disable()
+            
             youtubes.forEach(el => {
               el.classList.add('ratio-16x9')
             })
@@ -44,8 +44,10 @@ function sliderThumbActive(images, thumbs) {
               youtubes.forEach(el => el.classList.remove('ratio-16x9'))
             }
             if (document.querySelector('.slider-grid')) {
+              this.mousewheel.disable()
               masonrySlider()
             } else {
+              this.mousewheel.enable()
               masonrySliderDelete()
             }
           }
