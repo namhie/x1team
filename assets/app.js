@@ -23,7 +23,7 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 'auto',
       speed: 600,
       grabCursor: true,
-      mousewheel: false,
+      mousewheel: true,
       spaceBetween: 6,
       on: {
         click: function () {
@@ -32,6 +32,7 @@ function sliderThumbActive(images, thumbs) {
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
+            this.mousewheel.disable()
             youtubes.forEach(el => {
               el.classList.add('ratio-16x9')
             })
