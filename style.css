@@ -445,7 +445,7 @@ input:-webkit-autofill:focus {
 
 .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
   /* height: 100% !important; */
-  max-height: 590px;
+  max-height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -961,8 +961,8 @@ nav[aria-label=breadcrumb] {
     height: 108px;
   }
 
-  .slider-vertical .slider-thumb {
-    height: auto;
+  .slider-vertical .slider__images, .slider-vertical .slider-thumb {
+    height: 100%;
   }
 }
 
