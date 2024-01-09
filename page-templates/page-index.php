@@ -422,7 +422,7 @@ get_header(); // Вставляем заголовок сайта
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
             
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-xxl-6 col-md-7"> 
+            <div class="col-lg-7"> 
               <div class="row justify-content-center h-100">
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
@@ -549,8 +549,8 @@ get_header(); // Вставляем заголовок сайта
                 </div>
               </div>
             </div>
-            <div class="col-xxl-6 col-md-5">
-              <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
+            <div class="col-lg-5">
+              <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
                 <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                 <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                   <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
