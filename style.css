@@ -269,10 +269,9 @@ input:-webkit-autofill:focus {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  height: 76%;
   width: 100%;
   border-radius: 5px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   overflow: hidden;
 }
 
@@ -310,10 +309,11 @@ input:-webkit-autofill:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 22%;
+  height: 108px;
 }
 
 .slider-thumb__images {
+  margin-top: 15px;
   height: 100%;
   overflow-x: scroll;
 }
@@ -380,6 +380,9 @@ input:-webkit-autofill:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -408,9 +411,14 @@ input:-webkit-autofill:focus {
 
 .slider-vertical .slider__images .swiper-slide .image-4x3 {
   position: relative;
-  max-height: 35rem;
+  max-height: 36rem;
   width: 100%;
 }
+
+/* .slider-vertical .slider__images .swiper-slide .image-4x3 img {
+  height: 100%;
+} */
+
 
 .slider-vertical .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {
   min-width: 110px;
@@ -426,18 +434,24 @@ input:-webkit-autofill:focus {
   max-width: 244px;
 }
 
+.slider-vertical .slider-thumb .slider-thumb__images .swiper-wrapper {
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+
 .slider-vertical .slider-thumb .swiper-overlay {
   display: none;
 }
 
 .slider-vertical .slider-thumb .slider-thumb__images {
+  margin-top: 0;
   margin-right: 0;
   padding: 0;
   height: 100%;
 }
 
 .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
-  height: 100% !important;
+  /* height: 100% !important; */
+  max-height: 600px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -941,12 +955,13 @@ nav[aria-label=breadcrumb] {
 }
 
 @media (min-width: 1440px) {
-  .slider {
-    max-height: 590px;
-  }
 
   .slider__images {
     height: 80%;
+  }
+
+  .slider-vertical .slider__images {
+    height: auto;
   }
 
   .slider .slider-thumb {
@@ -954,8 +969,9 @@ nav[aria-label=breadcrumb] {
   }
 
   .slider-vertical .slider-thumb {
-    height: auto;
+    height: 100%;
   }
+
 }
 
 @media (max-width: 1440px) {
@@ -963,17 +979,32 @@ nav[aria-label=breadcrumb] {
         min-height: 400px;
     }
 
-    .slider {
-      max-height: 505px;
-    }
-
     .slider-vertical .slider__images .swiper-slide .image-4x3 {
       max-height: 34.7rem;
+    }
+
+    .slider-vertical .slider__images {
+      height: 100%;
+    }
+
+    .slider-vertical .slider-thumb {
+      height: 100%;
     }
 
     .img-fluid {
       max-height: 620px;
     }
+}
+
+@media (max-width: 1367px) {
+  .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
+    max-height: 523px;
+  }
+
+  .slider-vertical .slider__images .swiper-wrapper {
+    min-height: 523px;
+  }
+
 }
 
 @media (max-width: 1240px) {
@@ -1010,16 +1041,7 @@ nav[aria-label=breadcrumb] {
     display: none;
   }
 
-  .slider {
-    max-height: 100%;
-  }
-
   .slider__images {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: auto;
-    /* padding: 10px; */
     margin-bottom: 0;
   }
 
@@ -1027,11 +1049,11 @@ nav[aria-label=breadcrumb] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 69px;
+    height: 80px;
   }
 
   .slider-thumb__images {
-    max-height: 48px;
+    max-height: 80px;
   }
 
   .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {
@@ -1044,9 +1066,11 @@ nav[aria-label=breadcrumb] {
     border-radius: 0;
   }
 
-  .slider__images .youtube {
-    min-height: 0;
+  .slider__images .swiper-slide .image-4x3 img {
+    padding-top: .8rem;
+    max-height: 500px;
   }
+
   .img-flex-card {
     width: 50px;
     height: 50px;
@@ -1147,6 +1171,11 @@ nav[aria-label=breadcrumb] {
     height: auto;
   }
 
+  .slider__images .swiper-slide .image-4x3 img {
+    padding-top: 0;
+    max-height: 100%;
+  }
+
   .btn-mobile {
     margin-left: 10px;
     width: 75%;
@@ -1225,6 +1254,10 @@ nav[aria-label=breadcrumb] {
   .btn-mobile-header {
     width: 100%;
     margin-right: 15px;
+  }
+
+  .email-mobile {
+    display: none;
   }
 }
 

@@ -23,6 +23,7 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 'auto',
       speed: 600,
       grabCursor: true,
+      mousewheel: true,
       spaceBetween: 6,
       on: {
         click: function () {
@@ -31,6 +32,7 @@ function sliderThumbActive(images, thumbs) {
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
+
             youtubes.forEach(el => {
               el.classList.add('ratio-16x9')
             })
@@ -42,8 +44,10 @@ function sliderThumbActive(images, thumbs) {
               youtubes.forEach(el => el.classList.remove('ratio-16x9'))
             }
             if (document.querySelector('.slider-grid')) {
+              this.mousewheel.disable()
               masonrySlider()
             } else {
+              this.mousewheel.enable()
               masonrySliderDelete()
             }
           }
@@ -58,8 +62,8 @@ function sliderThumbActive(images, thumbs) {
           slideToClickedSlide: true,
         },
         768: {
-          allowSlideNext: false,
-          allowSlidePrev: false,
+          // allowSlideNext: false,
+          // allowSlidePrev: false,
         }
       }
     })
@@ -74,17 +78,11 @@ function sliderThumbActive(images, thumbs) {
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 600,
-      mousewheel: false,
-      keyboard: false,
-      allowSlidePrev: false,
-      allowSlideNext: false,
-      // grabCursor: true,
+      autoHeight: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      freeMode: true,
-      // allowTouchMove: true,
       on: {
         slideChange: function () {
           if (mediaQuery.matches) {
@@ -92,7 +90,6 @@ function sliderThumbActive(images, thumbs) {
                 sliderItem.classList.add('slider-vertical')
                 sliderThumbs.changeDirection(getDirection())
                 sliderThumbs.wrapperEl.classList.add('slider-grid')
-                console.log(this.activeIndex)
                 if (this.activeIndex === 0) {
                   clicked = false
                   sliderThumbs.changeDirection(getDirection())
@@ -117,7 +114,7 @@ function sliderThumbActive(images, thumbs) {
         0: {
           direction: 'horizontal',
           autoHeight: true,
-          mousewheel: true,
+          // mousewheel: true,
           keyboard: true,
           allowSlidePrev: true,
           allowSlideNext: true
@@ -187,24 +184,21 @@ modalItem.forEach(modal => {
   if(modal) {
     modal.addEventListener('show.bs.modal', function (e) {
       let invoker = e.relatedTarget
-      console.log(modal)
-      console.log(invoker)
-      iframeUrl = this.querySelector('.iframe')
-      videoURL = iframeUrl.getAttribute('src')
-      src = "?rel=0&autoplay=1"
-      srcUrl = videoURL+src
-      if(iframeUrl) {
+      if (this.querySelector('.iframe')) {
+        iframeUrl = this.querySelector('.iframe')
+        videoURL = iframeUrl.getAttribute('src')
+        src = "?rel=0&autoplay=1"
+        srcUrl = videoURL+src
         iframeUrl.setAttribute('src', srcUrl)
       }
 
       sliderImagesModals.forEach(slider => {
-        console.log(slider)
         sliderModals(slider)
         carousel.to(invoker.getAttribute('data-slider') - 1)
         slider.addEventListener('slid.bs.carousel', function(e) {
 
-          var currentSlide = this.querySelector('.carousel-item')
-          if (currentSlide) {
+        let currentSlide = this.querySelector('.carousel-item')
+          if (currentSlide && this.querySelector('.iframe')) {
             videoIFrame = this.querySelector('.iframe')
             videoURL = videoIFrame.setAttribute('src', videoSrc);
             if (videoURL === videoIFrame.setAttribute('src', srcUrl)) {

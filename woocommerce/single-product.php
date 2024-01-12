@@ -34,10 +34,16 @@ $_product = wc_get_product( get_the_ID() );
 
 get_header(); // Вставляем заголовок сайта
 ?>
-    <main class="main">
-      <div class="container-sm container-fluid">
+<?php
+
+$gallery_attachment_ids = $_product->get_gallery_image_ids();
+$product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+
+?>
+    <main class="main pb-5">
+      <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
-            <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
+            <h1 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h1>
             <!-- без слайдера - НАЧАЛО -->
               <!--<div class="col">-->
               <!--  <div class="d-flex justify-content-end align-items-end mb-3 mt-xl-0 mt-4">-->
@@ -447,14 +453,8 @@ get_header(); // Вставляем заголовок сайта
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-xxl-7 col-lg-6">
+            <div class="col-lg-7">
               <div class="row justify-content-center h-100">
-                <?php
-
-                  $gallery_attachment_ids = $_product->get_gallery_image_ids();
-                  $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
-
-                ?>
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
                     <div class="swiper-wrapper">
@@ -478,8 +478,8 @@ get_header(); // Вставляем заголовок сайта
                         if ( $gallery_attachment_ids) {
                           foreach ($gallery_attachment_ids as $gallery_attachment_id) {
                             ?>
-                            <div class="swiper-slide" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
-                              <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
+                            <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
+                              <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
                                 <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                   <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                                   <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -496,9 +496,12 @@ get_header(); // Вставляем заголовок сайта
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-lg-0 px-2">
+                  <div class="slider-thumb d-flex px-md-0 px-2 mt-lg-0 mt-1">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
+                      <?php
+                        if ( $product_video) {
+                      ?>
                         <div class="swiper-slide youtube ratio slide-horizontal">
                           <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
@@ -507,7 +510,7 @@ get_header(); // Вставляем заголовок сайта
                           <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
                         </div>
 
-                        <?php
+                        <?php }
 
                             if ( $gallery_attachment_ids) {
                               foreach ($gallery_attachment_ids as $gallery_attachment_id) {
@@ -526,8 +529,8 @@ get_header(); // Вставляем заголовок сайта
                 </div>
               </div>
             </div>
-            <div class="col-xxl-5 col-lg-6">
-              <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
+            <div class="col-lg-5">
+              <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
                 <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                   <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
@@ -564,6 +567,16 @@ get_header(); // Вставляем заголовок сайта
                     </div>
                   <?php } ?>
                 </div>
+                <?php if( current_user_can('edit_pages') ) { ?>
+                  <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4"><a href=""> <span class="text-primary fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success badge fw-normal me-0">Редактировать</span>
+                      <div class="d-inline-block align-middle" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">
+                        <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                        </svg>
+                      </div></span></div>
+                  </div>
+                <?php } ?>
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
                     <nav class="d-lg-block d-none" aria-label="breadcrumb">
@@ -582,7 +595,7 @@ get_header(); // Вставляем заголовок сайта
                     <h1 class="mt-3 d-md-block d-none fs-md-1"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>
-                        <?php echo get_the_excerpt( ) ?>
+                        <?php echo get_the_excerpt() ?>
                         <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
                           <span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span>
                         </a> -->
@@ -1104,7 +1117,34 @@ get_header(); // Вставляем заголовок сайта
           <div class="modal-body p-0">
             <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-1">
               <div class="carousel-inner">
-                <div class="carousel-item bg-white active">
+                <?php
+                  if ( $product_video) {
+                ?>
+                  <div class="carousel-item bg-white active">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                <?php }
+                  if ( $gallery_attachment_ids ) {
+                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                    ?>
+                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
+                    </div>
+                <?php }
+                  }
+			            if (!$product_video && $gallery_attachment_ids) {
+                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                    ?>
+                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white active">
+                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
+                    </div>
+                    <?php }
+                  }
+
+                ?>
+                <!-- <div class="carousel-item active bg-white">
                   <div class="youtube ratio ratio-16x9">
                     <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                   </div>
@@ -1138,7 +1178,7 @@ get_header(); // Вставляем заголовок сайта
                 </div>
                 <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                   <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
-                </div>
+                </div> -->
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
