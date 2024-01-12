@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Edit Vendor Product
+*/
 /**
  * The Template for displaying all single products
  *
@@ -18,22 +21,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-// get_header( 'shop' );
-
-$_product = wc_get_product( get_the_ID() );
-// var_dump($_product);
-?>
-
-<?php
-/**
- * Template Name: Single Page Product
- *
- * @package Bootscore
- */
-
-
 get_header(); // Вставляем заголовок сайта
+
+if ( !isset( $_GET['edit-id'] ) || $_GET['edit-id'] == '') return;
+$_product = wc_get_product( $_GET['edit-id'] );
+// var_dump($_product);
+
 ?>
+
+<style>
+
+  #product-title {
+    font-size: 18px;
+    width: 100%;
+  }
+  #product-price {
+
+    font-size: 18px;
+  }
+  #product-regular-price {
+
+    font-size: 18px;
+  }
+
+
+</style>
     <main class="main">
       <div class="container-sm container-fluid">
           <div class="row h-100">
@@ -536,10 +548,10 @@ get_header(); // Вставляем заголовок сайта
                       <div class="toast-body">
                         <div class="list-group" id="scollspy">
                           <a class="btn btn-outline-secondary mb-2" href="/edit-product/?edit-id=<?php echo $_product->get_id(); ?>" role="button">Редактировать</a>
-                          <!-- <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
+                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
                           <a class="btn btn-outline-secondary mb-2" href="#" role="button">Администраторы</a>
                           <a class="btn btn-outline-secondary mb-2" href="#" role="button">Пригласить</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a> -->
+                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a>
                         </div>
                       </div>
                     </div>
@@ -548,7 +560,7 @@ get_header(); // Вставляем заголовок сайта
 
 
                   if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
+                    <!-- <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
                       <a href="">
                         <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
                       </a>
@@ -561,7 +573,7 @@ get_header(); // Вставляем заголовок сайта
                           </svg>
                         </div>
                       </span>
-                    </div>
+                    </div> -->
                   <?php } ?>
                 </div>
                 <div class="row my-auto">
@@ -572,17 +584,20 @@ get_header(); // Вставляем заголовок сайта
                           display: none;
                          }
                       </style>
-                      <?php woocommerce_breadcrumb(['home'=>'Главная'])?>
+                      <?php  // woocommerce_breadcrumb(['home'=>'Главная'])?>
                       <!-- <ol class="breadcrumb">
                         <li class="breadcrumb-item"> <a href="#">Главная</a></li>
                         <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
                         <li class="breadcrumb-item"><a href="#">Услуги</a></li>
                       </ol> -->
                     </nav>
-                    <h1 class="mt-3 d-md-block d-none fs-md-1"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="mt-3 d-md-block d-none fs-md-1">
+                      <input type="text" name="product-title" id="product-title" value="<?php echo $_product->get_name() ?>">
+
+                    </h1>
                     <div class="mb-3"></div>
                       <span>
-                        <?php echo get_the_excerpt( ) ?>
+                        <?php // echo get_the_excerpt() ?>
                         <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
                           <span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span>
                         </a> -->
@@ -594,14 +609,108 @@ get_header(); // Вставляем заголовок сайта
                   </div>
                   <div class="col">
                     <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
-                      <h4 class="text-danger text-nowrap m-0"><?php echo $_product->get_price() . ' ' . get_woocommerce_currency_symbol()?> </h4>
-                      <?php if ( $_product->get_regular_price() ) { ?>
-                        <span class="text-decoration-line-through ps-3"><?php echo $_product->get_regular_price() . ' ' . get_woocommerce_currency_symbol() ?></span>
-                      <?php }?>
+                      <h4 class="text-danger text-nowrap m-0">
+                        <input type="text" name="product-price" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <?php echo get_woocommerce_currency_symbol()?>
+                      </h4>
+                      <input type="text" name="product-regular-price" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <?php echo get_woocommerce_currency_symbol()?>
                     </div>
+                    <div class="">
+                      Категории
+                      <?php
+
+
+
+        $taxonomy = 'product_cat';
+        $terms = get_the_terms( $_product->get_ID(), $taxonomy);
+        $terms_ids = [];
+        foreach ($terms as $key => $t) {
+          $terms_ids[] = $t->term_id;
+        }
+        $args = array(
+                'taxonomy'     => $taxonomy,
+                'orderby'      => 'name',
+                'show_count'   => 0,
+                'pad_counts'   => 0,
+                'hierarchical' => 1,
+                'hide_empty'   => 0
+        );
+        $all_categories = get_categories( $args );
+
+        $html = '';
+        foreach ($all_categories as $cat) {
+            $checked = '';
+
+            if ( in_array($cat->term_id, $terms_ids)) {
+              $checked = 'checked';
+            }
+            if($cat->category_parent == 0) {
+                $category_id = $cat->term_id;
+
+                $cat_url = get_term_link($cat->slug, $taxonomy);
+                $cat_name = $cat->name;
+                if ( $cat_name == 'Misc') continue;
+
+                $args2 = array(
+                        'taxonomy'     => $taxonomy,
+                        'child_of'     => 0,
+                        'parent'       => $category_id,
+                        'orderby'      => $orderby,
+                        'show_count'   => $show_count,
+                        'pad_counts'   => $pad_counts,
+                        'hierarchical' => $hierarchical,
+                        'title_li'     => $title,
+                        'hide_empty'   => $empty
+                );
+                $sub_cats = get_categories( $args2 );
+                $html_inner = '';
+                if($sub_cats) {
+                    $isset_sub_class = 'form-list';
+                    $html_inner = '<a class="d-block collapsed" data-bs-toggle="collapse" href="#collapseCatalogItem'.$category_id.'" role="button" aria-controls="collapseCatalogItem'.$category_id.'">
+                                        <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                        <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>
+                                        <div class="form-check-arrow"></div>
+                                    </a>
+                                    <div class="collapse show" id="collapseCatalogItem'.$category_id.'">
+                                    ';
+                    foreach($sub_cats as $sub_category) {
+                        $checked = '';
+                        $sub_category_id = $sub_category->term_id;
+                        $sub_cat_name = $sub_category->name;
+
+                        if ( in_array($sub_category->term_id, $terms_ids)) {
+                          $checked = 'checked';
+                        }
+
+                        $html_inner .= '<div class="form-check">
+                                            <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$sub_category_id.'" id="'.$sub_category_id.'" '.$checked.'>
+                                            <label class="form-check-label" for="'.$sub_category_id.'">'.$sub_cat_name.'</label>
+                                        </div>';
+                    }
+                    $html_inner .= '</div>';
+                } else {
+                    $isset_sub_class = '';
+                    $html_inner = '<input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                    <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>';
+                }
+                $html .= '<div class="form-check border-bottom py-2 '.$isset_sub_class.'"> '.$html_inner.' </div>';
+            }
+        }
+        // $wrapper = '<div class="form-check border-bottom py-2">
+        //                 <input class="form-check-input" type="checkbox" value="cat_user_announcements" name="cat_product[]" id="user_announcements" checked>
+        //                 <label class="form-check-label" for="user_announcements">Мои объявления</label>
+        //             </div>' . $html;
+        $wrapper = $html;
+        echo $wrapper;
+
+                      ?>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                    <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
+                    <!--
                     <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
                       <div class="count d-flex flex-md-wrap flex-nowrap">
-                        <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}"><span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>
+                        <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}">
+                          <span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>
                           <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                         </div>
                         <div class="btn-block">
@@ -633,7 +742,10 @@ get_header(); // Вставляем заголовок сайта
                         </a>
                       </div>
                     </div>
+                     -->
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -644,7 +756,8 @@ get_header(); // Вставляем заголовок сайта
                 <div class="row">
                   <div class="col">
                     <h2 class="block-title text-nowrap">Описание</h2>
-                    <?php the_content() ?>
+                    <textarea name="product-description" id="product-description" style="width:100%; min-height: 300px " > <?php echo $_product->get_description() ?> </textarea>
+
                   </div>
                   <div class="col d-none">
                     <h2 class="block-title text-nowrap">Характеристики</h2>

@@ -21,16 +21,46 @@ if (!defined('ABSPATH')) {
     </p>
     <p><?php esc_html_e('Here you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.', 'bootscore'); ?></p>
   </div>
-
+<div class="woocommerce">
   <div class="navigation">
     <nav class="woocommerce-MyAccount-navigation" role="navigation">
       <div class="list-group mb-4">
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
-          <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>" class="list-group-item list-group-item-action"><?php echo esc_html($label); ?></a>
+
+          <?php
+            $menu_href = esc_url(wc_get_account_endpoint_url($endpoint));
+
+            if ( $endpoint == 'sales') {
+              ?>
+                <p class="list-group-item list-group-item-action" style="margin: unset;"><?php echo esc_html($label); ?></p>
+              <?php
+            } else if (  in_array( $endpoint, ['ads', 'ads_add', 'sales_orders'] ) ) {
+              ?>
+                <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action" style="margin: unset; padding-left:45px;"><?php echo esc_html($label); ?></a>
+              <?php
+            } else {
+              ?>
+                <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action"><?php echo esc_html($label); ?></a>
+              <?php
+            }
+
+
+          ?>
         <?php endforeach; ?>
       </div>
     </nav>
   </div>
+  <div class="woocommerce-MyAccount-content">
+    <?php
+    /**
+     * My Account content.
+     *
+     * @since 2.6.0
+     */
+    do_action('woocommerce_account_content');
+    ?>
+  </div>
+</div>
 
 <?php } else { ?>
 
@@ -39,24 +69,23 @@ if (!defined('ABSPATH')) {
     <div id="customer_login_1">
 
       <div class="login">
-
       <?php endif; ?>
       <?php
-if ( function_exists( 'wptelegram_login' ) ) {
-    wptelegram_login();
-}
-?>
+        if ( function_exists( 'wptelegram_login' ) ) {
+            wptelegram_login();
+        }
+      ?>
       <!-- <h5 class="fw-bold text-center mb-3"><?php esc_html_e('Login', 'woocommerce'); ?></h5> -->
 
       <div class="col mt-3">
 
         <form class="mb-3" method="post">
-            
+
           <?php do_action('woocommerce_login_form_start'); ?>
-            
+
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide mb-3">
-              
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : 'логин, ник игрока, телефон, email'; ?>" /><?php // @codingStandardsIgnoreLine 
+
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : 'логин, ник игрока, телефон, email'; ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                         ?>
           </div>
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide position-relative mb-3">
@@ -118,7 +147,7 @@ if ( function_exists( 'wptelegram_login' ) ) {
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide mb-3 position-relative">
                 <label for="reg_password_1"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
                 <input type="password" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="password" id="reg_password_1" autocomplete="new-password" />
-                <span class="offcanvas-password show-password-input"></span>  
+                <span class="offcanvas-password show-password-input"></span>
               </p>
 
             <?php else : ?>
@@ -148,3 +177,19 @@ if ( function_exists( 'wptelegram_login' ) ) {
   <?php do_action('woocommerce_after_customer_login_form'); ?>
 
 <?php } ?>
+
+<style>
+
+  .logged-in.woocommerce-account .woocommerce {
+      display: flex;
+      flex-direction: row;
+      gap: 5%;
+  }
+  .woocommerce-account .woocommerce::after, .woocommerce-account .woocommerce::before {
+      display: none;
+  }
+  .col-lg-4 {
+    width: 90%;
+  }
+
+</style>
