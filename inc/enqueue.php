@@ -25,9 +25,6 @@ function bootscore_scripts() {
   $modificated_themeJs        = date('YmdHi', filemtime(get_template_directory() . '/js/theme.js'));
 
 
-  wp_deregister_script( 'jquery' );
-  wp_register_script( 'jquery', ( 'https://code.jquery.com/jquery-3.7.1.min.js' ), false, null, true );
-  wp_enqueue_script( 'jquery' );
 
   // bootScore
   require_once 'scss-compiler.php';

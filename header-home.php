@@ -63,8 +63,17 @@ if( $current_user->exists() ){
                 </svg>Войти как Виктор
               </button>-->
               <?php
+              if( ! $current_user->exists() ){
                 if ( function_exists( 'wptelegram_login' ) ) {
                     wptelegram_login();
+                }
+              ?>
+                <a class="d-lg-block d-none" href="/my-account/">Войти</a>
+              <?php
+                } else {
+                  ?>
+                    <a class="d-lg-block d-none" href="/my-account/"><?php echo $user_login ?></a>
+                  <?php
                 }
               ?>
               <div class="phone"><a href="tel:+79261605204">

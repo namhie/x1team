@@ -7,6 +7,18 @@
  * because they have require get_template_directory() . '/woocommerce/woocommerce-functions.php';
  * in their functions.php.
  */
+add_action('wp_enqueue_scripts', 'x1team_scripts');
+function x1team_scripts() {
+
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', ( 'https://code.jquery.com/jquery-3.7.1.min.js' ), false, null, true );
+	wp_enqueue_script( 'jquery' );
+
+	wp_enqueue_script('create-vendor-product', get_template_directory_uri() . '/woocommerce/js/create-vendor-product.js', array('jquery'), '1.0' );
+
+}
+
+
 add_theme_support( 'wc-product-gallery-slider' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 function new_excerpt_more( $more ){
@@ -54,6 +66,191 @@ function custom_login_redirect( $redirect_to, $request, $user ) {
     return $redirect_to;
 }
 add_filter( 'login_redirect', 'custom_login_redirect', 10, 3 );
+
+
+
+
+add_filter( 'woocommerce_account_menu_items', 'my_account_menu' );
+function my_account_menu( $menu_links ){
+	$menu_links = array(
+		// 'dashboard'          => __( 'Панель управления', 'woocommerce' ),
+		'orders'             => __( 'Покупки', 'woocommerce' ),
+		'sales' 	=> __( 'Продажи', 'woocommerce' ),
+		'ads' 	=> __( 'Объявления', 'woocommerce' ),
+		'ads_add' 	=> __( 'Добавить объявление', 'woocommerce' ),
+		'sales_orders' 	=> __( 'Заказы покупателей', 'woocommerce' ),
+		'edit-account'       => __( 'Анкета', 'woocommerce' ),
+		'customer-logout'    => __( 'Выйти', 'woocommerce' ),
+
+
+		// 'edit-address'       => __( 'Адреса', 'woocommerce' ),
+		// 'woo-wallet'         => __( 'Анкета', 'woocommerce' ),
+		// 'edit-account'       => __( 'Детали профиля', 'woocommerce' ),
+
+
+	);
+	return $menu_links;
+}
+
+add_filter( 'woocommerce_get_endpoint_url', 'my_account_menu_endpoint', 10, 4 );
+
+function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
+	if ( $endpoint === 'sales_orders' ) {
+		$url = false;
+	}
+	if ( $endpoint === 'ads' ) {
+		$url = home_url( 'shop?category=my_products' );
+	}
+	if ( $endpoint === 'ads_add' ) {
+		$url = home_url( 'vendor-new-product' );
+	}
+	return $url;
+}
+
+// add_action( 'init', 'add_my_account_list_endpoint' );
+// function add_my_account_list_endpoint() {
+// 	add_rewrite_endpoint( 'online-voice-order', EP_PAGES );
+// 	add_rewrite_endpoint( 'instr', EP_PAGES );
+// 	add_rewrite_endpoint( 'feedback', EP_PAGES ); //добавил
+// 	add_rewrite_endpoint( 'formated', EP_PAGES );
+// 	add_rewrite_endpoint( 'test_cli', EP_PAGES );
+// 	add_rewrite_endpoint( 'order_ready', EP_PAGES );
+// }
+
+// add_action( 'woocommerce_account_online-voice-order_endpoint', 'show_templated_online_voice' );
+// function show_templated_online_voice() {
+// 	require_once dirname( __FILE__ )  . '/my-account/show_templated_online_voice.php';
+// }
+
+// $sss = get_post_meta(113);
+// echo '<pre>';
+// var_dump( YITH_Vendors() );
+// var_dump( YITH_Vendors()->get_vendors() );
+// var_dump( YITH_Vendors()->get_role_name() );
+// var_dump( YITH_Vendors()->get_user_meta_key() );
+// var_dump( YITH_Vendors()->get_user_meta_owner() );
+// var_dump( YITH_Vendors()->get_taxonomy_name() );
+
+// // $vendor = yith_get_vendor( 'current', 'user' );
+
+// $vendor = yith_get_vendor( 'current', 'product' );
+// var_dump($vendor);
+
+// $vendor = yith_get_vendor( 'current', 'user' );
+// var_dump($vendor);
+
+// $vendor = yith_get_vendor( 'current', 'vendor' );
+// var_dump($vendor);
+
+
+// var_dump( $vendor_id );
+// var_dump( YITH_Vendors()->get_taxonomy_name() );
+// var_dump(  get_term_by ( 'term_id', $vendor_id, YITH_Vendors()->get_taxonomy_name() ) );
+// echo '</pre>';
+
+
+add_action('wp_ajax_create_vendor_product', 'create_vendor_product');
+function create_vendor_product() {
+	$user_id = get_current_user_id();
+
+	$product_data = $_POST;
+
+
+
+	$product_id = create_product($product_data);
+	$arg = array(
+		'ID' => $product_id,
+		'post_author' => $user_id,
+	);
+	wp_update_post( $arg );
+
+	$cat_product = $product_data["cat_product"];
+	$cat_product_int = array_map(function( $str ) {
+		return (int)$str;
+	}, $cat_product);
+
+	wp_set_object_terms( $product_id, $cat_product_int, 'product_cat', false );
+
+
+	var_dump('done');
+
+	wp_die();
+}
+function create_product($product_data) {
+	$product = new WC_Product_Simple();
+
+	$product->set_status( 'pending' );
+
+	$product->set_name( $product_data['title'] );
+
+	$product->set_slug( sanitize_title( $product_data['title'] ) );
+
+	$product->set_regular_price( $product_data['regular_price'] );
+	if ( $product_data['sale_price_field'] != '' ) {
+		$product->set_sale_price( $product_data['sale_price_field'] );
+	}
+
+	$product->set_description( $product_data['content'] );
+
+	$product->set_short_description( $product_data['excerpt'] );
+	// you can also add a full product description
+	// $product->set_description( 'long description here...' );
+
+	// $product->set_image_id( 90 );
+
+	// let's suppose that our 'Accessories' category has ID = 19
+	// $product->set_category_ids( array( 19 ) );
+	// you can also use $product->set_tag_ids() for tags, brands etc
+
+	$product->save();
+
+	return $product->get_id();
+}
+
+
+
+add_action('wp_ajax_update_vendor_product', 'update_vendor_product');
+function update_vendor_product() {
+
+
+	$product_data = $_POST;
+
+	$product_id = update_product($product_data);
+
+
+	$cat_product = $product_data["productCategory"];
+	$cat_product_int = array_map(function( $str ) {
+		return (int)$str;
+	}, $cat_product);
+
+	wp_set_object_terms( $product_id, $cat_product_int, 'product_cat', false );
+
+	echo get_post_permalink( $product_id );
+
+	wp_die();
+}
+function update_product( $product_data ) {
+
+	$user_id = get_current_user_id();
+
+	$product = wc_get_product( $product_data['productID'] );
+
+	$product->set_name( trim($product_data['productTitle']) );
+	$product->set_description( trim($product_data['productDescription']) );
+	$product->set_price( $product_data['productPrice'] );
+	$product->set_sale_price( $product_data['productPrice'] );
+	$product->set_regular_price( $product_data['productRegularPrice'] );
+
+	$product->save();
+
+	return $product->get_id();
+	// $arg = array(
+	// 	'ID' => $product_data['productID'],
+	// 	'post_author' => $user_id,
+
+	// );
+	// wp_update_post( $arg );
+}
 
 
 

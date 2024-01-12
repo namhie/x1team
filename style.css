@@ -1,5 +1,5 @@
 /*
-Theme Name: bootScore
+Theme Name: x1team - bootScore
 Theme URI: https://bootscore.me/
 Author: bootScore
 Author URI: https://bootscore.me
@@ -19,14 +19,14 @@ Bootscore is based on Underscores https://underscores.me/, (C) 2012-2022 Automat
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-/* 
+/*
 All style editing is done via scss/_bscore_custom.scss
 */
 /* Стили для заголовка (Header) */
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 991px) {
-    
+
 }
 
 /* Общие стили для текста с использованием шрифта Roboto */
@@ -508,7 +508,7 @@ input:-webkit-autofill:focus {
   width: 101%;
   height: 100%;
   border-radius: 5px;
-  background-image: url("img/overlay.png"); 
+  background-image: url("img/overlay.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -990,7 +990,7 @@ nav[aria-label=breadcrumb] {
     .slider-vertical .slider-thumb {
       height: 100%;
     }
-    
+
     .img-fluid {
       max-height: 620px;
     }
@@ -1150,7 +1150,7 @@ nav[aria-label=breadcrumb] {
   .ratio-4x3 {
     --bs-aspect-ratio: 86%;
   }
-  
+
   .wptelegram-login-output-wrap {
     padding: 0!important;
   }
