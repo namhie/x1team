@@ -15,8 +15,39 @@ function x1team_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script('create-vendor-product', get_template_directory_uri() . '/woocommerce/js/create-vendor-product.js', array('jquery'), '1.0' );
+	wp_enqueue_script('x1team-main', get_template_directory_uri() . 'assets/x1team-main.js', array('jquery'), '1.0' );
+
+
+
+
 
 }
+
+add_action( 'wp_enqueue_scripts', 'add_data_to_scripts' );
+function add_data_to_scripts() {
+    $userData = wp_get_current_user();
+    $user = $userData->ID ? true : false;
+
+	$data = [];
+
+	if ( $userData->ID ) {
+		$data['user'] = [
+			'user_id' => $userData->ID,
+			'user_nickname'=>$userData->nickname
+		];
+	} else {
+
+		$data['user'] = false;
+
+
+	}
+
+
+    wp_add_inline_script('x1team-main', 'window.x1teamMainData = '.wp_json_encode( $data ), 'before');
+}
+
+
+
 
 
 add_theme_support( 'wc-product-gallery-slider' );

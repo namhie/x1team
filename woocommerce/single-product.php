@@ -499,27 +499,27 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                   <div class="slider-thumb d-flex px-md-0 px-2 mt-lg-0 mt-1">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
-                      <?php
-                        if ( $product_video) {
-                      ?>
-                        <div class="swiper-slide youtube ratio slide-horizontal">
-                          <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
-                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
-                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
-                          </video>
-                          <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
-                        </div>
+                        <?php
+                          if ( $product_video) {
+                        ?>
+                          <div class="swiper-slide youtube ratio slide-horizontal">
+                            <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
+                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
+                            </video>
+                            <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
+                          </div>
 
                         <?php }
 
-                            if ( $gallery_attachment_ids) {
-                              foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                                ?>
-                                  <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
+                          if ( $gallery_attachment_ids) {
+                            foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                              ?>
+                                <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
 
-                                <?php
-                              }
+                              <?php
                             }
+                          }
 
 
                         ?>
@@ -548,8 +548,6 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     </div>
                   </div>
                   <?php
-
-
                   if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
                     <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
                       <a href="">
@@ -567,16 +565,6 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     </div>
                   <?php } ?>
                 </div>
-                <?php if( current_user_can('edit_pages') ) { ?>
-                  <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4"><a href=""> <span class="text-primary fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success badge fw-normal me-0">Редактировать</span>
-                      <div class="d-inline-block align-middle" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">
-                        <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
-                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
-                        </svg>
-                      </div></span></div>
-                  </div>
-                <?php } ?>
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
                     <nav class="d-lg-block d-none" aria-label="breadcrumb">
