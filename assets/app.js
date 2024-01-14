@@ -4,6 +4,7 @@ const sliderItem = document.querySelector('.slider')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
 const youtubes = document.querySelectorAll('.swiper-slide.youtube')
+const ImageYoutubes = document.querySelectorAll('.swiper-slide .youtube')
 const modalItem = document.querySelectorAll('.modal')
 const sliderImagesModals = document.querySelectorAll('.slider__images--modal') 
 const videoSrc = document.querySelector('.iframe').getAttribute("src")
@@ -15,6 +16,7 @@ let msnrySlider
 let isMobileWidth = window.innerWidth < 769
 let sliderThumbs
 let carousel
+let videoIframe
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
@@ -85,6 +87,10 @@ function sliderThumbActive(images, thumbs) {
       },
       on: {
         slideChange: function () {
+          ImageYoutubes.forEach(video => {
+            videoIframe = video.querySelector('.iframe')
+            videoIframe.setAttribute('src', videoSrc)
+            })
           if (mediaQuery.matches) {
               clicked = true
                 sliderItem.classList.add('slider-vertical')
