@@ -607,7 +607,13 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                   </div>
                   <div class="col">
                     <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
-                      <h4 class="text-danger text-nowrap m-0"><?php echo $_product->get_price() . ' ' . get_woocommerce_currency_symbol()?> </h4>
+                      <h4 class="text-danger text-nowrap m-0">
+                        <?php
+                          if ( $_product->get_price() ) {
+                            echo $_product->get_price() . ' ' . get_woocommerce_currency_symbol();
+                          }
+                        ?>
+                      </h4>
                       <?php if ( $_product->get_regular_price() ) { ?>
                         <span class="text-decoration-line-through ps-3"><?php echo $_product->get_regular_price() . ' ' . get_woocommerce_currency_symbol() ?></span>
                       <?php }?>
