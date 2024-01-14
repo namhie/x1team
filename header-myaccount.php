@@ -45,6 +45,7 @@ if( $current_user->exists() ){
 </head>
 
 <body <?php body_class("body-register"); ?>>
+<div class="woocommerce-mini-cart"></div>
 
 <?php wp_body_open(); ?>
     <header class="header py-md-2 pt-lg-3">

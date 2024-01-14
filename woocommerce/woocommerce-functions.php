@@ -15,7 +15,7 @@ function x1team_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script('create-vendor-product', get_template_directory_uri() . '/woocommerce/js/create-vendor-product.js', array('jquery'), '1.0' );
-	wp_enqueue_script('x1team-main', get_template_directory_uri() . 'assets/x1team-main.js', array('jquery'), '1.0' );
+	wp_enqueue_script('x1team-main', get_template_directory_uri() . '/assets/x1team-main.js', array('jquery'), '1.0' );
 
 
 
