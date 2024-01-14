@@ -253,7 +253,6 @@ input:-webkit-autofill:focus {
 
 .slider {
   max-width: 743px;
-  height: auto;
 }
 
 .slider.slider-vertical {

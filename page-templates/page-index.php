@@ -423,7 +423,7 @@ get_header(); // Вставляем заголовок сайта
             
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7"> 
-              <div class="row justify-content-center h-100">
+              <div class="row justify-content-center">
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
                     <div class="swiper-wrapper">
