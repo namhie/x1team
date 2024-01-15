@@ -138,6 +138,73 @@ function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
 	return $url;
 }
 
+
+add_action( 'woocommerce_after_shop_loop_item', 'edit_link_after_btn_card', 10 );
+function edit_link_after_btn_card() {
+	$current_user = wp_get_current_user();
+	if( $current_user->exists() ){
+		global $product;
+		// Авторизован.
+		// $user_login =  $current_user->user_login;
+		// $user_email =  $current_user->user_email;
+		// $user_firstname =  $current_user->user_firstname;
+		// $user_lastname =  $current_user->user_lastname;
+		// $user_display_name =  $current_user->display_name;
+		$user_id =  $current_user->ID;
+
+		$vendor = yith_get_vendor( $product->get_id(), 'product' );
+		$vendor_user_id = $vendor->get_owner();
+
+		if ( is_a( $product, 'WC_Product' ) &&  $vendor_user_id == $user_id ) {
+			echo '<a href="/edit-product/?edit-id='.$product->get_id().'">Редактировать</a>';
+		}
+	}
+}
+
+add_filter( 'woocommerce_checkout_fields', 'x1team_del_fields', 25 );
+function x1team_del_fields( $fields ) {
+
+	// оставляем эти поля
+	// unset( $fields[ 'billing' ][ 'billing_first_name' ] ); // имя
+	// unset( $fields[ 'billing' ][ 'billing_last_name' ] ); // фамилия
+	// unset( $fields[ 'billing' ][ 'billing_phone' ] ); // телефон
+	// unset( $fields[ 'billing' ][ 'billing_email' ] ); // емайл
+
+	// // удаляем все эти поля
+	unset( $fields[ 'billing' ][ 'billing_company' ] ); // компания
+	unset( $fields[ 'billing' ][ 'billing_country' ] ); // страна
+	unset( $fields[ 'billing' ][ 'billing_address_1' ] ); // адрес 1
+	unset( $fields[ 'billing' ][ 'billing_address_2' ] ); // адрес 2
+	unset( $fields[ 'billing' ][ 'billing_city' ] ); // город
+	unset( $fields[ 'billing' ][ 'billing_state' ] ); // регион, штат
+	unset( $fields[ 'billing' ][ 'billing_postcode' ] ); // почтовый индекс
+	unset( $fields[ 'order' ][ 'order_comments' ] ); // заметки к заказу
+
+
+    // $fields[ 'billing' ] = [];
+    // $fields[ 'shipping' ] = [];
+    // unset( $fields[ 'billing' ]);
+    // unset( $fields[ 'shipping' ]);
+    // var_dump($fields);
+	return $fields;
+
+}
+
+add_filter( 'woocommerce_checkout_fields', 'truemisha_required_fields', 25 );
+function truemisha_required_fields( $fields ) {
+
+	// print_r( $fields ); exit // если хотите узнать названия полей
+	$fields[ 'billing' ][ 'billing_first_name' ][ 'required' ] = false; // необязательно
+	$fields[ 'billing' ][ 'billing_last_name' ][ 'required' ] = false; // необязательно
+	$fields[ 'billing' ][ 'billing_email' ][ 'required' ] = false; // обязательно
+
+	return $fields;
+
+}
+
+
+
+
 // add_action( 'init', 'add_my_account_list_endpoint' );
 // function add_my_account_list_endpoint() {
 // 	add_rewrite_endpoint( 'online-voice-order', EP_PAGES );
@@ -162,7 +229,6 @@ function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
 // var_dump( YITH_Vendors()->get_user_meta_owner() );
 // var_dump( YITH_Vendors()->get_taxonomy_name() );
 
-// // $vendor = yith_get_vendor( 'current', 'user' );
 
 // $vendor = yith_get_vendor( 'current', 'product' );
 // var_dump($vendor);
