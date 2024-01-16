@@ -526,11 +526,11 @@ get_header(); // Вставляем заголовок сайта
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide youtube ratio slide-horizontal">
-                          <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                          <!-- <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
-                          </video>
-                          <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
+                          </video> -->
+                          <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" title="YouTube video" frameborder="0"></iframe>
                         </div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="thumb"></div>
@@ -1241,7 +1241,7 @@ get_header(); // Вставляем заголовок сайта
                 <div class="carousel-inner">
                   <div class="carousel-item bg-white active">
                     <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
+                      <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                     </div>
                   </div>
                   <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
