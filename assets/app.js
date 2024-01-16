@@ -87,10 +87,7 @@ function sliderThumbActive(images, thumbs) {
       },
       on: {
         slideChange: function () {
-          ImageYoutubes.forEach(video => {
-            videoIframe = video.querySelector('.iframe')
-            videoIframe.setAttribute('src', videoSrc)
-            })
+          hideIframe()
           if (mediaQuery.matches) {
               clicked = true
                 sliderItem.classList.add('slider-vertical')
@@ -213,6 +210,7 @@ modalItem.forEach(modal => {
             }
           }
       })
+      hideIframe()
     })
     modal.addEventListener('hidden.bs.modal', function(e) {
       iframeUrl = this.querySelector('.iframe')
@@ -222,6 +220,13 @@ modalItem.forEach(modal => {
     
   }
 })
+
+function hideIframe() {
+  ImageYoutubes.forEach(video => {
+    videoIframe = video.querySelector('.iframe')
+    videoIframe.setAttribute('src', videoSrc)
+    })
+}
 //togglepassword
 if (document.querySelector('.registration-form')) {
   const togglePassword = document.querySelector('#togglePassword');
