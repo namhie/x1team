@@ -109,7 +109,7 @@ function my_account_menu( $menu_links ){
 		'sales' 	=> __( 'Продажи', 'woocommerce' ),
 		'ads' 	=> __( 'Объявления', 'woocommerce' ),
 		'ads_add' 	=> __( 'Добавить объявление', 'woocommerce' ),
-		'sales_orders' 	=> __( 'Заказы покупателей', 'woocommerce' ),
+		'sales-orders' 	=> __( 'Заказы покупателей', 'woocommerce' ),
 		'edit-account'       => __( 'Анкета', 'woocommerce' ),
 		'customer-logout'    => __( 'Выйти', 'woocommerce' ),
 
@@ -124,11 +124,7 @@ function my_account_menu( $menu_links ){
 }
 
 add_filter( 'woocommerce_get_endpoint_url', 'my_account_menu_endpoint', 10, 4 );
-
 function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
-	if ( $endpoint === 'sales_orders' ) {
-		$url = false;
-	}
 	if ( $endpoint === 'ads' ) {
 		$url = home_url( 'shop?category=my_products' );
 	}
@@ -137,29 +133,19 @@ function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
 	}
 	return $url;
 }
-
-
-add_action( 'woocommerce_after_shop_loop_item', 'edit_link_after_btn_card', 10 );
-function edit_link_after_btn_card() {
-	$current_user = wp_get_current_user();
-	if( $current_user->exists() ){
-		global $product;
-		// Авторизован.
-		// $user_login =  $current_user->user_login;
-		// $user_email =  $current_user->user_email;
-		// $user_firstname =  $current_user->user_firstname;
-		// $user_lastname =  $current_user->user_lastname;
-		// $user_display_name =  $current_user->display_name;
-		$user_id =  $current_user->ID;
-
-		$vendor = yith_get_vendor( $product->get_id(), 'product' );
-		$vendor_user_id = $vendor->get_owner();
-
-		if ( is_a( $product, 'WC_Product' ) &&  $vendor_user_id == $user_id ) {
-			echo '<a href="/edit-product/?edit-id='.$product->get_id().'">Редактировать</a>';
-		}
-	}
+add_action( 'init', 'add_x1team_list_endpoint' );
+function add_x1team_list_endpoint() {
+	add_rewrite_endpoint( 'sales-orders', EP_PAGES );
 }
+add_action( 'woocommerce_account_sales-orders_endpoint', 'show_templated_sales_orders' );
+function show_templated_sales_orders() {
+	require_once dirname( __FILE__ )  . '/myaccount/sales-orders.php';
+}
+
+
+
+
+
 
 add_filter( 'woocommerce_checkout_fields', 'x1team_del_fields', 25 );
 function x1team_del_fields( $fields ) {
@@ -190,8 +176,8 @@ function x1team_del_fields( $fields ) {
 
 }
 
-add_filter( 'woocommerce_checkout_fields', 'truemisha_required_fields', 25 );
-function truemisha_required_fields( $fields ) {
+add_filter( 'woocommerce_checkout_fields', 'x1team_required_fields', 25 );
+function x1team_required_fields( $fields ) {
 
 	// print_r( $fields ); exit // если хотите узнать названия полей
 	$fields[ 'billing' ][ 'billing_first_name' ][ 'required' ] = false; // необязательно
@@ -203,7 +189,27 @@ function truemisha_required_fields( $fields ) {
 }
 
 
+add_action( 'woocommerce_after_shop_loop_item', 'edit_link_after_btn_card', 10 );
+function edit_link_after_btn_card() {
+	$current_user = wp_get_current_user();
+	if( $current_user->exists() ){
+		global $product;
+		// Авторизован.
+		// $user_login =  $current_user->user_login;
+		// $user_email =  $current_user->user_email;
+		// $user_firstname =  $current_user->user_firstname;
+		// $user_lastname =  $current_user->user_lastname;
+		// $user_display_name =  $current_user->display_name;
+		$user_id =  $current_user->ID;
 
+		$vendor = yith_get_vendor( $product->get_id(), 'product' );
+		$vendor_user_id = $vendor->get_owner();
+
+		if ( is_a( $product, 'WC_Product' ) &&  $vendor_user_id == $user_id ) {
+			echo '<a href="/edit-product/?edit-id='.$product->get_id().'">Редактировать</a>';
+		}
+	}
+}
 
 // add_action( 'init', 'add_my_account_list_endpoint' );
 // function add_my_account_list_endpoint() {

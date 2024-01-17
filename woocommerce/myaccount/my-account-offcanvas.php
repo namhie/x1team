@@ -34,7 +34,7 @@ if (!defined('ABSPATH')) {
               ?>
                 <p class="list-group-item list-group-item-action" style="margin: unset;"><?php echo esc_html($label); ?></p>
               <?php
-            } else if (  in_array( $endpoint, ['ads', 'ads_add', 'sales_orders'] ) ) {
+            } else if (  in_array( $endpoint, ['ads', 'ads_add', 'sales-orders'] ) ) {
               ?>
                 <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action" style="margin: unset; padding-left:45px;"><?php echo esc_html($label); ?></a>
               <?php

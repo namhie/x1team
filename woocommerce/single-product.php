@@ -46,7 +46,10 @@ $user_id =  $current_user->ID;
 
 
 get_header(); // Вставляем заголовок сайта
+
+
 ?>
+
 <?php
 
 $gallery_attachment_ids = $_product->get_gallery_image_ids();
