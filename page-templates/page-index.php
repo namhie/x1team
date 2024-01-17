@@ -425,7 +425,7 @@ get_header(); // Вставляем заголовок сайта
             <div class="col-lg-7"> 
               <div class="row justify-content-center">
                 <div class="slider pe-xl-3 px-0">
-                  <div class="swiper slider__images slider__images--main">
+                  <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="youtube ratio ratio-16x9">
