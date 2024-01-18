@@ -201,20 +201,21 @@ modalItem.forEach(modal => {
         let currentSlide = this.querySelector('.carousel-item')
           if (currentSlide && this.querySelector('.iframe')) {
             videoIFrame = this.querySelector('.iframe')
-            videoURL = videoIFrame.setAttribute('src', videoSrc);
-            if (videoURL === videoIFrame.setAttribute('src', srcUrl)) {
-              videoIFrame.setAttribute('src', videoSrc)
+            let videoURLa = videoIframe.getAttribute('src');
+            if (videoURL === videoIframe.setAttribute('src', srcUrl)) {
+              videoIframe.setAttribute('src', videoURLa)
             } 
-            if (videoIFrame && videoIFrame.setAttribute('src', videoSrc)) {
-              videoIFrame.setAttribute('src', srcUrl)
+            if (videoIframe && videoIframe.setAttribute('src', videoURL)) {
+              videoIframe.setAttribute('src', srcUrl)
             }
+           
           }
       })
       hideIframe()
     })
     modal.addEventListener('hidden.bs.modal', function(e) {
       iframeUrl = this.querySelector('.iframe')
-      iframeUrl.setAttribute('src', videoSrc)
+      iframeUrl.setAttribute('src', videoURL)
     });
   }) 
     
@@ -223,9 +224,11 @@ modalItem.forEach(modal => {
 
 function hideIframe() {
   ImageYoutubes.forEach(video => {
-    videoIframe = video.querySelector('.iframe')
-    videoIframe.setAttribute('src', videoSrc)
+    let videoEl = video.querySelectorAll('.iframe')
+    videoEl.forEach(el => {
+        el.setAttribute('src', el.src)
     })
+  })
 }
 //togglepassword
 if (document.querySelector('.registration-form')) {

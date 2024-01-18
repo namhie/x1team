@@ -1032,6 +1032,7 @@ nav[aria-label=breadcrumb] {
         -ms-flex-align: center;
             align-items: center;
     height: 80px;
+    margin-top: 0;
   }
 
   .slider-thumb__images {
