@@ -1212,6 +1212,9 @@ nav[aria-label=breadcrumb] {
     min-height: 60px;
     max-height: 60px;
   }
+  .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {
+    min-width: 99px;
+  }
 }
 
 @media (max-width: 376px) {
