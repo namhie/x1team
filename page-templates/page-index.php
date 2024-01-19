@@ -952,11 +952,11 @@ get_header(); // Вставляем заголовок сайта
                           <div class="swiper slider-thumb__images slider-thumb__images--offer01" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide youtube ratio swiper-item mb-2">
-                              <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                              <!-- <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
                                   <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
                                   <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
-                                </video>
-                                <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
+                                </video> -->
+                                <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" title="YouTube video" frameborder="0"></iframe>
                               </div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                               <div class="swiper-slide swiper-item mb-2"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image01.jpg" alt="thumb"></div>
