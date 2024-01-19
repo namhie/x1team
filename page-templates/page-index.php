@@ -832,7 +832,6 @@ get_header(); // Вставляем заголовок сайта
                               <div class="youtube object-fit-contain ratio ratio-16x9">
                                 <iframe class="iframe" width="720" height="405" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" frameborder="0" allowfullscreen></iframe>
                               </div>
-                              <div class="overlay"></div>
                               <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-2" data-bs-gallery-video="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6"> 
                                 <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                   <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
@@ -974,7 +973,7 @@ get_header(); // Вставляем заголовок сайта
                         </div>
                       </div>
                     </div>
-                    <div class="row"> 
+                    <div class="row row mt-3 mb-5"> 
                       <div class="col-12"> <a class="d-block fw-bold pb-2" href="">Занятия по программированию в Майнкрафт</a></div>
                       <div class="col">
                         <div class="d-flex flex-column justify-content-center align-items-start">
@@ -1007,7 +1006,6 @@ get_header(); // Вставляем заголовок сайта
                               <div class="youtube object-fit-contain ratio ratio-16x9">
                                 <iframe class="iframe" width="720" height="405" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH" frameborder="0" allowfullscreen></iframe>
                               </div>
-                              <div class="overlay"></div>
                               <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-3" data-bs-gallery-video="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH"> 
                                 <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                   <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
@@ -1144,7 +1142,7 @@ get_header(); // Вставляем заголовок сайта
                         </div>
                       </div>
                     </div>
-                    <div class="row"> 
+                    <div class="row row mt-3 mb-5"> 
                       <div class="col-12"> <a class="d-block fw-bold pb-4" href="">Занятия по программированию в Майнкрафт</a></div>
                       <div class="col">
                         <div class="d-flex flex-column justify-content-center align-items-start">
