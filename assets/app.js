@@ -1,5 +1,5 @@
 (()=>{"use strict";
-
+if (document.querySelector('.slider')) {
 const sliderItem = document.querySelector('.slider')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
@@ -7,7 +7,6 @@ const youtubes = document.querySelectorAll('.swiper-slide.youtube')
 const ImageYoutubes = document.querySelectorAll('.swiper-slide .youtube')
 const modalItem = document.querySelectorAll('.modal')
 const sliderImagesModals = document.querySelectorAll('.slider__images--modal') 
-const videoSrc = document.querySelector('.iframe').getAttribute("src")
 
 const mediaQuery = window.matchMedia('(min-width: 769px)')
 
@@ -16,7 +15,13 @@ let msnrySlider
 let isMobileWidth = window.innerWidth < 769
 let sliderThumbs
 let carousel
+let srcModal = "?rel=0&autoplay=1"
+let srcUrl
 let videoIframe
+let videoURL
+let iframeUrl
+let iframeThumb
+let urlThumb
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
@@ -175,22 +180,15 @@ function sliderModals(modal) {
   })
 }
 
-let src
-let srcUrl
-let videoURL
-let videoIFrame
-let iframeUrl
-
 modalItem.forEach(modal => {
   if(modal) {
     modal.addEventListener('show.bs.modal', function (e) {
       let invoker = e.relatedTarget
       if (this.querySelector('.iframe')) {
-        iframeUrl = this.querySelector('.iframe')
-        videoURL = iframeUrl.getAttribute('src')
-        src = "?rel=0&autoplay=1"
-        srcUrl = videoURL+src
-        iframeUrl.setAttribute('src', srcUrl)
+        videoIframe = this.querySelector('.iframe')
+        videoURL = videoIframe.getAttribute('src')
+        srcUrl = videoURL+srcModal
+        videoIframe.setAttribute('src', srcUrl)
       }
 
       sliderImagesModals.forEach(slider => {
@@ -200,7 +198,7 @@ modalItem.forEach(modal => {
          
         let currentSlide = this.querySelector('.carousel-item')
           if (currentSlide && this.querySelector('.iframe')) {
-            videoIFrame = this.querySelector('.iframe')
+            videoIframe = this.querySelector('.iframe')
             let videoURLa = videoIframe.getAttribute('src');
             if (videoURL === videoIframe.setAttribute('src', srcUrl)) {
               videoIframe.setAttribute('src', videoURLa)
@@ -208,7 +206,6 @@ modalItem.forEach(modal => {
             if (videoIframe && videoIframe.setAttribute('src', videoURL)) {
               videoIframe.setAttribute('src', srcUrl)
             }
-           
           }
       })
       hideIframe()
@@ -229,6 +226,30 @@ function hideIframe() {
         el.setAttribute('src', el.src)
     })
   })
+}
+
+if (youtubes.length > 0) {
+  youtubes.forEach (thumb => {
+    iframeThumb = thumb.querySelector('.iframe')
+    urlThumb = iframeThumb.getAttribute('src')
+    let urlId = YouTubeGetID(urlThumb)
+    let srcLoop = `?rel=0&autoplay=1&loop=1&mute=1&start=10&end=40&playlist=${urlId}`
+    let urlPlay = urlThumb + srcLoop
+    console.log(urlThumb)
+    console.log(urlPlay)
+    
+    if (urlThumb !== null) {
+      iframeThumb.setAttribute('src', urlPlay)
+      console.log(iframeThumb)
+    }
+      
+  })
+}
+
+function YouTubeGetID(url){
+  url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+  return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[2];
+}
 }
 //togglepassword
 if (document.querySelector('.registration-form')) {

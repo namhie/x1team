@@ -429,9 +429,9 @@ get_header(); // Вставляем заголовок сайта
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="youtube ratio ratio-16x9">
-                          <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" frameborder="0" allowfullscreen></iframe>
+                          <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="увеличить окно просмотра" frameborder="0"> 
+                        <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="увеличить окно просмотра" frameborder="0"> 
                           <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                             <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -530,7 +530,7 @@ get_header(); // Вставляем заголовок сайта
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
                             <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
                           </video> -->
-                          <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/Tp1mk8DsLuQ?si=fqHuQwz2wTR1fsR6" title="YouTube video" frameborder="0"></iframe>
+                          <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=F8-Guv6u-YSvZyjH" title="YouTube video" frameborder="0"></iframe>
                         </div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image06.jpg" alt="thumb"></div>
                         <div class="swiper-slide swiper-item"><img src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image03.jpg" alt="thumb"></div>
