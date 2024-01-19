@@ -233,7 +233,7 @@ if (youtubes.length > 0) {
     iframeThumb = thumb.querySelector('.iframe')
     urlThumb = iframeThumb.getAttribute('src')
     let urlId = YouTubeGetID(urlThumb)
-    let srcLoop = `?rel=0&autoplay=1&loop=1&mute=1&start=10&end=40&playlist=${urlId}`
+    let srcLoop = `?rel=0&autoplay=1&loop=1&mute=1&start=10&end=40&controls=0&playlist=${urlId}`
     let urlPlay = urlThumb + srcLoop
     console.log(urlThumb)
     console.log(urlPlay)
