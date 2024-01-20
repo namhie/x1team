@@ -16,9 +16,9 @@
 
   <footer class="footer d-none pb-5 my-5">
     <div class="container-sm">
-        <div class="row gap-lg-0 gap-5"> 
+        <div class="row gap-lg-0 gap-5">
             <div class="col-lg-4 col-12"><img class="logo-footer mt-3" src="<?= get_stylesheet_directory_uri(); ?>/img/logo/logo-footer.png" alt="footer logo"></div>
-            <div class="col-lg-8 col-12"> 
+            <div class="col-lg-8 col-12">
               <div class="list-footer mx-lg-auto ms-0 me-auto">
                 <div class="row flex-lg-row flex-column">
                   <div class="col-lg-3">
@@ -52,12 +52,12 @@
               </div>
             </div>
         </div>
-        <div class="row mt-5"> 
+        <div class="row mt-5">
             <p class="copy">2023 © Wildberries — модный интернет-магазин одежды, обуви и аксессуаров. Все права защищены. Доставка по всей России.На Торговой площадке wildberries.ru применяются рекомендательные технологии. Адрес для направления юридически значимых сообщений: sales@wildberries.ru</p>
         </div>
     </div>
   </footer>
-  
+
 
 <!-- To top button -->
 <a href="#" class="btn btn-primary shadow top-button position-fixed zi-1020"><i class="fa-solid fa-chevron-up"></i><span class="visually-hidden-focusable">To top</span></a>
