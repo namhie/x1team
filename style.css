@@ -936,6 +936,12 @@ nav[aria-label=breadcrumb] {
     line-height: 1;
 }
 
+.carousel-control-next, .carousel-control-prev {
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @media (min-width: 1440px) {
 
   .slider__images {
