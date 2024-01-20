@@ -12,8 +12,8 @@ $user_id =  $current_user->ID;
 
 
 $vendor = yith_get_vendor( $user_id, 'user' );
+// var_dump($vendor);
 $vendor_id = $vendor->term->term_id;
-
 $orders = wc_get_orders( array(
     // 'customer_id' => $user_id,
     'limit' => -1,

@@ -126,7 +126,10 @@ function my_account_menu( $menu_links ){
 add_filter( 'woocommerce_get_endpoint_url', 'my_account_menu_endpoint', 10, 4 );
 function my_account_menu_endpoint( $url, $endpoint, $value, $permalink ) {
 	if ( $endpoint === 'ads' ) {
-		$url = home_url( 'shop?category=my_products' );
+		$current_user = wp_get_current_user();
+		$user_id =  $current_user->ID;
+		$vendor = yith_get_vendor( $user_id, 'user' );
+		$url = home_url( "/vendor/".$vendor->term->slug );
 	}
 	if ( $endpoint === 'ads_add' ) {
 		$url = home_url( 'vendor-new-product' );
