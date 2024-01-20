@@ -46,6 +46,7 @@ if (empty($product) || !$product->is_visible()) {
 
     ?>
     <div class="card-body d-flex flex-column">
+
       <?php
       /**
        * Hook: woocommerce_shop_loop_item_title.

@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Edit Vendor Product
+*/
 /**
  * The Template for displaying all single products
  *
@@ -18,48 +21,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-// get_header( 'shop' );
-
-$_product = wc_get_product( get_the_ID() );
-$_product_url = get_permalink( $_product->get_id() );
-// var_dump($_product);
-
-// var_dump( get_post_meta(get_the_ID()) );
-$current_user = wp_get_current_user();
-$user_id =  $current_user->ID;
-
-
-// $vendor = yith_get_vendor( $user_id, 'user' );
-// $vendor_user_id = $vendor->get_owner();
-
-// var_dump($vendor);
-// var_dump($vendor_user_id);
-
-?>
-
-<?php
-/**
- * Template Name: Single Page Product
- *
- * @package Bootscore
- */
-
-
 get_header(); // Вставляем заголовок сайта
 
+if ( !isset( $_GET['edit-id'] ) || $_GET['edit-id'] == '') return;
+$_product = wc_get_product( $_GET['edit-id'] );
+// var_dump($_product);
 
 ?>
 
-<?php
+<style>
 
-$gallery_attachment_ids = $_product->get_gallery_image_ids();
-$product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+  #product-title {
+    font-size: 18px;
+    width: 100%;
+  }
+  #product-price {
 
-?>
-    <main class="main pb-5">
-      <div class="container-sm container-fluid mb-5">
+    font-size: 18px;
+  }
+  #product-regular-price {
+
+    font-size: 18px;
+  }
+
+
+</style>
+    <main class="main">
+      <div class="container-sm container-fluid">
           <div class="row h-100">
-            <h1 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h1>
+            <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
             <!-- без слайдера - НАЧАЛО -->
               <!--<div class="col">-->
               <!--  <div class="d-flex justify-content-end align-items-end mb-3 mt-xl-0 mt-4">-->
@@ -469,8 +459,14 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-lg-7">
+            <div class="col-xxl-7 col-lg-6">
               <div class="row justify-content-center h-100">
+                <?php
+
+                  $gallery_attachment_ids = $_product->get_gallery_image_ids();
+                  $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+
+                ?>
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main">
                     <div class="swiper-wrapper">
@@ -494,8 +490,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                         if ( $gallery_attachment_ids) {
                           foreach ($gallery_attachment_ids as $gallery_attachment_id) {
                             ?>
-                            <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
-                              <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
+                            <div class="swiper-slide" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
+                              <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
                                 <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                   <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                                   <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
@@ -512,30 +508,27 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-md-0 px-2 mt-lg-0 mt-1">
+                  <div class="slider-thumb d-flex px-lg-0 px-2">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
+                        <div class="swiper-slide youtube ratio slide-horizontal">
+                          <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
+                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
+                          </video>
+                          <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
+                        </div>
+
                         <?php
-                          if ( $product_video) {
-                        ?>
-                          <div class="swiper-slide youtube ratio slide-horizontal">
-                            <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
-                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
-                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
-                            </video>
-                            <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
-                          </div>
 
-                        <?php }
+                            if ( $gallery_attachment_ids) {
+                              foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                                ?>
+                                  <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
 
-                          if ( $gallery_attachment_ids) {
-                            foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                              ?>
-                                <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
-
-                              <?php
+                                <?php
+                              }
                             }
-                          }
 
 
                         ?>
@@ -545,8 +538,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
+            <div class="col-xxl-5 col-lg-6">
+              <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
                 <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                   <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
@@ -555,17 +548,19 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                       <div class="toast-body">
                         <div class="list-group" id="scollspy">
                           <a class="btn btn-outline-secondary mb-2" href="/edit-product/?edit-id=<?php echo $_product->get_id(); ?>" role="button">Редактировать</a>
-                          <!-- <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
+                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
                           <a class="btn btn-outline-secondary mb-2" href="#" role="button">Администраторы</a>
                           <a class="btn btn-outline-secondary mb-2" href="#" role="button">Пригласить</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a> -->
+                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a>
                         </div>
                       </div>
                     </div>
                   </div>
                   <?php
+
+
                   if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
+                    <!-- <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
                       <a href="">
                         <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
                       </a>
@@ -578,7 +573,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                           </svg>
                         </div>
                       </span>
-                    </div>
+                    </div> -->
                   <?php } ?>
                 </div>
                 <div class="row my-auto">
@@ -589,17 +584,20 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                           display: none;
                          }
                       </style>
-                      <?php woocommerce_breadcrumb(['home'=>'Главная'])?>
+                      <?php  // woocommerce_breadcrumb(['home'=>'Главная'])?>
                       <!-- <ol class="breadcrumb">
                         <li class="breadcrumb-item"> <a href="#">Главная</a></li>
                         <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
                         <li class="breadcrumb-item"><a href="#">Услуги</a></li>
                       </ol> -->
                     </nav>
-                    <h1 class="mt-3 d-md-block d-none fs-md-1"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="mt-3 d-md-block d-none fs-md-1">
+                      <input type="text" name="product-title" id="product-title" value="<?php echo $_product->get_name() ?>">
+
+                    </h1>
                     <div class="mb-3"></div>
                       <span>
-                        <?php echo get_the_excerpt() ?>
+                        <?php // echo get_the_excerpt() ?>
                         <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
                           <span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span>
                         </a> -->
@@ -612,32 +610,112 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                   <div class="col">
                     <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
                       <h4 class="text-danger text-nowrap m-0">
-                        <?php
-                          if ( $_product->get_price() ) {
-                            echo $_product->get_price() . ' ' . get_woocommerce_currency_symbol();
-                          }
-                        ?>
+                        <input type="text" name="product-price" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <?php echo get_woocommerce_currency_symbol()?>
                       </h4>
-                      <?php if ( $_product->get_regular_price() ) { ?>
-                        <span class="text-decoration-line-through ps-3"><?php echo $_product->get_regular_price() . ' ' . get_woocommerce_currency_symbol() ?></span>
-                      <?php }?>
+                      <input type="text" name="product-regular-price" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <?php echo get_woocommerce_currency_symbol()?>
                     </div>
+                    <div class="">
+                      Категории
+                      <?php
+
+
+
+        $taxonomy = 'product_cat';
+        $terms = get_the_terms( $_product->get_ID(), $taxonomy);
+        $terms_ids = [];
+        foreach ($terms as $key => $t) {
+          $terms_ids[] = $t->term_id;
+        }
+        $args = array(
+                'taxonomy'     => $taxonomy,
+                'orderby'      => 'name',
+                'show_count'   => 0,
+                'pad_counts'   => 0,
+                'hierarchical' => 1,
+                'hide_empty'   => 0
+        );
+        $all_categories = get_categories( $args );
+
+        $html = '';
+        foreach ($all_categories as $cat) {
+            $checked = '';
+
+            if ( in_array($cat->term_id, $terms_ids)) {
+              $checked = 'checked';
+            }
+            if($cat->category_parent == 0) {
+                $category_id = $cat->term_id;
+
+                $cat_url = get_term_link($cat->slug, $taxonomy);
+                $cat_name = $cat->name;
+                if ( $cat_name == 'Misc') continue;
+
+                $args2 = array(
+                        'taxonomy'     => $taxonomy,
+                        'child_of'     => 0,
+                        'parent'       => $category_id,
+                        'orderby'      => $orderby,
+                        'show_count'   => $show_count,
+                        'pad_counts'   => $pad_counts,
+                        'hierarchical' => $hierarchical,
+                        'title_li'     => $title,
+                        'hide_empty'   => $empty
+                );
+                $sub_cats = get_categories( $args2 );
+                $html_inner = '';
+                if($sub_cats) {
+                    $isset_sub_class = 'form-list';
+                    $html_inner = '<a class="d-block collapsed" data-bs-toggle="collapse" href="#collapseCatalogItem'.$category_id.'" role="button" aria-controls="collapseCatalogItem'.$category_id.'">
+                                        <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                        <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>
+                                        <div class="form-check-arrow"></div>
+                                    </a>
+                                    <div class="collapse show" id="collapseCatalogItem'.$category_id.'">
+                                    ';
+                    foreach($sub_cats as $sub_category) {
+                        $checked = '';
+                        $sub_category_id = $sub_category->term_id;
+                        $sub_cat_name = $sub_category->name;
+
+                        if ( in_array($sub_category->term_id, $terms_ids)) {
+                          $checked = 'checked';
+                        }
+
+                        $html_inner .= '<div class="form-check">
+                                            <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$sub_category_id.'" id="'.$sub_category_id.'" '.$checked.'>
+                                            <label class="form-check-label" for="'.$sub_category_id.'">'.$sub_cat_name.'</label>
+                                        </div>';
+                    }
+                    $html_inner .= '</div>';
+                } else {
+                    $isset_sub_class = '';
+                    $html_inner = '<input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                    <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>';
+                }
+                $html .= '<div class="form-check border-bottom py-2 '.$isset_sub_class.'"> '.$html_inner.' </div>';
+            }
+        }
+        // $wrapper = '<div class="form-check border-bottom py-2">
+        //                 <input class="form-check-input" type="checkbox" value="cat_user_announcements" name="cat_product[]" id="user_announcements" checked>
+        //                 <label class="form-check-label" for="user_announcements">Мои объявления</label>
+        //             </div>' . $html;
+        $wrapper = $html;
+        echo $wrapper;
+
+                      ?>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                    <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
+                    <!--
                     <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
                       <div class="count d-flex flex-md-wrap flex-nowrap">
-                        <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}"><span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>
+                        <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}">
+                          <span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>
                           <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                         </div>
                         <div class="btn-block">
                           <div class="add-to-cart-container mt-auto">
-                            <a href="?add-to-cart=<?php echo $_product->get_id() ?>"
-                                class="product_type_simple add_to_cart_button ajax_add_to_cart btn btn-primary btn-lg"
-                                data-quantity="1"
-                                data-product_id="<?php echo $_product->get_id() ?>"
-                                data-product_sku="<?php echo $_product->get_sku() ?>"
-                                aria-label="Add to cart: “bS Isotope”"
-                                aria-describedby=""
-                                rel="nofollow"
-                                product-title="bS Isotope">
+                            <a href="?add-to-cart=<?php echo $_product->get_id() ?>" data-quantity="1" class="product_type_simple add_to_cart_button ajax_add_to_cart btn btn-primary btn-lg" data-product_id="<?php echo $_product->get_id() ?>" data-product_sku="<?php echo $_product->get_sku() ?>" aria-label="Add to cart: “bS Isotope”" aria-describedby="" rel="nofollow" product-title="bS Isotope">
 
                               <div class="btn-loader">
                                 <span class="spinner-border spinner-border-sm"></span>
@@ -651,24 +729,23 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                         </div>
                       </div>
                       <div class="soc-button d-flex flex-nowrap gap-2">
-                        <a class="btn btn-outline-primary btn-lg" target="_blank" href="https://t.me/share/url?url=<?php echo $_product_url ?>&text=<?php echo $_product->get_name() ?>">
+                        <a class="btn btn-outline-primary btn-lg" href="">
                           <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"> </path>
-                          </svg>
-                        </a>
-                        <a class="btn btn-outline-success btn-lg" href="https://wa.me/?text=<?php echo $_product_url ?>">
+                          </svg></a><a class="btn btn-outline-success btn-lg" href="">
                           <svg class="bi bi-whatsapp" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
-                          </svg>
-                        </a>
-                        <div class="btn btn-outline-secondary btn-lg" id="copyLinkProduct" href="#">
+                          </svg></a><a class="btn btn-outline-secondary btn-lg" href="">
                           <svg class="bi bi-subtract" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"></path>
                           </svg>
-                        </div>
+                        </a>
                       </div>
                     </div>
+                     -->
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -679,7 +756,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 <div class="row">
                   <div class="col">
                     <h2 class="block-title text-nowrap">Описание</h2>
-                    <?php the_content() ?>
+                    <textarea name="product-description" id="product-description" style="width:100%; min-height: 300px " > <?php echo $_product->get_description() ?> </textarea>
+
                   </div>
                   <div class="col d-none">
                     <h2 class="block-title text-nowrap">Характеристики</h2>
@@ -1139,34 +1217,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
           <div class="modal-body p-0">
             <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-1">
               <div class="carousel-inner">
-                <?php
-                  if ( $product_video) {
-                ?>
-                  <div class="carousel-item bg-white active">
-                    <div class="youtube ratio ratio-16x9">
-                      <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                <?php }
-                  if ( $gallery_attachment_ids ) {
-                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                    ?>
-                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
-                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
-                    </div>
-                <?php }
-                  }
-			            if (!$product_video && $gallery_attachment_ids) {
-                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                    ?>
-                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white active">
-                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
-                    </div>
-                    <?php }
-                  }
-
-                ?>
-                <!-- <div class="carousel-item active bg-white">
+                <div class="carousel-item bg-white active">
                   <div class="youtube ratio ratio-16x9">
                     <iframe class="iframe object-fit-cover" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=d8NntCiUb7Zn05KR" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
                   </div>
@@ -1200,7 +1251,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 </div>
                 <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                   <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= get_stylesheet_directory_uri(); ?>/img/slider/image04.jpg" alt="..."></div>
-                </div> -->
+                </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>

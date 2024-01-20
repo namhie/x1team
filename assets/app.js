@@ -25,7 +25,7 @@ let urlThumb
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
-  sliderThumbs = new Swiper(thumbs, { 
+  sliderThumbs = new Swiper(thumbs, {
       direction: getDirection(),
       slidesPerView: 'auto',
       speed: 600,
@@ -39,7 +39,7 @@ function sliderThumbActive(images, thumbs) {
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
-            
+
             youtubes.forEach(el => {
               el.classList.add('ratio-16x9')
             })
@@ -61,8 +61,8 @@ function sliderThumbActive(images, thumbs) {
         }
       },
       breakpoints: {
-        0: { 
-          direction: 'horizontal', 
+        0: {
+          direction: 'horizontal',
           spaceBetween: 4,
           allowSlideNext: true,
           allowSlidePrev: true,
@@ -74,20 +74,20 @@ function sliderThumbActive(images, thumbs) {
         }
       }
     })
-    
+
     function getDirection() {
       let direction = clicked ? 'vertical' : 'horizontal'
       return direction
     }
-    
-    const sliderImages = new Swiper(images, { 
+
+    const sliderImages = new Swiper(images, {
       direction: 'horizontal',
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 600,
       autoHeight: false,
       navigation: {
-        nextEl: '.swiper-button-next', 
+        nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       on: {
@@ -115,12 +115,12 @@ function sliderThumbActive(images, thumbs) {
           }
         }
       },
-      thumbs: { 
-        swiper: sliderThumbs 
+      thumbs: {
+        swiper: sliderThumbs
       },
-      breakpoints: { 
-        0: { 
-          direction: 'horizontal', 
+      breakpoints: {
+        0: {
+          direction: 'horizontal',
           autoHeight: true,
           // mousewheel: true,
           keyboard: true,
@@ -129,7 +129,7 @@ function sliderThumbActive(images, thumbs) {
         }
       },
     })
-    
+
   }
 }
 
@@ -138,7 +138,7 @@ function masonrySlider() {
     gutter: 8,
     columnWidth: 110,
     percentPosition: true,
-  }) 
+  })
 }
 
 function masonrySliderDelete() {
@@ -146,33 +146,35 @@ function masonrySliderDelete() {
 }
 
 function sliderImageActive(images) {
-const sliderImagesSquer = new Swiper(images, { 
+const sliderImagesSquer = new Swiper(images, {
   direction: 'horizontal',
   slidesPerView: 1,
   spaceBetween: 24,
   speed: 600,
-  mousewheel: true, 
+  mousewheel: true,
   navigation: {
-    nextEl: '.swiper-button-next', 
-    prevEl: '.swiper-button-prev' 
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
   },
-  grabCursor: true, 
+  grabCursor: true,
 })
 }
+if ( $('.slider__images--main').lenght && $('.slider-thumb__images--main').lenght ) {
 
-if (isMobileWidth) {
-  sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
-  sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
-  sliderThumbActive('.slider__images--offer02', '.slider-thumb__images--offer02')
-} else {
-  sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
+  if (isMobileWidth) {
+    sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
+    sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
+    sliderThumbActive('.slider__images--offer02', '.slider-thumb__images--offer02')
+  } else {
+    sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
+  }
+
+  if (sliderSquer || sliderImageHorizont) {
+    sliderImageActive('.slider__square')
+    sliderImageActive('.slider__image-horizont')
+  }
+
 }
-
-if (sliderSquer || sliderImageHorizont) {
-  sliderImageActive('.slider__square')
-  sliderImageActive('.slider__image-horizont')
-}
-
 //modals
 function sliderModals(modal) {
   carousel = new bootstrap.Carousel(modal, {
@@ -193,9 +195,9 @@ modalItem.forEach(modal => {
 
       sliderImagesModals.forEach(slider => {
         sliderModals(slider)
-        carousel.to(invoker.getAttribute('data-slider') - 1) 
+        carousel.to(invoker.getAttribute('data-slider') - 1)
         slider.addEventListener('slid.bs.carousel', function(e) {
-         
+
         let currentSlide = this.querySelector('.carousel-item')
           if (currentSlide && this.querySelector('.iframe')) {
             videoIframe = this.querySelector('.iframe')
@@ -214,8 +216,8 @@ modalItem.forEach(modal => {
       iframeUrl = this.querySelector('.iframe')
       iframeUrl.setAttribute('src', videoURL)
     });
-  }) 
-    
+  })
+
   }
 })
 
@@ -263,7 +265,7 @@ if (document.querySelector('.registration-form')) {
     this.setAttribute('class', icon);
   });
 }
-//popup 
+//popup
 const staticBackdrop = document.getElementById('staticBackdrop')
 const staticBackdropVidio = document.getElementById('staticBackdropVidio')
 if (staticBackdropVidio) {
