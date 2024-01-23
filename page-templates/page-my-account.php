@@ -18,7 +18,56 @@ get_header("myaccount"); // Вставляем заголовок сайта
             <?php include get_stylesheet_directory() . '/woocommerce/myaccount/my-account-offcanvas.php'; ?>
 
             <?php if ( ! is_user_logged_in() ) { ?>
+
               <h5 class="fw-bold text-center mb-2">Регистрация</h5>
+
+
+
+
+              <form name="registerform" id="registerform" action="<?php echo admin_url('admin-post.php?action=register_user'); ?>" method="post">
+                <p>
+                  <label for="user_login">
+                    Имя пользователя<br>
+                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20" style="">
+                  </label>
+                </p>
+                <p>
+                  <label for="user_email">
+                    E-mail<br>
+                    <input type="email" name="user_email" id="user_email" class="input" value="" size="25">
+                  </label>
+                </p>
+                <p>
+                  <label for="user_password">
+                    Password<br>
+                    <input type="password" name="user_pass" id="user_password" class="input" value="" size="25">
+                  </label>
+                </p>
+                  <label for="user_password_confirm">
+                    Password confirm<br>
+                    <input type="password" name="user_confirm_pass" id="user_password_confirm" class="input" value="" size="25">
+                  </label>
+                </p>
+
+                <p id="reg_passmail">Подтверждение регистрации будет отправлено на ваш e-mail.</p>
+
+                <br class="clear">
+                <?php wp_nonce_field('create-'.$_SERVER['REMOTE_ADDR'], 'user-front', false); ?>
+                <input type="hidden" name="redirect_to" value="">
+
+                <p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Регистрация"></p>
+              </form>
+
+
+
+
+
+
+
+
+
+
+<!--
               <form>
                 <div class="mb-3">
                   <input class="form-control" type="text" placeholder="Логин, ник игрока, телефон, email">
@@ -35,7 +84,7 @@ get_header("myaccount"); // Вставляем заголовок сайта
                 <div class="d-block text-center">
                   <button class="btn btn-primary" type="submit">Регистрация</button>
                 </div>
-              </form>
+              </form> -->
 
             <?php } ?>
 

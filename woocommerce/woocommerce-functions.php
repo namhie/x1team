@@ -146,10 +146,6 @@ function show_templated_sales_orders() {
 }
 
 
-
-
-
-
 add_filter( 'woocommerce_checkout_fields', 'x1team_del_fields', 25 );
 function x1team_del_fields( $fields ) {
 
@@ -213,6 +209,55 @@ function edit_link_after_btn_card() {
 		}
 	}
 }
+
+
+
+// РЕГИСТРАЦИЯ
+
+add_action('admin_post_nopriv_register_user', 'my_register_user');
+function my_register_user() {
+    // Check the form validity
+    if (isset($_POST['user-front']) && wp_verify_nonce($_POST['user-front'], 'create-'.$_SERVER['REMOTE_ADDR'])) {
+
+        // Check the required field
+        if (!isset($_POST['user_login']) && !isset($_POST['user_email']) || !isset($_POST['user_pass']) || !isset($_POST['user_confirm_pass']) || !is_email($_POST['user_email'])
+            ) {
+            wp_redirect(home_url() . '?message=wrong-input');
+            exit();
+        }
+
+        // Check if both password match
+        if ($_POST['user_pass'] != $_POST['user_confirm_pass']) {
+            wp_redirect(home_url() . '?message=pass-dif');
+            exit();
+        }
+
+        // Check if user exists
+        if ( email_exists($_POST['user_email']) != username_exists($_POST['user_login']) ) {
+            wp_redirect(home_url() . '?message=already-registered');
+            exit();
+        }
+
+        // Create the user
+        $user_id = wp_create_user($_POST['user_login'], $_POST['user_pass'], $_POST['email_user']);
+        // $user = new WP_User($user_id);
+        // $user->set_role('subscriber');
+
+        // Automatic loggin
+        $creds = array();
+        $creds['user_login'] = $_POST['user_login'];
+        $creds['user_password'] = $_POST['user_pass'];
+        $creds['remember'] = false;
+        $user = wp_signon($creds, false);
+
+        // Redirection
+        wp_redirect(home_url('my-account'));
+        exit();
+    }
+}
+
+
+
 
 // add_action( 'init', 'add_my_account_list_endpoint' );
 // function add_my_account_list_endpoint() {
