@@ -25,46 +25,39 @@ get_header("myaccount"); // Вставляем заголовок сайта
 
 
               <form name="registerform" id="registerform" action="<?php echo admin_url('admin-post.php?action=register_user'); ?>" method="post">
-                <p>
+                <div class="mb-3">
                   <label for="user_login">
                     Имя пользователя<br>
-                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20" style="">
+                    <input type="text" name="user_login" id="user_login" class="form-control" value="" size="20" style="">
                   </label>
-                </p>
-                <p>
+                </div>
+                <div class="mb-3">
                   <label for="user_email">
                     E-mail<br>
-                    <input type="email" name="user_email" id="user_email" class="input" value="" size="25">
+                    <input type="email" name="user_email" id="user_email" class="form-control" value="" size="25">
                   </label>
-                </p>
-                <p>
+                </div>
+                <div class="mb-3">
                   <label for="user_password">
                     Password<br>
-                    <input type="password" name="user_pass" id="user_password" class="input" value="" size="25">
+                    <input type="password" name="user_pass" id="user_password" class="form-control" value="" size="25">
                   </label>
-                </p>
+                </div>
+                <div class="mb-3">
                   <label for="user_password_confirm">
                     Password confirm<br>
-                    <input type="password" name="user_confirm_pass" id="user_password_confirm" class="input" value="" size="25">
+                    <input type="password" name="user_confirm_pass" id="user_password_confirm" class="form-control" value="" size="25">
                   </label>
-                </p>
+                </div>
 
-                <p id="reg_passmail">Подтверждение регистрации будет отправлено на ваш e-mail.</p>
+                <!-- <p id="reg_passmail">Подтверждение регистрации будет отправлено на ваш e-mail.</p> -->
 
                 <br class="clear">
                 <?php wp_nonce_field('create-'.$_SERVER['REMOTE_ADDR'], 'user-front', false); ?>
                 <input type="hidden" name="redirect_to" value="">
 
-                <p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Регистрация"></p>
+                <p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary" value="Регистрация"></p>
               </form>
-
-
-
-
-
-
-
-
 
 
 <!--
