@@ -249,8 +249,10 @@ if (youtubes.length > 0) {
 }
 
 function YouTubeGetID(url){
-  url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-  return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[2];
+  if (url) {
+    url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+    return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[2];
+  }
 }
 }
 //togglepassword
@@ -352,15 +354,6 @@ document.querySelectorAll('.count .minus').forEach(item => {
 });
 
 //bootstrap settings
-const toastTrigger = document.getElementById('liveToastBtn');
-const toastLiveExample = document.getElementById('liveToast');
-
-if (toastTrigger) {
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-  toastTrigger.addEventListener('click', () => {
-    toastBootstrap.show();
-  });
-}
 
 if (document.querySelectorAll('[data-bs-toggle="tooltip"]')) {
   let tooltipTriggerList = [].slice.call(
