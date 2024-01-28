@@ -159,22 +159,21 @@ const sliderImagesSquer = new Swiper(images, {
   grabCursor: true,
 })
 }
-if ( $('.slider__images--main').lenght && $('.slider-thumb__images--main').lenght ) {
 
-  if (isMobileWidth) {
-    sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
-    sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
-    sliderThumbActive('.slider__images--offer02', '.slider-thumb__images--offer02')
-  } else {
-    sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
-  }
-
-  if (sliderSquer || sliderImageHorizont) {
-    sliderImageActive('.slider__square')
-    sliderImageActive('.slider__image-horizont')
-  }
-
+if (isMobileWidth) {
+  sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
+  sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
+  sliderThumbActive('.slider__images--offer02', '.slider-thumb__images--offer02')
+} else {
+  sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
 }
+
+if (sliderSquer || sliderImageHorizont) {
+  sliderImageActive('.slider__square')
+  sliderImageActive('.slider__image-horizont')
+}
+
+
 //modals
 function sliderModals(modal) {
   carousel = new bootstrap.Carousel(modal, {
