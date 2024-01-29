@@ -815,6 +815,10 @@ nav[aria-label=breadcrumb] {
   cursor: pointer;
 }
 
+select {
+  min-width: 260px;
+}
+
 .redact {
   font-size: 0.875em;
 }
