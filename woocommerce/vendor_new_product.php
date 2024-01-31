@@ -11,16 +11,16 @@ get_header();
 <div class="container-sm">
     <h1><?php the_title(); ?></h1>
     <div class="row mx-auto">
-        <div class="col-lg-4">
+        <div class="col-lg-6 px-0">
             <form id="createVendorProduct">
                 <div class="custom_form_field mb-3">
                     <input type="text" name="title" placeholder="Заголовок" class="form-control">
                 </div>
                 <div class="custom_form_field mb-3">
-                    <textarea type="text" name="excerpt" placeholder="Краткое описание" class="form-control">
+                    <textarea type="text" name="excerpt" placeholder="Краткое описание" class="form-control"></textarea>
                 </div>
                 <div class="custom_form_field mb-3">
-                    <textarea type="text" name="content" placeholder="Описание">
+                    <textarea type="text" name="content" placeholder="Описание"></textarea>
                 </div>
                 <div class="custom_form_field mb-3">
                     <input type="text" name="regular_price" placeholder="Цена" class="form-control">
