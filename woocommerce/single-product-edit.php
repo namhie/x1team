@@ -540,7 +540,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
             </div>
             <div class="col-xxl-5 col-lg-6">
               <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
-                <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
+                <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                   <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                       <div class="d-flex"></div>
@@ -555,7 +555,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                         </div>
                       </div>
                     </div>
-                  </div> -->
+                  </div>
                   <?php
 
 
