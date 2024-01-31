@@ -807,6 +807,13 @@ nav[aria-label=breadcrumb] {
 /* .by-vendor-name-link {
   display: none;
 } */
+.fade {
+  min-width: 100%;
+}
+
+.modal-fullscreen {
+  width: 96vw;
+}
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {

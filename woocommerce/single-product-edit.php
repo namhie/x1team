@@ -608,7 +608,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                     </div>
                   </div>
                   <div class="col">
-                    <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end gap-2 mt-4 mb-3">
+                    <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end gap-2 mb-3">
                       <div class="text-danger text-nowrap m-0">
                         <input type="text" name="product-price" class="form-control" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
                       </div>
