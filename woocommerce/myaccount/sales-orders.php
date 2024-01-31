@@ -12,7 +12,7 @@ $user_id =  $current_user->ID;
 
 
 
-var_dump( get_user_meta($user_id) );
+// var_dump( get_user_meta($user_id) );
 
 
 $terms = get_terms( [
