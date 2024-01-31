@@ -20,7 +20,7 @@ get_header();
                     <textarea type="text" name="excerpt" placeholder="Краткое описание" class="form-control"></textarea>
                 </div>
                 <div class="custom_form_field mb-3">
-                    <textarea type="text" name="content" placeholder="Описание"></textarea>
+                    <textarea type="text" name="content" placeholder="Описание" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="custom_form_field mb-3">
                     <input type="text" name="regular_price" placeholder="Цена" class="form-control">
@@ -108,7 +108,7 @@ get_header();
 
                     ?>
                 </div>
-                <button type="submit" class="btn btn-primary mb-3">Создать</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Создать</button>
             </form>
         </div>
     </div>
