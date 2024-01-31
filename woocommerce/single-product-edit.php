@@ -540,7 +540,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
             </div>
             <div class="col-xxl-5 col-lg-6">
               <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
-                <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
+                <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
                   <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                       <div class="d-flex"></div>
@@ -555,7 +555,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <?php
 
 
@@ -608,7 +608,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                     </div>
                   </div>
                   <div class="col">
-                    <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
+                    <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end gap-2 mt-4 mb-3">
                       <div class="text-danger text-nowrap m-0">
                         <input type="text" name="product-price" class="form-control" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
                       </div>
@@ -706,7 +706,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
                       ?>
                     </div>
-                    <button type="button" class="btn btn-primary" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                    <button type="button" class="btn btn-primary my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
                     <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
                     <!--
                     <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
