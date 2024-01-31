@@ -35,7 +35,7 @@ if (!function_exists('bootscore_main_col_class')) {
  */
 if (!function_exists('bootscore_sidebar_col_class')) {
   function bootscore_sidebar_col_class() {
-    return "col-md-4 col-lg-3 order-first order-md-last";
+    return "col-md-4 col-lg-3";
   }
 }
 

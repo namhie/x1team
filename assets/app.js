@@ -159,8 +159,7 @@ const sliderImagesSquer = new Swiper(images, {
   grabCursor: true,
 })
 }
-if ( $('.slider__images--main').lenght && $('.slider-thumb__images--main').lenght ) {
-
+if (document.querySelectorAll('.slider__images--main') && document.querySelectorAll('.slider-thumb__images--main')) {
   if (isMobileWidth) {
     sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
     sliderThumbActive('.slider__images--offer01', '.slider-thumb__images--offer01')
@@ -168,13 +167,13 @@ if ( $('.slider__images--main').lenght && $('.slider-thumb__images--main').lengh
   } else {
     sliderThumbActive('.slider__images--main', '.slider-thumb__images--main')
   }
-
-  if (sliderSquer || sliderImageHorizont) {
-    sliderImageActive('.slider__square')
-    sliderImageActive('.slider__image-horizont')
-  }
-
 }
+if (sliderSquer || sliderImageHorizont) {
+  sliderImageActive('.slider__square')
+  sliderImageActive('.slider__image-horizont')
+}
+
+
 //modals
 function sliderModals(modal) {
   carousel = new bootstrap.Carousel(modal, {

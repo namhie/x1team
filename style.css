@@ -801,9 +801,12 @@ details > summary:first-of-type {
 
 nav[aria-label=breadcrumb] {
   margin-bottom: 40px;
-  height: 20px;
   line-height: 20px;
 }
+
+/* .by-vendor-name-link {
+  display: none;
+} */
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -813,6 +816,10 @@ nav[aria-label=breadcrumb] {
 .nav-pills .nav-link {
   color: var(--bs-secondary);
   cursor: pointer;
+}
+
+select {
+  min-width: 260px;
 }
 
 .redact {

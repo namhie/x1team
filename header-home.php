@@ -113,12 +113,12 @@ if( $current_user->exists() ){
                   <?php
                     if( ! $current_user->exists() ){
                       ?>
-                      <li class="nav-item"><a class="nav-link" href="/my-account/">Войти</a></li>
+                      <li class="nav-item d-lg-none d-block"><a class="nav-link" href="/my-account/">Войти</a></li>
 
                     <?php
                       if ( function_exists( 'wptelegram_login' ) ) {
                         ?>
-                          <li class="nav-item"><?php wptelegram_login(); ?></li>
+                          <li class="nav-item d-lg-none d-block"><?php wptelegram_login(); ?></li>
                         <?php
                         }
                       } else {
