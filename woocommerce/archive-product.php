@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-  <div id="content" class="site-content <?= bootscore_container_class(); ?> pb-5 mt-4">
+  <div id="content" class="site-content <?= bootscore_container_class(); ?> pb-5 mt-md-2 mt-4">
     <div id="primary" class="content-area">
       <!-- Hook to add something nice -->
       <?php bs_after_primary(); ?>
