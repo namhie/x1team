@@ -8,10 +8,10 @@ get_header();
 
 
 ?>
-<div class="container-sm">
+<div class="container-sm text-md-center my-md-0 my-4">
     <h1><?php the_title(); ?></h1>
-    <div class="row mx-auto">
-        <div class="col-lg-6 px-0">
+    <div class="row mt-4">
+        <div class="col-lg-6 mx-md-auto my-md-4 mb-5">
             <form id="createVendorProduct">
                 <div class="custom_form_field mb-3">
                     <input type="text" name="title" placeholder="Заголовок" class="form-control">
@@ -28,7 +28,7 @@ get_header();
                 <div class="custom_form_field mb-3">
                     <input type="text" name="sale_price_field" placeholder="Акционная цена" class="form-control">
                 </div>
-                <div class="custom_form_field">
+                <div class="custom_form_field text-start">
                     <label for="fruits">Категория:</label>
                     <?php
 
@@ -108,7 +108,7 @@ get_header();
 
                     ?>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Создать</button>
+                <button type="submit" class="btn btn-primary btn-lg col-md-4 col-12 my-3">Создать</button>
             </form>
         </div>
     </div>
