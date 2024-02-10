@@ -469,8 +469,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-lg-7">
-              <div class="row justify-content-center h-100">
+            <div class="col-xxl-7 col-lg-6">
+              <div class="row justify-content-center ps-lg-3 h-100">
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
@@ -544,7 +544,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 </div>
               </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-xxl-5 col-lg-6">
               <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
                 <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
                   <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
@@ -595,7 +595,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                         <li class="breadcrumb-item"><a href="#">Услуги</a></li>
                       </ol> -->
                     </nav>
-                    <h1 class="mt-3 d-md-block d-none fs-md-1"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>
                         <?php echo get_the_excerpt() ?>

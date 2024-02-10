@@ -216,13 +216,53 @@ input:-webkit-autofill:focus {
 .count .minus.min {
   background-color: var(--secondary);
 }
-
+.breadcrumb {
+  background-color: #fff;
+  color: #999797;
+}
 .swiper {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-
+.navbar-toggler {
+  border: 1px solid transparent;
+  padding-right: 0;
+}
+.navbar-toggler-icon {
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.products {
+  justify-content: center;
+}
+.products > div {
+  min-width: 188px;
+  max-width: 190px;
+}
+.woocommerce .card .woocommerce-loop-product__title {
+  font-size: 1.1rem;
+}
+.wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-max-input, .wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-min-input {
+  border: 1px solid #ccc;
+  padding: 0 10px;
+}
+/* .pch-burger-icon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pch-bar {
+  background: #28a745;
+} */
+/* .pch-burger-icon.active .pch-bar {
+  top: 20px;
+  transform: none;
+}
+.pch-burger-icon.active .pch-bar:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -7px);
+} */
 .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -807,6 +847,10 @@ nav[aria-label=breadcrumb] {
 /* .by-vendor-name-link {
   display: none;
 } */
+.fade {
+  min-width: 100%;
+  padding: 0;
+}
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -952,12 +996,13 @@ select {
 
 @media (min-width: 1440px) {
 
-  .slider__images {
+  /* .slider__images {
     height: 80%;
-  }
+  } */
 
   .slider-vertical .slider__images {
     height: auto;
+    min-height: 600px;
   }
 
   .slider .slider-thumb {
