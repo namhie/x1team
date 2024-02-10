@@ -1002,6 +1002,7 @@ select {
 
   .slider-vertical .slider__images {
     height: auto;
+    min-height: 600px;
   }
 
   .slider .slider-thumb {
