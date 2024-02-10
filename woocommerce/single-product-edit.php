@@ -460,7 +460,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-xxl-7 col-lg-6">
-              <div class="row justify-content-center h-100">
+              <div class="row justify-content-center ps-lg-3 h-100">
                 <?php
 
                   $gallery_attachment_ids = $_product->get_gallery_image_ids();

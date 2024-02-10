@@ -216,15 +216,24 @@ input:-webkit-autofill:focus {
 .count .minus.min {
   background-color: var(--secondary);
 }
-
+.breadcrumb {
+  background-color: #fff;
+  color: #999797;
+}
 .swiper {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-.breadcrumb {
-  background-color: #fff;
-  color: #999797;
+.navbar-toggler {
+  border: 1px solid transparent;
+  padding-right: 0;
+}
+.navbar-toggler-icon {
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 .swiper-slide {
   display: -webkit-box;
