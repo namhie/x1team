@@ -26,7 +26,7 @@ if (empty($product) || !$product->is_visible()) {
 }
 ?>
 
-<div class="col-md-6 col-lg-4 col-xxl-3">
+<div class="col-6 col-lg-3">
   <div <?php wc_product_class('card h-100 d-flex text-center', $product); ?>>
     <?php
     /**

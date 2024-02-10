@@ -222,7 +222,10 @@ input:-webkit-autofill:focus {
   margin-left: auto;
   margin-right: auto;
 }
-
+.breadcrumb {
+  background-color: #fff;
+  color: #999797;
+}
 .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -959,9 +962,9 @@ select {
 
 @media (min-width: 1440px) {
 
-  .slider__images {
+  /* .slider__images {
     height: 80%;
-  }
+  } */
 
   .slider-vertical .slider__images {
     height: auto;

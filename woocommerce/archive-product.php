@@ -7,13 +7,14 @@ get_header();
       <!-- Hook to add something nice -->
       <?php bs_after_primary(); ?>
       <main id="main" class="site-main">
-        <!-- Breadcrumb -->
-        <?php woocommerce_breadcrumb(); ?>
+        
         <div class="row">
           <!-- sidebar -->
           <?php get_sidebar(); ?>
           <!-- row -->
           <div class="<?= bootscore_main_col_class(); ?>">
+            <!-- Breadcrumb -->
+            <?php woocommerce_breadcrumb(); ?>
             <?php  woocommerce_content(); ?>
           </div>
         </div>
