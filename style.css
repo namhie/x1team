@@ -849,10 +849,7 @@ nav[aria-label=breadcrumb] {
 } */
 .fade {
   min-width: 100%;
-}
-
-.modal-fullscreen {
-  width: 96vw;
+  padding: 0;
 }
 
 .nav-pills .nav-link.active,
