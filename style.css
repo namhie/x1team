@@ -235,6 +235,34 @@ input:-webkit-autofill:focus {
   background-position: center;
   background-size: 100%;
 }
+.products {
+  justify-content: center;
+}
+.products > div {
+  min-width: 188px;
+  max-width: 190px;
+}
+.woocommerce .card .woocommerce-loop-product__title {
+  font-size: 1.1rem;
+}
+.wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-max-input, .wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-min-input {
+  border: 1px solid #ccc;
+  padding: 0 10px;
+}
+/* .pch-burger-icon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pch-bar {
+  background: #28a745;
+} */
+/* .pch-burger-icon.active .pch-bar {
+  top: 20px;
+  transform: none;
+}
+.pch-burger-icon.active .pch-bar:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -7px);
+} */
 .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
