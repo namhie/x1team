@@ -9,7 +9,7 @@ get_header();
 
 ?>
 <div class="container-sm text-md-center my-md-0 my-4">
-    <h1><?php the_title(); ?></h1>
+    <h1 class="fs-2"><?php the_title(); ?></h1>
     <div class="row mt-4">
         <div class="col-lg-6 mx-md-auto my-md-4 mb-5">
             <form id="createVendorProduct">
