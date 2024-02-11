@@ -583,19 +583,6 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 <!-- </div> -->
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <nav class="d-lg-block d-none" aria-label="breadcrumb">
-                      <style>
-                         .wc-breadcrumb .breadcrumb-item:first-child a::before {
-                          display: none;
-                         }
-                      </style>
-                      <?php woocommerce_breadcrumb(['home'=>'Главная'])?>
-                      <!-- <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="#">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
-                        <li class="breadcrumb-item"><a href="#">Услуги</a></li>
-                      </ol> -->
-                    </nav>
                     <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>

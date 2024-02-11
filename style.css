@@ -216,10 +216,18 @@ input:-webkit-autofill:focus {
 .count .minus.min {
   background-color: var(--secondary);
 }
+
 .breadcrumb {
   background-color: #fff;
   color: #999797;
+  font-size: .9rem;
 }
+
+.breadcrumb-item+.breadcrumb-item::before {
+  height: 27px;
+  line-height: 30px;
+}
+
 .swiper {
   width: 100%;
   margin-left: auto;
@@ -834,11 +842,6 @@ details > summary:first-of-type {
 
 .navbar-toggler:focus {
     box-shadow: none;
-}
-
-nav[aria-label=breadcrumb] {
-  margin-bottom: 40px;
-  line-height: 20px;
 }
 
 /* .by-vendor-name-link {

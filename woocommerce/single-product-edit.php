@@ -578,19 +578,6 @@ $_product = wc_get_product( $_GET['edit-id'] );
                 <!-- </div> -->
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <nav class="d-lg-block d-none" aria-label="breadcrumb">
-                      <style>
-                         .wc-breadcrumb .breadcrumb-item:first-child a::before {
-                          display: none;
-                         }
-                      </style>
-                      <?php  // woocommerce_breadcrumb(['home'=>'Главная'])?>
-                      <!-- <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="#">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
-                        <li class="breadcrumb-item"><a href="#">Услуги</a></li>
-                      </ol> -->
-                    </nav>
                     <div class="mt-3 d-md-block d-none fs-3">
                       <input type="text" name="product-title" class="form-control" id="product-title" value="<?php echo $_product->get_name() ?>">
 

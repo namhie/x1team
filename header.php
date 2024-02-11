@@ -120,6 +120,7 @@ if( $current_user->exists() ){
                   </a>
                 </div>
               </div>
+              <?php woocommerce_breadcrumb(['home'=>' '])?> 
             </div>
           </div>
         </div>

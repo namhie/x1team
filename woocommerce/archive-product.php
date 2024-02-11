@@ -13,8 +13,6 @@ get_header();
           <?php get_sidebar(); ?>
           <!-- row -->
           <div class="<?= bootscore_main_col_class(); ?>">
-            <!-- Breadcrumb -->
-            <?php woocommerce_breadcrumb(); ?>
             <?php  woocommerce_content(); ?>
           </div>
         </div>
