@@ -46,8 +46,8 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 
 </style>
-    <main class="main">
-      <div class="container-sm container-fluid">
+    <main class="main pb-5">
+      <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
             <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
             <!-- без слайдера - НАЧАЛО -->
@@ -539,9 +539,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
               </div>
             </div>
             <div class="col-xxl-5 col-lg-6">
-              <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
-                <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
-                  <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
+              <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
+                <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
+                  <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                       <div class="d-flex"></div>
                       <button class="d-block btn-close me-2 mt-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>
@@ -555,12 +555,12 @@ $_product = wc_get_product( $_GET['edit-id'] );
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <?php
 
 
                   if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <!-- <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
+                    <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
                       <a href="">
                         <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
                       </a>
@@ -573,24 +573,11 @@ $_product = wc_get_product( $_GET['edit-id'] );
                           </svg>
                         </div>
                       </span>
-                    </div> -->
+                    </div>
                   <?php } ?>
-                </div>
+                <!-- </div> -->
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <nav class="d-lg-block d-none" aria-label="breadcrumb">
-                      <style>
-                         .wc-breadcrumb .breadcrumb-item:first-child a::before {
-                          display: none;
-                         }
-                      </style>
-                      <?php  // woocommerce_breadcrumb(['home'=>'Главная'])?>
-                      <!-- <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="#">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
-                        <li class="breadcrumb-item"><a href="#">Услуги</a></li>
-                      </ol> -->
-                    </nav>
                     <div class="mt-3 d-md-block d-none fs-3">
                       <input type="text" name="product-title" class="form-control" id="product-title" value="<?php echo $_product->get_name() ?>">
 
