@@ -239,7 +239,7 @@ function my_register_user() {
         }
 
         // Create the user
-        $user_id = wp_create_user($_POST['user_login'], $_POST['user_pass'], $_POST['email_user']);
+        $user_id = wp_create_user($_POST['user_login'], $_POST['user_pass'], $_POST['user_email']);
         // $user = new WP_User($user_id);
         // $user->set_role('subscriber');
 
@@ -256,8 +256,41 @@ function my_register_user() {
     }
 }
 
+// автосоздание магазина после регистрации
+
+add_action('user_register', 'auto_new_vendor_shop', 10, 2 );
+// add_action('wptelegram_login_after_update_user_meta', 'auto_new_vendor_shop', 10 );
+
+function auto_new_vendor_shop( $user_id, $userdata = false  ){
+
+	$taxonomies = get_taxonomies();
+	error_log( print_r($taxonomies, true), 0);
 
 
+	// $user_login = $user->user_login;
+	$new_vendor_shop_id = wp_insert_term( $userdata['user_login'], YITH_Vendors()->get_taxonomy_name() );
+
+
+	error_log( print_r($user_id, true), 0);
+	error_log( print_r($userdata, true), 0);
+	error_log( print_r($new_vendor_shop_id, true), 0);
+
+	if ( is_wp_error( $new_vendor_shop_id ) ) return;
+
+	update_user_meta( $user_id, 'yith_product_vendor_owner', $new_vendor_shop_id['term_id'] );
+	update_user_meta( $user_id, 'yith_product_vendor', $new_vendor_shop_id['term_id'] );
+
+	update_term_meta( $new_vendor_shop_id['term_id'], 'owner', $user_id);
+	update_term_meta( $new_vendor_shop_id['term_id'], 'enable_selling', 'yes');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'commission', '10');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'skip_review', 'no');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'featured_products', 'yes');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'show_gravatar', 'no');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'bank_account', '');
+	update_term_meta( $new_vendor_shop_id['term_id'], 'store_email', $userdata['user_email']);
+
+
+}
 
 // add_action( 'init', 'add_my_account_list_endpoint' );
 // function add_my_account_list_endpoint() {
@@ -323,7 +356,7 @@ function create_vendor_product() {
 	wp_set_object_terms( $product_id, $cat_product_int, 'product_cat', false );
 
 
-	var_dump('done');
+	// var_dump('done');
 
 	wp_die();
 }
