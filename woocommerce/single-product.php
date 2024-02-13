@@ -469,7 +469,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-xxl-7 col-lg-6">
+            <div class="col-lg-7">
               <div class="row justify-content-center ps-lg-3 h-100">
                 <div class="slider pe-xl-3 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
@@ -544,7 +544,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                 </div>
               </div>
             </div>
-            <div class="col-xxl-5 col-lg-6">
+            <div class="col-lg-5">
               <div class="card card-body mt-lg-0 mt-5 py-0 px-3 h-100">
                 <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
                   <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">

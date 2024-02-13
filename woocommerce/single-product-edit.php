@@ -459,7 +459,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-xxl-7 col-lg-6">
+            <div class="col-lg-7">
               <div class="row justify-content-center ps-lg-3 h-100">
                 <?php
 
@@ -468,7 +468,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
                 ?>
                 <div class="slider pe-xl-3 px-0">
-                  <div class="swiper slider__images slider__images--main">
+                  <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php
                         if ( $product_video) {
@@ -538,7 +538,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                 </div>
               </div>
             </div>
-            <div class="col-xxl-5 col-lg-6">
+            <div class="col-lg-5">
               <div class="card card-body mt-lg-0 mt-5 py-0 px-3 h-100">
                 <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
                   <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
@@ -564,15 +564,10 @@ $_product = wc_get_product( $_GET['edit-id'] );
                       <a href="">
                         <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
                       </a>
-                      <span>
-                        <span class="text-success badge fw-normal me-0">Редактировать</span>
-                        <div class="d-inline-block align-middle" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">
-                          <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
-                          </svg>
-                        </div>
-                      </span>
+                      <div>
+                        <button type="button" class="btn btn-primary my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                        <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
+                      </div>
                     </div>
                   <?php } ?>
                 <!-- </div> -->
@@ -693,8 +688,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
                       ?>
                     </div>
-                    <button type="button" class="btn btn-primary my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
-                    <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
+                    
                     <!--
                     <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
                       <div class="count d-flex flex-md-wrap flex-nowrap">
