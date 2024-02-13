@@ -545,7 +545,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
               </div>
             </div>
             <div class="col-lg-5">
-              <div class="card card-body mt-lg-0 mt-5 py-0 px-3 h-100">
+              <div class="card card-body border-0 mt-lg-0 mt-5 py-0 px-3 h-100">
                 <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
                   <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">

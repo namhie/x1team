@@ -20,7 +20,7 @@ if (!function_exists('the_breadcrumb')) :
 
     if (!is_home()) {
       echo '<nav aria-label="breadcrumb" class="breadcrumb-scroller ms-2">';
-      echo '<ol class="breadcrumb mb-0">';
+      echo '<ol class="breadcrumb bg-white p-0 mb-0">';
       echo '<li class="breadcrumb-item"><a href="' . home_url() . '">' . '<i class="fa-solid fa-house"></i>' . '</a></li>';
       // display parent category names with links
       if (is_category() || is_single()) {

@@ -21,7 +21,7 @@ if (!function_exists('bs_woocommerce_breadcrumbs')) :
     return array(
       'delimiter'   => '',
       'wrap_before' => "<nav aria-label='breadcrumb' class='wc-breadcrumb breadcrumb-scroller ms-2'>
-      <ol class='breadcrumb mb-0'>",
+      <ol class='breadcrumb bg-white p-0 mb-0'>",
       'wrap_after'  => '</ol>
       </nav>',
       'before'      => '<li class="breadcrumb-item">',
