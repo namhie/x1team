@@ -217,6 +217,10 @@ input:-webkit-autofill:focus {
   background-color: var(--secondary);
 }
 
+.wc-breadcrumb .breadcrumb-item:first-child a::before {
+  background-color: #c7cace;
+}
+
 .breadcrumb {
   background-color: #fff;
   color: #999797;

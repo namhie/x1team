@@ -107,9 +107,9 @@ if( $current_user->exists() ){
               </div>
               <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-lg-0 mt-3">
-                  <li class="nav-item"> <a class="nav-link" href="/shop/">Каталог</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/blockly/">Blockly</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/unity/">Unity</a></li>
+                  <li class="nav-item"> <a class="nav-link py-lg-0" href="/shop/">Каталог</a></li>
+                  <li class="nav-item"><a class="nav-link py-lg-0" href="/blockly/">Blockly</a></li>
+                  <li class="nav-item"><a class="nav-link py-lg-0" href="/unity/">Unity</a></li>
                   <li class="nav-item d-lg-none d-block"> <a class="nav-link" href="/my-account/">Войти</a></li>
                 </ul>
                 <div class="phone d-lg-none d-inline-block">
