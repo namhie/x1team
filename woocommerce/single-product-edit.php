@@ -539,7 +539,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
               </div>
             </div>
             <div class="col-xxl-5 col-lg-6">
-              <div class="card card-body shadow bg-body-tertiary rounded mt-lg-0 mt-5 p-3 h-100">
+              <div class="card card-body mt-lg-0 mt-5 py-0 px-3 h-100">
                 <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
                   <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
                     <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
@@ -560,7 +560,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 
                   if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
+                    <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
                       <a href="">
                         <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
                       </a>
