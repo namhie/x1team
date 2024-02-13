@@ -699,7 +699,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                       ?>
                     </ul><a class="d-block delivery py-2" href="" role="button">Доставка и оплата</a><a class="d-block conditions py-2" href="" role="button">Условия продажи</a>
                   </div>
-                  <div class="col">
+                  <div class="col-12">
                     <?php echo do_shortcode('[pch_group]'); ?>
                   </div>
                 </div>
