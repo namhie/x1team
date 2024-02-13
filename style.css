@@ -247,9 +247,9 @@ input:-webkit-autofill:focus {
   background-position: center;
   background-size: 100%;
 }
-.products > div {
-  min-width: 188px;
-  max-width: 190px;
+.products > div img {
+  max-width: 270px;
+  width: 100%;
 }
 .woocommerce .card .woocommerce-loop-product__title {
   font-size: 1.1rem;
@@ -1263,9 +1263,6 @@ details > summary:first-of-type {
         -ms-flex-pack: justify;
             justify-content: space-between;
     gap: 0 !important;
-  }
-  .products {
-    justify-content: center;
   }
 }
 
