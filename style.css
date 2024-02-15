@@ -121,6 +121,15 @@ a:hover {
   color: var(--accent);
 }
 
+.form-check-input:checked, #createaccount:checked, #ship-to-different-address input:checked, .woocommerce-checkout #payment ul.payment_methods li input:checked, .woocommerce-SavedPaymentMethods.wc-saved-payment-methods li input:checked, .form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated input:checked, .woocommerce form .form-row .input-checkbox:checked, .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme #rememberme:checked, .woocommerce ul#shipping_method li input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.form-check-input[type="checkbox"], #createaccount[type="checkbox"], #ship-to-different-address input[type="checkbox"], .woocommerce-checkout #payment ul.payment_methods li input[type="checkbox"], .woocommerce-SavedPaymentMethods.wc-saved-payment-methods li input[type="checkbox"], .form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated input[type="checkbox"], .woocommerce form .form-row .input-checkbox[type="checkbox"], .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme #rememberme[type="checkbox"], .woocommerce ul#shipping_method li input[type="checkbox"] {
+  border-radius: 0;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   -webkit-transition: background-color 0s 600000s, color 0s 600000s;
