@@ -163,7 +163,10 @@ input:-webkit-autofill:focus {
 a:hover {
   color: var(--accent);
 }
-.btn-accent {
+a {
+  color: #000;
+}
+.btn.btn-accent {
   background-color: none;
   border-color: var(--accent);
   color: var(--accent);
@@ -174,7 +177,7 @@ a:hover {
   color: white;
 }
 .btn {
-  border-radius: 0;
+  border-radius: 0!important;
 }
 .nav-link {
   color: #000;
@@ -241,7 +244,7 @@ a:hover {
   background-color: #c7cace;
 }
 
-.breadcrumb {
+.breadcrumb, .breadcrumb a {
   background-color: #fff;
   color: #999797;
   font-size: .9rem;
