@@ -1322,6 +1322,9 @@ details > summary:first-of-type {
             justify-content: space-between;
     gap: 0 !important;
   }
+  .page-title {
+    height: 9rem;
+  }
 }
 
 @media (max-width: 380px) {
