@@ -251,6 +251,10 @@ input:-webkit-autofill:focus {
   background-color: #c7cace;
 }
 
+.wc-breadcrumb .breadcrumb-item:first-child a:hover::before {
+  background-color: var(--accent);
+}
+
 .breadcrumb, .breadcrumb a {
   background-color: #fff;
   color: #999797;
@@ -283,6 +287,17 @@ input:-webkit-autofill:focus {
 }
 .woocommerce .card .woocommerce-loop-product__title {
   font-size: 1.1rem;
+}
+.product .card-body a.button, .product-category .card-body a {
+  background-color: transparent;
+  border-radius: 0;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.product .card-body a.button:hover, .product-category .card-body a:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 .wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-max-input, .wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-min-input {
   border: 1px solid #ccc;

@@ -34,7 +34,7 @@ function custom_loop_product_thumbnail() {
 if (!function_exists('woocommerce_template_loop_category_title')) :
   function woocommerce_template_loop_category_title($category) {
     ?>
-    <h2 class="woocommerce-loop-category__title btn btn-primary w-100 mb-0">
+    <h2 class="woocommerce-loop-category__title btn btn-accent w-100 mb-0">
       <?php
       echo $category->name;
 
