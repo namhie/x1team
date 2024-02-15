@@ -777,12 +777,12 @@ details > summary:first-of-type {
   border: 0;
 }
 
-.form-select:focus,
+/* .form-select:focus,
 .form-control:focus {
   border-color: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
+} */
 
 .img-flex-card {
   width: 100px;
@@ -790,7 +790,11 @@ details > summary:first-of-type {
 }
 
 .form-control {
-  background-color: var(--bs-secondary-bg);
+  background-color: transparent;
+}
+
+.form-control:focus, .woocommerce-cart .coupon input:focus, .woocommerce form .form-row textarea:focus, .woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row .form-row textarea:focus, .woocommerce .qty:focus {
+  border-color: var(--accent);
 }
 
 .form-check.form-list,
