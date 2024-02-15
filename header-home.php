@@ -123,7 +123,7 @@ if( $current_user->exists() ){
                           }
                         } else {
                           ?>
-                            <li class="nav-item"><a class="nav-link" href="/my-account/"><?php echo $user_login ?></a></li>
+                            <li class="nav-item d-lg-none d-block"><a class="nav-link" href="/my-account/"><?php echo $user_login ?></a></li>
                           <?php
                         }
                       ?>
