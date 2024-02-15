@@ -148,7 +148,7 @@ input:-webkit-autofill:focus {
 }
 
 :root {
-  --accent: #0D6EFD;
+  --accent: #19368B;
   --dark: #333;
   --default: #ECECEC;
   --scrollbarBg: rgba(255, 255, 255, 0.8);
@@ -158,6 +158,26 @@ input:-webkit-autofill:focus {
   --scrollbarBorder: 1px solid transparent;
   --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
   --bs-breadcrumb-divider: url("../img/svg/arrow-right.svg");
+}
+
+a:hover {
+  color: var(--accent);
+}
+.btn-accent {
+  background-color: none;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-accent:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.btn {
+  border-radius: 0;
+}
+.nav-link {
+  color: #000;
 }
 
 .wrapper {
