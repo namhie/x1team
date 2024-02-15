@@ -23,7 +23,7 @@ if (!function_exists('bootscore_main_col_class')) {
       return "col";
     } else {
       // Sidebar has widgets
-      return "col-md-8 col-lg-9";
+      return "col-lg-9";
     }
   }
 }
@@ -35,7 +35,7 @@ if (!function_exists('bootscore_main_col_class')) {
  */
 if (!function_exists('bootscore_sidebar_col_class')) {
   function bootscore_sidebar_col_class() {
-    return "col-md-4 col-lg-3";
+    return "col-lg-3";
   }
 }
 

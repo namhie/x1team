@@ -12,7 +12,7 @@ get_header();
           <!-- sidebar -->
           <?php get_sidebar(); ?>
           <!-- row -->
-          <div class="<?= bootscore_main_col_class(); ?>  position-relative">
+          <div class="<?= bootscore_main_col_class(); ?> position-relative">
             <?php  woocommerce_content(); ?>
           </div>
         </div>
