@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<div class="col-md-6 col-lg-4 col-xxl-3 mb-4">
+<div class="col-md-6 col-lg-5">
 
   <form class="woocommerce-ordering" method="get">
     <select name="orderby" class="orderby custom-select" aria-label="<?php esc_attr_e('Shop order', 'bootscore'); ?>">
