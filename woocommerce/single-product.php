@@ -470,8 +470,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
-              <div class="row justify-content-center ps-lg-3 h-100">
-                <div class="slider pe-xl-3 px-0">
+              <div class="row justify-content-center h-100">
+                <div class="slider pe-xl-3 ms-md-3 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php

@@ -113,7 +113,7 @@ a {
   transition: all 0.25s ease;
 }
 
-.header a {
+.body .header a {
   color: #000;
 }
 
@@ -191,6 +191,9 @@ input:-webkit-autofill:focus {
 }
 .text-accent {
   color: var(--accent);
+}
+.text-accent:hover {
+  color: #2955d6;
 }
 .wrapper {
   scrollbar-width: var(--scrollbarWidth);
