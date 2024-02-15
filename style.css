@@ -106,7 +106,7 @@ body {
 }
 
 a {
-  color: #000;
+  color: #000!important;
   text-decoration: none;
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
