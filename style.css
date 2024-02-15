@@ -199,7 +199,9 @@ input:-webkit-autofill:focus {
   scrollbar-width: var(--scrollbarWidth);
   scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
 }
-
+.page-title {
+  height: 4rem;
+}
 ::-webkit-scrollbar {
   width: var(--scrollbarWidth);
   height: var(--scrollbarHeight);
