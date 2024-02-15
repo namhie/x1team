@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="row position-absolute top-0 end-0">
+<div class="row position-absolute top-0 end-0 align-items-end w-75">
   <!-- End in orderby.php -->
   <div class="col-md-6 col-lg-8 col-xxl-9">
     <p class="woocommerce-result-count">
