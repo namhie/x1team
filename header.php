@@ -71,7 +71,7 @@ if( $current_user->exists() ){
                   <?php
                 }
               ?>
-              <div class="navbar-contact d-flex align-items-center gap-md-3 gap-2 pe-md-0 pe-2">
+              <div class="navbar-contact d-flex align-items-center gap-md-3 gap-2">
                   <div class="phone">
                         <a href="tel:+79261605204" class="d-flex flex-nowrap align-items-center gap-2">
                             <svg class="bi bi-telephone" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
