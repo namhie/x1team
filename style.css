@@ -106,7 +106,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #000;
   text-decoration: none;
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
@@ -160,12 +160,6 @@ input:-webkit-autofill:focus {
   --bs-breadcrumb-divider: url("../img/svg/arrow-right.svg");
 }
 
-a:hover {
-  color: var(--accent);
-}
-a {
-  color: #000;
-}
 .btn.btn-accent {
   background-color: none;
   border-color: var(--accent);
