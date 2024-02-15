@@ -189,7 +189,9 @@ input:-webkit-autofill:focus {
 .nav-link {
   color: #000;
 }
-
+.text-accent {
+  color: var(--accent);
+}
 .wrapper {
   scrollbar-width: var(--scrollbarWidth);
   scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
