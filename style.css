@@ -1122,18 +1122,25 @@ details > summary:first-of-type {
     width: auto;
   }
 }
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
+  .slider {
+    height: calc(100vh - 14.7rem);
+  }
+
   .slider .slider-thumb {
     height: 88px;
   }
 
   .slider__images.slider__images-cotalog {
+    height: calc(100vh - 14.7rem);
+  }
+  /* .slider__images.slider__images-cotalog {
     height: 22rem;
-  }
+  } */
 
-  .slider.slider-vertical {
+  /* .slider.slider-vertical {
     height: 26rem;
-  }
+  } */
 
   .slider-vertical .slider__images .swiper-slide .image-4x3 {
     min-height: 31rem;
