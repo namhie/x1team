@@ -1060,7 +1060,7 @@ details > summary:first-of-type {
 
   .slider-vertical .slider__images {
     height: auto;
-    min-height: 600px;
+    /* min-height: 600px; */
   }
 
   .slider .slider-thumb {
