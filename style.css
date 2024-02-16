@@ -1105,7 +1105,7 @@ details > summary:first-of-type {
   }
 
   .slider-vertical .slider__images .swiper-wrapper {
-    min-height: 30rem;
+    min-height: 31rem;
     /* max-height: 32rem; */
   }
 
