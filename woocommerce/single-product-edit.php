@@ -47,7 +47,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 </style>
     <main class="main pb-5">
-      <div class="container-sm container-fluid mb-5">
+      <div class="container container-fluid mb-5">
           <div class="row h-100">
             <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
             <!-- без слайдера - НАЧАЛО -->
@@ -460,14 +460,14 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
-              <div class="row justify-content-center h-100">
+              <div class="row justify-content-center">
                 <?php
 
                   $gallery_attachment_ids = $_product->get_gallery_image_ids();
                   $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
 
                 ?>
-                <div class="slider pe-xl-3 ms-md-3 px-0">
+                <div class="slider pe-xl-3 ms-lg-3 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php

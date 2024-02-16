@@ -57,7 +57,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
 
 ?>
     <main class="main pb-5">
-      <div class="container-sm container-fluid mb-5">
+      <div class="container container-fluid mb-5">
           <div class="row h-100">
             <h1 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h1>
             <!-- без слайдера - НАЧАЛО -->
@@ -470,8 +470,8 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
 
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
-              <div class="row justify-content-center h-100">
-                <div class="slider pe-xl-3 ms-md-3 px-0">
+              <div class="row justify-content-center">
+                <div class="slider pe-xl-3 ms-lg-3 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php
