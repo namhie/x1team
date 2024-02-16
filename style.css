@@ -1132,23 +1132,23 @@ details > summary:first-of-type {
   }
 
   .slider__images.slider__images-cotalog {
-    height: calc(100vh - 14.7rem);
+    height: calc(100vh - 10rem);
   }
   /* .slider__images.slider__images-cotalog {
     height: 22rem;
   } */
 
   .slider.slider-vertical .slider-thumb {
-    mIn-height: calc(100vh - 9.5rem);
-    max-height: 30.1rem;
+    mIn-height: calc(100vh - 10rem);
+    /* max-height: 30.1rem; */
   }
 
   .slider-vertical .slider__images .swiper-slide .image-4x3 {
-    min-height: 34rem;
+    /* min-height: 34rem; */
   }
 
   .slider-vertical .slider__images .swiper-wrapper {
-    min-height: 34rem;
+    /* min-height: 34rem; */
   }
 }
 @media (max-width: 980px) {
