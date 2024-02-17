@@ -1087,6 +1087,10 @@ details > summary:first-of-type {
     max-height: 30rem;
   }
 
+  .slider.slider-vertical {
+    max-height: calc(100vh - 7rem);
+  }
+
   .slider-vertical .slider__images {
     height: 100%;
   }
@@ -1101,11 +1105,11 @@ details > summary:first-of-type {
   }
 
   .slider-vertical .slider-thumb .slider-thumb__images .slider-grid {
-    max-height: 32rem;
+    max-height: calc(100vh - 7rem);
   }
 
   .slider-vertical .slider__images .swiper-wrapper {
-    min-height: 31rem;
+    /* min-height: 31rem; */
     /* max-height: 32rem; */
   }
 
