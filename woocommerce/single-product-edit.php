@@ -467,7 +467,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                   $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
 
                 ?>
-                <div class="slider pe-xl-3 ms-lg-3 px-0">
+                <div class="slider pe-xl-3 ms-lg-4 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php
@@ -735,7 +735,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
             <!-- слайдер с табами изображениями -  КОНЕЦ -->
 
             <div class="col-12 ">
-              <div class="description card card-body">
+              <div class="description card card-body px-0">
                 <div class="row">
                   <div class="col">
                     <h2 class="block-title text-nowrap">Описание</h2>

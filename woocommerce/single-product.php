@@ -678,7 +678,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
             <!-- слайдер с табами изображениями -  КОНЕЦ -->
 
             <div class="col-12 ">
-              <div class="description card card-body border-0">
+              <div class="description card card-body border-0 px-0">
                 <div class="row">
                   <div class="col">
                     <h2 class="block-title text-nowrap">Описание</h2>

@@ -117,7 +117,7 @@ a {
   color: #000;
 }
 
-a:hover {
+.body .header a:hover, a:hover {
   color: var(--accent);
 }
 
@@ -264,7 +264,7 @@ input:-webkit-autofill:focus {
 
 .breadcrumb, .breadcrumb a {
   background-color: #fff;
-  color: #999797;
+  color: #999797!important;
   font-size: .9rem;
 }
 
