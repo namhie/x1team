@@ -930,7 +930,7 @@ details > summary:first-of-type {
 
 .description {
   margin-top: 4rem;
-  padding: 2.5rem;
+  padding: 2rem 0;
 }
 
 .description .list-group-item {
@@ -1181,7 +1181,7 @@ details > summary:first-of-type {
   .slider__images.slider__images-cotalog {
     height: auto;
   }
-  
+
   .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {
     min-width: 136px;
   }
@@ -1224,6 +1224,7 @@ details > summary:first-of-type {
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
+
 }
 
 @media (max-width: 680px) {
