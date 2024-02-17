@@ -267,6 +267,9 @@ input:-webkit-autofill:focus {
   color: #999797!important;
   font-size: .9rem;
 }
+.breadcrumb a:hover {
+  color: var(--accent);
+}
 
 .breadcrumb-item+.breadcrumb-item::before {
   height: 27px;
@@ -715,8 +718,8 @@ iframe {
 }
 
 .container {
-  padding: 0 30px;
-  max-width: 1340px;
+  padding: 0 30px!important;
+  max-width: 1340px!important;
 }
 
 .body-home {
@@ -1271,7 +1274,7 @@ details > summary:first-of-type {
   }
 
   .container {
-    padding: 0 15px;
+    padding: 0 15px!important;
   }
 
   .ratio-4x3 {
