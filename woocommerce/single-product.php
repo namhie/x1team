@@ -504,7 +504,7 @@ $total_count = count( $gallery_attachment_ids );
               <div class="card card-body border-0 mt-lg-0 mt-md-5 mt-4 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
                 <?php
                 if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                  <div class="d-flex justify-content-between align-items-center w-100 py-md-0 mt-4 pb-3">
+                  <div class="d-flex justify-content-between align-items-center w-100 py-md-0 mt-lg-0 mt-4 pb-3">
                     <a href="">
                       <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
                     </a>
