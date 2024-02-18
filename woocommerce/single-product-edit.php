@@ -457,7 +457,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--  </div>-->
               <!--</div>-->
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
-
+            <?php
+              if ( $product_video || $gallery_attachment_ids ) {
+            ?>
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
               <div class="row justify-content-center">
@@ -733,9 +735,186 @@ $_product = wc_get_product( $_GET['edit-id'] );
               </div>
             </div>
             <!-- слайдер с табами изображениями -  КОНЕЦ -->
+            <?php } 
+              else {
+              ?>
+              <!-- без слайдера - НАЧАЛО -->
+              <div class="col"> 
+                <?php
+                if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
+                  <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
+                    <a href="">
+                      <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
+                    </a>
+                    <div>
+                        <button type="button" class="btn btn-accent my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                        <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-accent">Назад</a>
+                      </div>
+                  </div>
+                <?php } ?>
+                <div class="row">
+                  <div class="col-lg-7 text-lable">
+                    <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
+                    <div class="mb-3"></div>
+                    <!-- <span><?php echo get_the_excerpt() ?></span> -->
+                    <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
+                      <span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span>
+                    </a> -->
+                    <div class="collapse" id="more">
+                      <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
+                      <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="card card-body border-0 pt-xxl-5 p-3">
+                      <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
+                        <div class="text-danger text-nowrap m-0">
+                          <input type="text" name="product-price" class="form-control" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
+                        </div>
+                        <div>
+                          <input type="text" name="product-regular-price" class="form-control" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
+                        </div>
+                      </div>
+                      <div class="">
+                        <strong>Категории</strong>
+                        <?php
 
+
+
+          $taxonomy = 'product_cat';
+          $terms = get_the_terms( $_product->get_ID(), $taxonomy);
+          $terms_ids = [];
+          foreach ($terms as $key => $t) {
+            $terms_ids[] = $t->term_id;
+          }
+          $args = array(
+                  'taxonomy'     => $taxonomy,
+                  'orderby'      => 'name',
+                  'show_count'   => 0,
+                  'pad_counts'   => 0,
+                  'hierarchical' => 1,
+                  'hide_empty'   => 0
+          );
+          $all_categories = get_categories( $args );
+
+          $html = '';
+          foreach ($all_categories as $cat) {
+              $checked = '';
+
+              if ( in_array($cat->term_id, $terms_ids)) {
+                $checked = 'checked';
+              }
+              if($cat->category_parent == 0) {
+                  $category_id = $cat->term_id;
+
+                  $cat_url = get_term_link($cat->slug, $taxonomy);
+                  $cat_name = $cat->name;
+                  if ( $cat_name == 'Misc') continue;
+
+                  $args2 = array(
+                          'taxonomy'     => $taxonomy,
+                          'child_of'     => 0,
+                          'parent'       => $category_id,
+                          'orderby'      => $orderby,
+                          'show_count'   => $show_count,
+                          'pad_counts'   => $pad_counts,
+                          'hierarchical' => $hierarchical,
+                          'title_li'     => $title,
+                          'hide_empty'   => $empty
+                  );
+                  $sub_cats = get_categories( $args2 );
+                  $html_inner = '';
+                  if($sub_cats) {
+                      $isset_sub_class = 'form-list';
+                      $html_inner = '<a class="d-block collapsed" data-bs-toggle="collapse" href="#collapseCatalogItem'.$category_id.'" role="button" aria-controls="collapseCatalogItem'.$category_id.'">
+                                          <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                          <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>
+                                          <div class="form-check-arrow"></div>
+                                      </a>
+                                      <div class="collapse show" id="collapseCatalogItem'.$category_id.'">
+                                      ';
+                      foreach($sub_cats as $sub_category) {
+                          $checked = '';
+                          $sub_category_id = $sub_category->term_id;
+                          $sub_cat_name = $sub_category->name;
+
+                          if ( in_array($sub_category->term_id, $terms_ids)) {
+                            $checked = 'checked';
+                          }
+
+                          $html_inner .= '<div class="form-check">
+                                              <input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$sub_category_id.'" id="'.$sub_category_id.'" '.$checked.'>
+                                              <label class="form-check-label" for="'.$sub_category_id.'">'.$sub_cat_name.'</label>
+                                          </div>';
+                      }
+                      $html_inner .= '</div>';
+                  } else {
+                      $isset_sub_class = '';
+                      $html_inner = '<input class="form-check-input cat_product" type="checkbox" name="cat_product[]" value="'.$category_id.'" id="'.$category_id.'" '.$checked.'>
+                                      <label class="form-check-label" for="'.$category_id.'">'.$cat_name.'</label>';
+                  }
+                  $html .= '<div class="form-check border-bottom py-2 '.$isset_sub_class.'"> '.$html_inner.' </div>';
+              }
+          }
+          // $wrapper = '<div class="form-check border-bottom py-2">
+          //                 <input class="form-check-input" type="checkbox" value="cat_user_announcements" name="cat_product[]" id="user_announcements" checked>
+          //                 <label class="form-check-label" for="user_announcements">Мои объявления</label>
+          //             </div>' . $html;
+          $wrapper = $html;
+          echo $wrapper;
+
+                        ?>
+                      </div>
+                      
+                      <!--
+                      <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
+                        <div class="count d-flex flex-md-wrap flex-nowrap">
+                          <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}">
+                            <span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>
+                            <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
+                          </div>
+                          <div class="btn-block">
+                            <div class="add-to-cart-container mt-auto">
+                              <a href="?add-to-cart=<?php echo $_product->get_id() ?>" data-quantity="1" class="product_type_simple add_to_cart_button ajax_add_to_cart btn btn-accent btn-lg" data-product_id="<?php echo $_product->get_id() ?>" data-product_sku="<?php echo $_product->get_sku() ?>" aria-label="Add to cart: “bS Isotope”" aria-describedby="" rel="nofollow" product-title="bS Isotope">
+
+                                <div class="btn-loader">
+                                  <span class="spinner-border spinner-border-sm"></span>
+                                </div>
+                                <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
+                                </svg>
+                                в корзину
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="soc-button d-flex flex-nowrap gap-2">
+                          <a class="btn btn-outline-primary btn-lg" href="">
+                            <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"> </path>
+                            </svg></a><a class="btn btn-outline-success btn-lg" href="">
+                            <svg class="bi bi-whatsapp" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                            </svg></a><a class="btn btn-outline-secondary btn-lg" href="">
+                            <svg class="bi bi-subtract" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                      -->
+                    </div>
+
+                    </div>    
+                  </div>
+                </div>
+              </div>
+            <!-- без слайдера - КОНЕЦ -->
+              <?php
+              }
+            ?>
             <div class="col-12 ">
-              <div class="description card card-body px-0">
+              <div class="description card card-body border-0 px-0">
                 <div class="row">
                   <div class="col">
                     <h2 class="block-title text-nowrap">Описание</h2>
