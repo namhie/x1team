@@ -49,7 +49,7 @@ if( $current_user->exists() ){
 <?php wp_body_open(); ?>
     <div class="woocommerce-mini-cart"></div>
     <header class="header py-md-2 pt-lg-3">
-        <div class="navbar navbar-expand-lg absolute-top py-0 rounded">
+        <div class="navbar navbar-expand-lg absolute-top py-0 rounded px-0">
           <div class="container align-items-center justify-content-md-end justify-content-start py-md-0 py-2 bg-white mb-md-2"><a class="navbar-brand order-0 p-0 me-md-4 me-0" href="https://x1team.ru"><img class="logo" src="https://x1team.ru/wp-content/uploads/2023/01/logo.png" alt="logo"></a>
             <button class="navbar-toggler order-1 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarMenu" aria-controls="offcanvasNavbarMenu" aria-expanded="false" aria-label="Переключатель навигации"><span class="navbar-toggler-icon"></span></button>
             <form class="d-flex flex-md-fill align-items-center justify-content-lg-center justify-content-md-end justify-content-center flex-wrap flex-lg-grow-0 flex-grow-1 order-0 order-lg-1 gap-md-4 me-lg-0">

@@ -37,6 +37,7 @@ function sliderThumbActive(images, thumbs) {
           clicked = true
           if (mediaQuery.matches) {
             sliderThumbs.changeDirection(getDirection())
+            console.log(sliderThumbs.changeDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
 
