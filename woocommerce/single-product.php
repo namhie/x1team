@@ -522,7 +522,7 @@ $total_count = count( $gallery_attachment_ids );
                 <?php } ?>
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>
                         <?php echo get_the_excerpt() ?>
