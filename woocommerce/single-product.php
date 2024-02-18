@@ -1247,7 +1247,7 @@ $total_count = count( $gallery_attachment_ids );
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-0">
-            <div class="carousel slide slider__images--modal carousel-fade h-100" id="imageButtons" data-bs-ride="true">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="imageButtons">
               <div class="carousel-inner">
                 <?php
                   if ( $product_video) {
@@ -1291,7 +1291,7 @@ $total_count = count( $gallery_attachment_ids );
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-0">
-            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-2" data-bs-ride="true">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-2">
               <div class="carousel-inner">
               <?php
                   if ( $product_video) {
@@ -1335,7 +1335,7 @@ $total_count = count( $gallery_attachment_ids );
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-0">
-            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-3" data-bs-ride="true">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-3">
               <div class="carousel-inner">
               <?php
                   if ( $product_video) {
