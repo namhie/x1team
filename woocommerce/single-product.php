@@ -1197,7 +1197,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </main>
     <div class="modal fade" id="backdrop-1" tabindex="-1" role="dialog" aria-labelledby="backdrop-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1276,7 +1276,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </div>
     <div class="modal fade" id="backdrop-image" tabindex="-1" role="dialog" aria-labelledby="backdrop-image" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1320,7 +1320,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </div>
     <div class="modal fade" id="backdrop-2" tabindex="-1" role="dialog" aria-labelledby="backdrop-2" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1375,7 +1375,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </div>
     <div class="modal fade" id="backdrop-3" tabindex="-1" role="dialog" aria-labelledby="backdrop-3" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
