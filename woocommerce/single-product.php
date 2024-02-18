@@ -1197,7 +1197,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </main>
     <div class="modal fade" id="backdrop-1" tabindex="-1" role="dialog" aria-labelledby="backdrop-1" aria-hidden="true">
-      <div class="modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1276,13 +1276,13 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </div>
     <div class="modal fade" id="backdrop-image" tabindex="-1" role="dialog" aria-labelledby="backdrop-image" aria-hidden="true">
-      <div class="modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-0">
-            <div class="carousel slide slider__images--modal carousel-fade h-100" id="imageButtons">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-1">
               <div class="carousel-inner">
                 <?php
                   if ( $product_video) {
@@ -1312,15 +1312,15 @@ $total_count = count( $gallery_attachment_ids );
 
                 ?>
               </div>
-              <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
-              <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="modal fade" id="backdrop-2" tabindex="-1" role="dialog" aria-labelledby="backdrop-2" aria-hidden="true">
-      <div class="modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1375,7 +1375,7 @@ $total_count = count( $gallery_attachment_ids );
       </div>
     </div>
     <div class="modal fade" id="backdrop-3" tabindex="-1" role="dialog" aria-labelledby="backdrop-3" aria-hidden="true">
-      <div class="modal-dialog-centered modal-fullscreen">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
           <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
             <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
