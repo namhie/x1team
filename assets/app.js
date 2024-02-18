@@ -5,7 +5,7 @@ const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
 const youtubes = document.querySelectorAll('.swiper-slide.youtube')
 const ImageYoutubes = document.querySelectorAll('.swiper-slide .youtube')
-const modalItem = document.querySelectorAll('.modal')
+const modalItem = document.querySelectorAll('.body .modal')
 const sliderImagesModals = document.querySelectorAll('.slider__images--modal') 
 
 const mediaQuery = window.matchMedia('(min-width: 769px)')
