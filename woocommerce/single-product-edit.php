@@ -575,7 +575,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                 <!-- </div> -->
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <div class="mt-3 d-md-block d-none fs-3">
+                    <div class="mt-3 d-md-block d-none ">
                       <input type="text" name="product-title" class="form-control" id="product-title" value="<?php echo $_product->get_name() ?>">
 
                     </div>
@@ -754,7 +754,10 @@ $_product = wc_get_product( $_GET['edit-id'] );
                 <?php } ?>
                 <div class="row">
                   <div class="col-lg-7 text-lable">
-                    <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
+                    <div class="mt-3 d-md-block d-none ">
+                      <input type="text" name="product-title" class="form-control" id="product-title" value="<?php echo $_product->get_name() ?>">
+
+                    </div>
                     <div class="mb-3"></div>
                     <!-- <span><?php echo get_the_excerpt() ?></span> -->
                     <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
@@ -764,10 +767,8 @@ $_product = wc_get_product( $_GET['edit-id'] );
                       <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>
                       <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p>
                     </div>
-                  </div>
-                  <div class="col-lg-5">
-                    <div class="card card-body border-0 pt-xxl-5 p-3">
-                      <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
+                    <div class="col">
+                      <div class="d-flex justify-content-xl-start justify-content-lg-center justify-content-start align-items-end gap-2 mt-2 mb-3">
                         <div class="text-danger text-nowrap m-0">
                           <input type="text" name="product-price" class="form-control" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
                         </div>
@@ -775,6 +776,10 @@ $_product = wc_get_product( $_GET['edit-id'] );
                           <input type="text" name="product-regular-price" class="form-control" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="card card-body border-0 pt-xxl-5 p-3">
                       <div class="">
                         <strong>Категории</strong>
                         <?php
