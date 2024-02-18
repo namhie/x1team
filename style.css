@@ -436,6 +436,14 @@ input:-webkit-autofill:focus {
   overflow: hidden;
 }
 
+.body .carousel-control-next {
+  margin-right: 1rem;
+}
+
+.body .carousel-control-prev {
+  margin-left: 1rem;
+}
+
 .swiper-button-next.swiper-button-hidden,
 .swiper-button-prev.swiper-button-hidden {
   opacity: 1;
