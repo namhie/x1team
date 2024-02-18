@@ -428,7 +428,7 @@ input:-webkit-autofill:focus {
 }
 
 .swiper-button-next,
-.swiper-button-prev {
+.swiper-button-prev, .body .carousel-control-next, .body .carousel-control-prev {
   top: var(--swiper-navigation-top-offset, 52%);
   width: 2rem;
   height: 2rem;
@@ -450,7 +450,7 @@ input:-webkit-autofill:focus {
 }
 
 .swiper-button-next::before,
-.swiper-button-prev::before {
+.swiper-button-prev::before, .body .carousel-control-prev-icon, .body .carousel-control-next-icon {
   content: "";
   position: absolute;
   top: 0;
