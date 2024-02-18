@@ -444,7 +444,7 @@ $total_count = count( $gallery_attachment_ids );
                             <?php
                           } else {
                             ?>
-                            <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-image" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">>
+                            <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-image" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
                               <div class="image-4x3 image-one">
                                 <img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image">
                                 <div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-image" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
