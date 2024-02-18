@@ -1275,6 +1275,50 @@ $total_count = count( $gallery_attachment_ids );
         </div>
       </div>
     </div>
+    <div class="modal fade" id="backdrop-image" tabindex="-1" role="dialog" aria-labelledby="backdrop-image" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content position-relative">
+          <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+            <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="imageButtons">
+              <div class="carousel-inner">
+                <?php
+                  if ( $product_video) {
+                ?>
+                  <div class="carousel-item bg-white active">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                <?php }
+                  if ( $gallery_attachment_ids ) {
+                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                    ?>
+                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
+                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
+                    </div>
+                <?php }
+                  }
+			            if (!$product_video && $gallery_attachment_ids) {
+                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                    ?>
+                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white active">
+                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
+                    </div>
+                    <?php }
+                  }
+
+                ?>
+              </div>
+              <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+              <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal fade" id="backdrop-2" tabindex="-1" role="dialog" aria-labelledby="backdrop-2" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content position-relative">
