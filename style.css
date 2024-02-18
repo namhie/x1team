@@ -467,6 +467,11 @@ input:-webkit-autofill:focus {
   z-index: -1;
 }
 
+.body .carousel-control-prev-icon, .body .carousel-control-next-icon {
+  background: 20%/90% 74% no-repeat;
+  -webkit-filter: none;
+          filter: none;
+}
 .slider-vertical {
   display: -webkit-box;
   display: -ms-flexbox;
