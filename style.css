@@ -1055,6 +1055,17 @@ details > summary:first-of-type {
   transform: translateY(-50%);
 }
 
+.image-4x3.image-one {
+  max-height: 32rem;
+}
+
+@media (max-width: 1400px) {
+  .image-4x3.image-one {
+    max-height: 30rem;
+  }
+}
+
+
 @media (min-width: 1440px) {
 
   .slider-vertical .slider__images {

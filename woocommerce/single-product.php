@@ -54,6 +54,7 @@ get_header(); // Вставляем заголовок сайта
 
 $gallery_attachment_ids = $_product->get_gallery_image_ids();
 $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+$total_count = count( $gallery_attachment_ids );
 
 ?>
     <main class="main pb-5">
@@ -400,8 +401,10 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
               <!--  </div>-->
               <!--</div>-->
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
+
+
             <?php
-              if ( $product_video || $gallery_attachment_ids ) {
+              if ( $product_video || $gallery_attachment_ids) {
             ?>
             
             <!-- слайдер с табами изображениями - НАЧАЛО -->
@@ -428,6 +431,7 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                         }
                         if ( $gallery_attachment_ids) {
                           foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                            if ($total_count > 1) {
                             ?>
                             <div class="swiper-slide" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
                               <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
@@ -438,11 +442,22 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
                               </div></div>
                             </div>
                             <?php
+                          } else {
+                            ?>
+                            <div class="image-4x3 image-one">
+                              <img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image">
+                              <div class="fullscrin" data-slider="2" data-bs-toggle="modal" data-bs-target="#backdrop-image" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
+                                <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
+                                  <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
+                                </svg>
+                            </div>
+                          </div>
+                         <?php 
                           }
-                        }
-
-
+                        }}
                       ?>
+
                     </div>
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
@@ -466,14 +481,18 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
 
                           if ( $gallery_attachment_ids) {
                             foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                              if ($total_count > 1) {
                               ?>
                                 <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
 
                               <?php
-                            }
+                            } else {  
+                              ?>
+                                <div class="swiper-slide swiper-item"></div>
+                                
+                              <?php
+                            }}
                           }
-
-
                         ?>
                       </div>
                     </div>
@@ -482,10 +501,10 @@ $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true 
               </div>
             </div>
             <div class="col-lg-5">
-              <div class="card card-body border-0 mt-lg-0 mt-5 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
+              <div class="card card-body border-0 mt-lg-0 mt-md-5 mt-4 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
                 <?php
                 if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                  <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
+                  <div class="d-flex justify-content-between align-items-center w-100 py-md-0 mt-4 pb-3">
                     <a href="">
                       <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
                     </a>

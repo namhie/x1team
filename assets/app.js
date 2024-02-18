@@ -174,6 +174,16 @@ if (sliderSquer || sliderImageHorizont) {
   sliderImageActive('.slider__image-horizont')
 }
 
+let imageSliders = document.querySelectorAll('.image-4x3')
+  
+  imageSliders.forEach(el => {
+    if (el.classList.contains('image-one')) {
+      document.querySelector('.swiper-button-prev').style.display = "none"
+      document.querySelector('.swiper-button-next').style.display = "none"
+      document.querySelector('.slider-thumb').style.height = "0"
+      document.querySelector('.slider-thumb').style.minHeight = "0"
+    }
+  })
 
 //modals
 function sliderModals(modal) {
