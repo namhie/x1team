@@ -29,6 +29,14 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 ?>
 
+<?php
+
+$gallery_attachment_ids = $_product->get_gallery_image_ids();
+$product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+$total_count = count( $gallery_attachment_ids );
+
+?>
+
 <style>
 
   #product-title {
@@ -393,12 +401,6 @@ $_product = wc_get_product( $_GET['edit-id'] );
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
               <div class="row justify-content-center">
-                <?php
-
-                  $gallery_attachment_ids = $_product->get_gallery_image_ids();
-                  $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
-
-                ?>
                 <div class="slider ms-lg-2 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">

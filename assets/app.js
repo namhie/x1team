@@ -205,7 +205,7 @@ modalItem.forEach(modal => {
 
       sliderImagesModals.forEach(slider => {
         sliderModals(slider)
-        carousel.to(invoker.getAttribute('data-slider'))
+        carousel.to(invoker.getAttribute('data-slider') - 1)
         slider.addEventListener('slid.bs.carousel', function(e) {
 
         let currentSlide = this.querySelector('.carousel-item')
