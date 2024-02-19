@@ -184,12 +184,14 @@ let videoModals = document.querySelectorAll('.youtube')
 imageModals.forEach(el => {
   if (el.classList.contains('image-one')) {
     oneElement()
+    console.log(el)
   }
 })
 
 videoModals.forEach(el => {
   if (el.classList.contains('video-one')) {
     oneElement()
+    console.log(el)
   }
 })
 function oneElement() {
