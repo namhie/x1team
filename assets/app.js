@@ -1,4 +1,6 @@
 (()=>{"use strict";
+let telegram = document.querySelector('.wptelegram-login-output-wrap')
+console.log(telegram)
 if (document.querySelector('.slider')) {
 const sliderItem = document.querySelector('.slider')
 const sliderSquer = document.querySelector('.slider__square')
