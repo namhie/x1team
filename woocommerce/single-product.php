@@ -415,6 +415,7 @@ $total_count = count( $gallery_attachment_ids );
                     <div class="swiper-wrapper">
                       <?php
                         if ( $product_video) {
+                          if ($total_count > 1) {
                       ?>
                         <div class="swiper-slide" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?php echo $product_video; ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0">
                           <div class="youtube ratio ratio-16x9">
@@ -428,6 +429,20 @@ $total_count = count( $gallery_attachment_ids );
                           </div>
                         </div>
                         <?php
+                        } else {?>
+                          <div class="swiper-slide" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-video" data-bs-gallery="<?php echo $product_video; ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0">
+                          <div class="youtube ratio ratio-16x9 video-one h-100">
+                            <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                          <div class="overlay"></div>
+                          <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-video" data-bs-gallery="<?php echo $product_video; ?>?rel=0&amp;autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="увеличить окно просмотра" frameborder="0">
+                            <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
+                              <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <? }
                         }
                         if ( $gallery_attachment_ids) {
                           foreach ($gallery_attachment_ids as $gallery_attachment_id) {
@@ -470,6 +485,7 @@ $total_count = count( $gallery_attachment_ids );
                       <div class="swiper-wrapper">
                         <?php
                           if ( $product_video) {
+                            if ($total_count > 1) {
                         ?>
                           <div class="swiper-slide youtube ratio slide-horizontal">
                             <iframe class="iframe" width="560" height="315" src="<?php echo $product_video; ?>" title="YouTube video" frameborder="0"></iframe>
@@ -481,6 +497,10 @@ $total_count = count( $gallery_attachment_ids );
                           </div>
 
                         <?php }
+                        else { ?>
+                          <div class="swiper-slide youtube ratio slide-horizontal"></div>
+                        <?php }
+                        }
 
                           if ( $gallery_attachment_ids) {
                             foreach ($gallery_attachment_ids as $gallery_attachment_id) {
@@ -643,7 +663,7 @@ $total_count = count( $gallery_attachment_ids );
                 <?php } ?>
                 <div class="row">
                   <div class="col-lg-7 text-lable">
-                    <h1 class="mt-3 d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="mt-3 d-md-block d-none fs-1"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                     <span><?php echo get_the_excerpt() ?></span>
                     <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
@@ -1280,6 +1300,32 @@ $total_count = count( $gallery_attachment_ids );
               </div>
               <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
               <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="backdrop-video" tabindex="-1" role="dialog" aria-labelledby="backdrop-video" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content position-relative">
+          <div class="modal-header position-absolute top-0 end-0 border-0 z-3">
+            <button class="btn-close bg-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="carousel slide slider__images--modal carousel-fade h-100" id="carouselButtons-2">
+              <div class="carousel-inner">
+                <?php
+                  if ( $product_video) {
+                ?>
+                  <div class="carousel-item bg-white active">
+                    <div class="youtube ratio ratio-16x9">
+                      <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" allow="autoplay;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                <?php }?>
+              </div>
+              <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselButtons-2" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+              <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselButtons-2" data-bs-slide="next"><span class="carousel-control-next-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
             </div>
           </div>
         </div>
