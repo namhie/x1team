@@ -1,6 +1,6 @@
 (()=>{"use strict";
 let telegram = document.querySelector('.wptelegram-login-output-wrap')
-if (telegram.classList.contains('container')) {
+if (telegram && telegram.classList.contains('container')) {
   telegram.classList.remove('container')
 }
 if (document.querySelector('.slider')) {
