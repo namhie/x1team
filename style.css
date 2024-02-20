@@ -553,8 +553,7 @@ input:-webkit-autofill:focus {
   max-width: 110px;
   height: auto !important;
   border-radius: 5px;
-  /* max-height: 143px;
-  min-height: 108px; */
+  min-height: 0;
 }
 
 .slider-vertical .slider-thumb .slider-thumb__images .slider-grid .swiper-slide img {
@@ -592,9 +591,9 @@ input:-webkit-autofill:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
 }
 
 .slider-thumb__images .swiper-wrapper .swiper-slide.youtube {

@@ -35,7 +35,6 @@ function sliderThumbActive(images, thumbs) {
       speed: 600,
       grabCursor: true,
       mousewheel: true,
-      spaceBetween: 6,
       on: {
         click: function () {
           clicked = true
