@@ -3,7 +3,7 @@ let telegram = document.querySelector('.wptelegram-login-output-wrap')
 if (telegram && telegram.classList.contains('container')) {
   telegram.classList.remove('container')
 }
-if (document.querySelector('.slider')) {
+if (document.querySelectorAll('.slider')) {
 const sliderItem = document.querySelector('.slider')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
@@ -140,7 +140,7 @@ function sliderThumbActive(images, thumbs) {
 
 function masonrySlider() {
   msnrySlider = new Masonry( document.querySelector('.slider-grid'), {
-    gutter: 8,
+    gutter: 10,
     columnWidth: 110,
     percentPosition: true,
   })
