@@ -35,6 +35,7 @@ function sliderThumbActive(images, thumbs) {
       speed: 600,
       grabCursor: true,
       mousewheel: true,
+      spaceBetween: 10,
       on: {
         click: function () {
           clicked = true
@@ -102,7 +103,7 @@ function sliderThumbActive(images, thumbs) {
                 sliderItem.classList.add('slider-vertical')
                 sliderThumbs.changeDirection(getDirection())
                 sliderThumbs.wrapperEl.classList.add('slider-grid')
-                if (this.activeIndex === 0) {
+                if (sliderImages.activeIndex === 0) {
                   clicked = false
                   sliderThumbs.changeDirection(getDirection())
                   sliderItem.classList.remove('slider-vertical')
