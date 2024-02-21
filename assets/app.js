@@ -4,6 +4,7 @@ if (telegram && telegram.classList.contains('container')) {
   telegram.classList.remove('container')
 }
 if (document.querySelectorAll('.slider')) {
+  
 const sliderItem = document.querySelector('.slider')
 const sliderSquer = document.querySelector('.slider__square')
 const sliderImageHorizont = document.querySelector('.slider__image-horizont')
@@ -29,6 +30,7 @@ let urlThumb
 
 function sliderThumbActive(images, thumbs) {
   if (images && thumbs) {
+    
   sliderThumbs = new Swiper(thumbs, {
       direction: getDirection(),
       slidesPerView: 'auto',
@@ -39,9 +41,10 @@ function sliderThumbActive(images, thumbs) {
       on: {
         click: function () {
           clicked = true
+          console.log(sliderItem)
           if (mediaQuery.matches) {
+            console.log(sliderItem)
             sliderThumbs.changeDirection(getDirection())
-            console.log(sliderThumbs.changeDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
 
@@ -100,21 +103,23 @@ function sliderThumbActive(images, thumbs) {
           hideIframe()
           if (mediaQuery.matches) {
               clicked = true
-                sliderItem.classList.add('slider-vertical')
+              
+              sliderItem.classList.add('slider-vertical')
+              sliderThumbs.changeDirection(getDirection())
+              sliderThumbs.wrapperEl.classList.add('slider-grid')
+              
+              if (sliderImages.activeIndex === 0) {
+                clicked = false
                 sliderThumbs.changeDirection(getDirection())
-                sliderThumbs.wrapperEl.classList.add('slider-grid')
-                if (sliderImages.activeIndex === 0) {
-                  clicked = false
-                  sliderThumbs.changeDirection(getDirection())
-                  sliderItem.classList.remove('slider-vertical')
-                  sliderThumbs.wrapperEl.classList.remove('slider-grid')
-                  youtubes.forEach(el => el.classList.remove('ratio-16x9'))
-                }
-                if (document.querySelector('.slider-grid')) {
-                  masonrySlider()
-                } else {
-                    masonrySliderDelete()
-                }
+                sliderItem.classList.remove('slider-vertical')
+                sliderThumbs.wrapperEl.classList.remove('slider-grid')
+                youtubes.forEach(el => el.classList.remove('ratio-16x9'))
+              }
+              if (document.querySelector('.slider-grid')) {
+                masonrySlider()
+              } else {
+                masonrySliderDelete()
+              }
           } else {
             sliderThumbs.wrapperEl.classList.remove('slider-grid')
           }
