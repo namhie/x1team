@@ -401,7 +401,7 @@ $total_count = count( $gallery_attachment_ids );
             <!-- слайдер с табами изображениями - НАЧАЛО -->
             <div class="col-lg-7">
               <div class="row justify-content-center">
-                <div class="slider ms-lg-2 px-0">
+                <div class="slider ps-xl-0 ps-md-2 px-0">
                   <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php
