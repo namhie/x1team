@@ -195,6 +195,9 @@ input:-webkit-autofill:focus {
 .text-accent:hover {
   color: #2955d6;
 }
+.body .header a:hover, .body .header .breadcrumb a:hover {
+  color: var(--accent);
+}
 .wrapper {
   scrollbar-width: var(--scrollbarWidth);
   scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);

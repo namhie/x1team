@@ -107,7 +107,20 @@ function sliderThumbActive(images, thumbs) {
               sliderItem.classList.add('slider-vertical')
               sliderThumbs.changeDirection(getDirection())
               sliderThumbs.wrapperEl.classList.add('slider-grid')
-              
+              let swiperSliders = sliderImages.wrapperEl.querySelectorAll('.swiper-slide')
+              let fullSliders = sliderImages.wrapperEl.querySelectorAll('.fullscrin')
+              let i
+              for(i=0; i < fullSliders.length; i++) {
+                if (i != 0) {
+                  fullSliders[i].setAttribute('data-slider', i)
+                }
+                
+              }
+              for(i=0; i < swiperSliders.length; i++) {
+                if (i != 0) {
+                  swiperSliders[i].setAttribute('data-slider', i)
+                }
+              }
               if (sliderImages.activeIndex === 0) {
                 clicked = false
                 sliderThumbs.changeDirection(getDirection())
@@ -226,7 +239,7 @@ modalItem.forEach(modal => {
 
       sliderImagesModals.forEach(slider => {
         sliderModals(slider)
-        carousel.to(invoker.getAttribute('data-slider') - 1)
+        carousel.to(invoker.getAttribute('data-slider'))
         slider.addEventListener('slid.bs.carousel', function(e) {
 
         let currentSlide = this.querySelector('.carousel-item')
