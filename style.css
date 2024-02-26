@@ -265,7 +265,7 @@ input:-webkit-autofill:focus {
   background-color: var(--accent);
 }
 
-.breadcrumb, .breadcrumb a {
+.breadcrumb, .body .header .breadcrumb a {
   background-color: #fff;
   color: #999797;
   font-size: .9rem;
