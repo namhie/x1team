@@ -43,14 +43,26 @@ function sliderThumbActive(images, thumbs) {
           clicked = true
           console.log(sliderItem)
           if (mediaQuery.matches) {
-            console.log(sliderItem)
             sliderThumbs.changeDirection(getDirection())
             sliderItem.classList.add('slider-vertical')
             sliderThumbs.wrapperEl.classList.add('slider-grid')
+            youtubes.forEach(el => {el.classList.add('ratio-16x9')})
 
-            youtubes.forEach(el => {
-              el.classList.add('ratio-16x9')
-            })
+            let swSlImg = sliderImages.wrapperEl.querySelectorAll('img')
+            for (let i=0; i < swSlImg.length; i++) {
+              if (sliderImages.slides[i].classList.contains('swiper-slide-prev')) {
+                var width = swSlImg[i].offsetWidth;
+                var height = swSlImg[i].offsetHeight;
+                if (width > height ) {
+                  clicked = false
+                  sliderThumbs.changeDirection(getDirection())
+                  sliderItem.classList.remove('slider-vertical')
+                  sliderThumbs.wrapperEl.classList.remove('slider-grid')
+                  youtubes.forEach(el => el.classList.remove('ratio-16x9'))
+                }
+              }
+            }
+
             if (this.clickedSlide.classList.contains('ratio-16x9')) {
               clicked = false
               sliderThumbs.changeDirection(getDirection())
@@ -107,18 +119,38 @@ function sliderThumbActive(images, thumbs) {
               sliderItem.classList.add('slider-vertical')
               sliderThumbs.changeDirection(getDirection())
               sliderThumbs.wrapperEl.classList.add('slider-grid')
+
+              let swSlImg = sliderImages.wrapperEl.querySelectorAll('img')
+              for (let i=0; i < swSlImg.length; i++) {
+                if (sliderImages.slides[i].classList.contains('swiper-slide-active')) {
+                  var width = swSlImg[i].offsetWidth;
+                  var height = swSlImg[i].offsetHeight;
+                  if (width > height ) {
+                    clicked = false
+                    sliderThumbs.changeDirection(getDirection())
+                    sliderItem.classList.remove('slider-vertical')
+                    sliderThumbs.wrapperEl.classList.remove('slider-grid')
+                    youtubes.forEach(el => el.classList.remove('ratio-16x9'))
+                  }
+                }
+              }
+
               let swiperSliders = sliderImages.wrapperEl.querySelectorAll('.swiper-slide')
               let fullSliders = sliderImages.wrapperEl.querySelectorAll('.fullscrin')
               let i
               for(i=0; i < fullSliders.length; i++) {
                 if (i != 0) {
                   fullSliders[i].setAttribute('data-slider', i)
+                } else {
+                  fullSliders[i].setAttribute('data-slider', '0')
                 }
                 
               }
               for(i=0; i < swiperSliders.length; i++) {
                 if (i != 0) {
                   swiperSliders[i].setAttribute('data-slider', i)
+                } else {
+                  swiperSliders[i].setAttribute('data-slider', '0')
                 }
               }
               if (sliderImages.activeIndex === 0) {
@@ -243,8 +275,8 @@ modalItem.forEach(modal => {
         slider.addEventListener('slid.bs.carousel', function(e) {
 
         let currentSlide = this.querySelector('.carousel-item')
-          if (currentSlide && this.querySelector('.iframe')) {
-            videoIframe = this.querySelector('.iframe')
+          videoIframe = this.querySelector('.iframe')
+          if (currentSlide && videoIframe) {
             let videoURLa = videoIframe.getAttribute('src');
             if (videoURL === videoIframe.setAttribute('src', srcUrl)) {
               videoIframe.setAttribute('src', videoURLa)
