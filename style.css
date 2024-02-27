@@ -723,6 +723,10 @@ iframe {
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
   opacity: 0;
 }
+body .container {
+  padding: 0 30px;
+  max-width: 1340px;
+}
 
 .body-home {
   color: white;
@@ -919,7 +923,7 @@ details > summary:first-of-type {
 /* .by-vendor-name-link {
   display: none;
 } */
-.fade {
+body .fade {
   min-width: 100%;
   padding: 0;
 }
@@ -1056,15 +1060,10 @@ details > summary:first-of-type {
     line-height: 1;
 }
 
-.carousel-control-next, .carousel-control-prev {
+body .modal .carousel-control-next, body .modal  .carousel-control-prev {
   height: 50%;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.container {
-  padding: 0 30px;
-  max-width: 1340px;
 }
 
 @media (min-width: 1920px) {
