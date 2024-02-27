@@ -198,7 +198,7 @@ function masonrySlider() {
 }
 
 function masonrySliderDelete() {
-  msnrySlider.destroy();
+  if (msnrySlider) msnrySlider.destroy();
   // msnrySlider.destroyed();
 }
 
