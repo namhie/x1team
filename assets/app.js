@@ -197,7 +197,7 @@ if (document.querySelectorAll('.slider')) {
   }
   
   function masonrySliderDelete() {
-    msnrySlider.destroyed();
+    msnrySlider.destroy();
   }
   
   function sliderImageActive(images) {
