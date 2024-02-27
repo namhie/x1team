@@ -695,7 +695,7 @@ iframe {
   display: none;
 }
 
-.modal-body .carousel-inner {
+body .modal-body .carousel-inner {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -704,19 +704,26 @@ iframe {
   /* height: 100vh; */
 }
 
-.modal-body .carousel-inner .carousel-item {
+body .modal-body .carousel-inner .carousel-item {
   height: 100%;
   transition: none;
 }
-.modal-body .carousel-inner .youtube {
+body .modal-body .carousel-inner .youtube {
   height: 100%;
 }
 
-.modal-body .carousel-inner .ratio-16x9 {
+body .modal-body .carousel-inner .ratio-16x9 {
   --bs-aspect-ratio: 48.25%;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+body .modal-dialog {
+  max-width: 100%;
+}
+
+body .modal .carousel-control-next, body .modal  .carousel-control-prev {
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
   background-size: 70%;
 }
 
@@ -1058,12 +1065,6 @@ body .fade {
     min-width: 190px;
     text-align: center;
     line-height: 1;
-}
-
-body .modal .carousel-control-next, body .modal  .carousel-control-prev {
-  height: 50%;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 @media (min-width: 1920px) {
