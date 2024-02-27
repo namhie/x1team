@@ -1134,6 +1134,7 @@ body .fade {
     height: 100%;
     width: auto;
     margin: 0 auto;
+    max-height: none;
   }
 
   .slider-vertical .slider__images {
