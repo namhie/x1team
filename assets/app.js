@@ -155,7 +155,11 @@ if (document.querySelectorAll('.slider')) {
                 }
                 
                 if (sliderImages.activeIndex === 0) {
-                  slidesHorizont(get)
+                  clicked = false
+                  sliderThumbs.changeDirection(getDirection())
+                  sliderItem.classList.remove('slider-vertical')
+                  sliderThumbs.wrapperEl.classList.remove('slider-grid')
+                  youtubes.forEach(el => el.classList.remove('ratio-16x9'))
                 }
                 if (document.querySelector('.slider-grid')) {
                   masonrySlider()
@@ -174,7 +178,6 @@ if (document.querySelectorAll('.slider')) {
           0: {
             direction: 'horizontal',
             autoHeight: true,
-            // mousewheel: true,
             keyboard: true,
             allowSlidePrev: true,
             allowSlideNext: true
