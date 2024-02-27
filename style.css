@@ -724,11 +724,6 @@ iframe {
   opacity: 0;
 }
 
-.container {
-  padding: 0 30px;
-  max-width: 1340px;
-}
-
 .body-home {
   color: white;
 }
@@ -1065,6 +1060,11 @@ details > summary:first-of-type {
   height: 50%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.container {
+  padding: 0 30px;
+  max-width: 1340px;
 }
 
 @media (min-width: 1920px) {
