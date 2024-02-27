@@ -661,6 +661,10 @@ iframe {
   width: 100%;
 }
 
+.slider__images.slider__images-cotalog.swiper-horizontal img {
+  max-height: 413px;
+}
+
 .fullscrin {
   position: absolute;
   top: 0;
