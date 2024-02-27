@@ -96,11 +96,6 @@ function sliderThumbActive(images, thumbs) {
       }
     })
 
-    function getDirection() {
-      let direction = clicked ? 'vertical' : 'horizontal'
-      return direction
-    }
-
     const sliderImages = new Swiper(images, {
       direction: 'horizontal',
       slidesPerView: 1,
@@ -187,6 +182,11 @@ function sliderThumbActive(images, thumbs) {
     })
 
   }
+}
+
+function getDirection() {
+  let direction = clicked ? 'vertical' : 'horizontal'
+  return direction
 }
 
 function masonrySlider() {
