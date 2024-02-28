@@ -838,8 +838,9 @@ details > summary:first-of-type {
   height: 100px;
 }
 
-.form-control {
+.body .form-control {
   background-color: transparent;
+  border-radius: 0;
 }
 
 .form-control:focus, .woocommerce-cart .coupon input:focus, .woocommerce form .form-row textarea:focus, .woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row .form-row textarea:focus, .woocommerce .qty:focus {
