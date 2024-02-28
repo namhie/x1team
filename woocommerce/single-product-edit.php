@@ -492,37 +492,19 @@ $total_count = count( $gallery_attachment_ids );
             </div>
             <div class="col-lg-5">
               <div class="card card-body border-0 mt-lg-0 mt-5 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
-                <!-- <div class="d-flex justify-content-end align-items-end mb-0 mt-0"> -->
-                  <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
-                    <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                      <div class="d-flex"></div>
-                      <button class="d-block btn-close me-2 mt-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>
-                      <div class="toast-body">
-                        <div class="list-group" id="scollspy">
-                          <a class="btn btn-outline-secondary mb-2" href="/edit-product/?edit-id=<?php echo $_product->get_id(); ?>" role="button">Редактировать</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Администраторы</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Пригласить</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a>
+                  <?php
+                    if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
+                      <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
+                        <a href="">
+                          <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
+                        </a>
+                        <div>
+                          <button type="button" class="btn btn-accent my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                          <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-accent">Назад</a>
                         </div>
                       </div>
-                    </div>
-                  </div> -->
-                  <?php
-
-
-                  if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
-                      <a href="">
-                        <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
-                      </a>
-                      <div>
-                        <button type="button" class="btn btn-accent my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
-                        <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-accent">Назад</a>
-                      </div>
-                    </div>
                   <?php } ?>
-                <!-- </div> -->
+    
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
                     <div class="mt-3">
@@ -690,7 +672,9 @@ $total_count = count( $gallery_attachment_ids );
               <div class="description card card-body border-0 px-0">
                 <div class="row">
                   <div class="col">
-                    <h2 class="block-title text-nowrap">Описание</h2>
+                    <h2 class="block-title text-nowrap fs-3">Короткое описание</h2>
+                    <textarea name="product-description" id="product-description" style="width:100%; min-height: 100px " > <?php echo $_product->get_description() ?> </textarea>
+                    <h2 class="block-title text-nowrap fs-3">Полное писание</h2>
                     <textarea name="product-description" id="product-description" style="width:100%; min-height: 300px " > <?php echo $_product->get_description() ?> </textarea>
 
                   </div>
