@@ -671,7 +671,7 @@ $total_count = count( $gallery_attachment_ids );
             <div class="col-12 ">
               <div class="description card card-body border-0 px-0">
                 <div class="row">
-                  <div class="col">
+                  <div class="col px-md-0">
                     <div class="mb-5 short-desc">
                       <h2 class="block-title text-nowrap fs-4">Краткое описание</h2>
                       <textarea name="product-description" id="product-description" style="width:100%; min-height: 100px; border: 1px solid #ccc;" > <?php echo $_product->get_description() ?> </textarea>
