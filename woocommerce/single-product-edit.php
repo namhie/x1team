@@ -675,7 +675,7 @@ $total_count = count( $gallery_attachment_ids );
                       <h2 class="block-title text-nowrap fs-4">Краткое описание</h2>
                       <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
                     </div>
-                    <div class="lonk-desc">
+                    <div class="long-desc">
                       <h2 class="block-title text-nowrap fs-4">Полное писание</h2>
                       <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
                     </div>

@@ -853,11 +853,15 @@ details > summary:first-of-type {
   position: relative;
 }
 
-.short-desc textarea {
+.short-desc textarea, .long-desc textarea {
   width:100%; 
-  min-height: 300px; 
+  min-height: 100px; 
   border: 1px solid #ccc; 
   padding: 4px 10px;
+}
+
+.long-desc textarea {
+  min-height: 300px; 
 }
 
 .filter-check {
