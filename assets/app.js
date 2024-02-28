@@ -292,7 +292,7 @@ modalItem.forEach(modal => {
       hideIframe()
     })
     modal.addEventListener('hidden.bs.modal', function(e) {
-      if (this.this.querySelector('.iframe')) {
+      if (this.querySelector('.iframe')) {
         iframeUrl = this.querySelector('.iframe')
         iframeUrl.setAttribute('src', videoURL)
       }
