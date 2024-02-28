@@ -544,7 +544,7 @@ $total_count = count( $gallery_attachment_ids );
                 <?php } ?>
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <h1 class="d-md-block d-none fs-3"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="d-md-block d-none fs-2"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                       <span>
                         <?php echo get_the_excerpt() ?>
@@ -662,7 +662,7 @@ $total_count = count( $gallery_attachment_ids );
                 <?php } ?>
                 <div class="row">
                   <div class="col-lg-7 text-lable">
-                    <h1 class="mt-3 d-md-block d-none fs-1"><?php echo $_product->get_name() ?></h1>
+                    <h1 class="mt-3 d-md-block d-none fs-2"><?php echo $_product->get_name() ?></h1>
                     <div class="mb-3"></div>
                     <span><?php echo get_the_excerpt() ?></span>
                     <!-- <a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample">
@@ -761,7 +761,7 @@ $total_count = count( $gallery_attachment_ids );
               <div class="description card card-body border-0 px-0">
                 <div class="row">
                   <div class="col">
-                    <h2 class="block-title text-nowrap">Описание</h2>
+                    <h2 class="block-title text-nowrap fs-3">Описание</h2>
                     <?php the_content() ?>
                   </div>
                   <div class="col d-none">
@@ -1242,14 +1242,7 @@ $total_count = count( $gallery_attachment_ids );
                     </div>
                 <?php }
                   }
-			            if (!$product_video && $gallery_attachment_ids) {
-                    foreach ($gallery_attachment_ids as $gallery_attachment_id) {
-                    ?>
-                    <div class="carousel-item d-flex justify-content-center align-items-center bg-white active">
-                      <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
-                    </div>
-                    <?php }
-                  }
+			            
 
                 ?>
               </div>
