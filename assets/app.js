@@ -263,11 +263,12 @@ function sliderModals(modal) {
 
 modalItem.forEach(modal => {
     modal.addEventListener('show.bs.modal', function (e) {
-      videoIframe = this.querySelector('.iframe')
-      videoURL = videoIframe.getAttribute('src')
-      srcUrl = videoURL+srcModal
-      videoIframe.setAttribute('src', srcUrl)
-
+      if (this.querySelector('.iframe')) {
+        videoIframe = this.querySelector('.iframe')
+        videoURL = videoIframe.getAttribute('src')
+        srcUrl = videoURL+srcModal
+        videoIframe.setAttribute('src', srcUrl)
+      }
       let invoker = e.relatedTarget
       sliderImagesModals.forEach(el => {
         sliderModals(el)
@@ -275,7 +276,7 @@ modalItem.forEach(modal => {
         el.addEventListener('slid.bs.carousel', function(e) {
          
           let currentSlide = this.querySelector('.carousel-item')
-          videoIframe = this.querySelector('.iframe')
+          // videoIframe = this.querySelector('.iframe')
           if (currentSlide && videoIframe) {
             let videoURLa = videoIframe.getAttribute('src');
             if (videoURL === videoIframe.setAttribute('src', srcUrl)) {
