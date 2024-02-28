@@ -673,11 +673,11 @@ $total_count = count( $gallery_attachment_ids );
                   <div class="col px-xxl-2 px-md-0">
                     <div class="mb-5 short-desc">
                       <h2 class="block-title text-nowrap fs-4">Краткое описание</h2>
-                      <textarea name="product-description" id="product-description" style="width:100%; min-height: 100px; border: 1px solid #ccc;" > <?php echo $_product->get_description() ?> </textarea>
+                      <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
                     </div>
                     <div class="lonk-desc">
                       <h2 class="block-title text-nowrap fs-4">Полное писание</h2>
-                      <textarea name="product-description" id="product-description" style="width:100%; min-height: 300px; border: 1px solid #ccc; " > <?php echo $_product->get_description() ?> </textarea>
+                      <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
                     </div>
                   </div>
                   <div class="col d-none">

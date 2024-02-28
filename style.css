@@ -853,6 +853,13 @@ details > summary:first-of-type {
   position: relative;
 }
 
+.short-desc textarea {
+  width:100%; 
+  min-height: 300px; 
+  border: 1px solid #ccc; 
+  padding: 4px 10px;
+}
+
 .filter-check {
   -webkit-box-shadow: none;
           box-shadow: none;
