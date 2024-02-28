@@ -275,7 +275,7 @@ modalItem.forEach(modal => {
         carousel.to(invoker.getAttribute('data-slider')) 
         el.addEventListener('slid.bs.carousel', function(e) {
          
-          let currentSlide = this.querySelector('.carousel-item')
+          let currentSlide = this.querySelector('.carousel-item.active')
           // videoIframe = this.querySelector('.iframe')
           if (currentSlide && videoIframe) {
             let videoURLa = videoIframe.getAttribute('src');
