@@ -1240,9 +1240,7 @@ $total_count = count( $gallery_attachment_ids );
                     <div class="carousel-item d-flex justify-content-center align-items-center bg-white">
                       <div class="image-4x3"><img class="img-fluid py-md-3" src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="..."></div>
                     </div>
-                <?php }
-                  }
-
+                <?php }}
                 ?>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons-1" data-bs-slide="prev"><span class="carousel-control-prev-icon text-bg-dark rounded" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
