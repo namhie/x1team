@@ -357,6 +357,10 @@ input:-webkit-autofill:focus {
   left: 197px!important;
 }
 
+.pch-menu-link {
+  margin-right: 4rem;
+}
+
 .pch-chat-top {
   margin-bottom: 10px;
   margin-right: 40px;
