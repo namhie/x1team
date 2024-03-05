@@ -347,6 +347,10 @@ input:-webkit-autofill:focus {
   padding-bottom: 0;
 }
 
+#groupMenu {
+  top: 60px;
+}
+
 .body .filter {
   position: absolute;
   left: 0px;
@@ -354,7 +358,7 @@ input:-webkit-autofill:focus {
 }
 
 .body .more-list {
-  left: 197px!important;
+  right: 0;
 }
 
 .pch-menu-link {
