@@ -173,12 +173,22 @@ input:-webkit-autofill:focus {
   --bs-breadcrumb-divider: url("../img/svg/arrow-right.svg");
 }
 
-.btn.btn-accent {
+.btn.btn-outline-accent {
   background-color: none;
   border-color: var(--accent);
   color: var(--accent);
 }
-.btn-accent:hover {
+.btn.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.btn.btn-accent:hover {
+  background-color: none;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn.btn-outline-accent:hover {
   background-color: var(--accent);
   border-color: var(--accent);
   color: white;
@@ -269,11 +279,96 @@ input:-webkit-autofill:focus {
   background-color: #fff;
   color: #999797;
   font-size: .9rem;
+  line-height: 27px;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
   height: 27px;
   line-height: 30px;
+}
+
+/* Стили для кнопки */
+.btn-registration {
+  background-color: #ffffff;
+  color: #000000;
+}
+/* Стили для чата */
+.body .pch-burger-icon {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  opacity: 1;
+  width: 48px!important;
+  height: 62px!important;
+}
+
+.pch-burger-icon.active .pch-bar-active {
+  opacity: 0;
+}
+
+.pch-burger-icon .pch-bar-close {
+  opacity: 0;
+}
+
+.pch-burger-icon.active .pch-bar-close {
+  position: absolute;
+  left: 1.2rem;
+  top: 0rem;
+  color: var(--dark);
+  opacity: .7;
+}
+
+.pch-burger-icon.active .pch-bar-close:hover {
+  opacity: 1;
+}
+
+.pch-vertical-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.body .pch-popup-menu {
+  position: absolute;
+}
+
+.body .pch-popup-menu.active {
+  right: 15px;
+  box-shadow: none;
+}
+
+.pch-container {
+  box-shadow: 0 0px 5px 0px var(--accent);
+  min-height: 140px;
+}
+
+#pch-wrapper {
+  margin-left: 230px;
+  padding-bottom: 0;
+}
+
+.body .filter {
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.body .more-list {
+  left: 197px!important;
+}
+
+.pch-chat-top {
+  margin-bottom: 18px;
+  margin-right: 40px;
+}
+
+.pch-chat-top .h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.pch-text-field__icon {
+  border-top: 1px solid #ccc;
 }
 
 .swiper {

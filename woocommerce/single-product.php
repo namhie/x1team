@@ -522,8 +522,8 @@ $total_count = count( $gallery_attachment_ids );
                 </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="card card-body border-0 mt-lg-0 mt-md-5 mt-4 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
+            <div class="col-lg-5 my-auto">
+              <div class="card card-body border-0 mt-lg-0 mt-md-5 mt-4 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0">
                 <?php
                 if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
                   <div class="d-flex justify-content-between align-items-center w-100 py-md-0 mt-lg-0 mt-4 pb-3">
@@ -758,9 +758,9 @@ $total_count = count( $gallery_attachment_ids );
               }
             ?>
             <div class="col-12 ">
-              <div class="description card card-body border-0 px-0">
+              <div class="description card card-body border-0 px-md-0">
                 <div class="row">
-                  <div class="col">
+                  <div class="col px-0">
                     <h2 class="block-title text-nowrap fs-3">Описание</h2>
                     <?php the_content() ?>
                   </div>
@@ -779,8 +779,13 @@ $total_count = count( $gallery_attachment_ids );
                       ?>
                     </ul><a class="d-block delivery py-2" href="" role="button">Доставка и оплата</a><a class="d-block conditions py-2" href="" role="button">Условия продажи</a>
                   </div>
-                  <div class="col-12">
-                    <?php echo do_shortcode('[pch_group]'); ?>
+                  <div class="col-12 px-0">
+                    <h2 class="pt-4 pb-2 fs-3 fw-medium">Чат</h2>
+                  </div>
+                  <div class="col-12 position-relative px-0">
+                    <div class="pch-container pt-2">
+                      <?php echo do_shortcode('[pch_group]'); ?>
+                    </div>
                   </div>
                 </div>
               </div>
