@@ -371,6 +371,7 @@ input:-webkit-autofill:focus {
 }
 
 .pch-chat-top .h1 {
+  margin-bottom: 3px;
   font-weight: 700;
   font-size: 1.25rem;
 }
@@ -892,6 +893,11 @@ body .modal .carousel-control-next, body .modal  .carousel-control-prev {
 
 .body-home .nav-link {
   color: white;
+}
+
+.body-home a:hover, .body-home .nav-link:hover {
+  color: inherit;
+  opacity: .7;
 }
 
 .body-hove .navbar {

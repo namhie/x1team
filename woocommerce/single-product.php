@@ -783,7 +783,7 @@ $total_count = count( $gallery_attachment_ids );
                     <h2 class="pt-4 pb-2 fs-3 fw-medium">Чат</h2>
                   </div>
                   <div class="col-12 position-relative px-0">
-                    <div class="pch-container pt-4">
+                    <div class="pch-container pt-2">
                       <?php echo do_shortcode('[pch_group]'); ?>
                     </div>
                   </div>
