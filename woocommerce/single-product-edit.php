@@ -29,6 +29,14 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 ?>
 
+<?php
+
+$gallery_attachment_ids = $_product->get_gallery_image_ids();
+$product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
+$total_count = count( $gallery_attachment_ids );
+
+?>
+
 <style>
 
   #product-title {
@@ -46,77 +54,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
 
 </style>
-    <main class="main">
-      <div class="container-sm container-fluid">
+    <main class="main pb-5">
+      <div class="container-sm container-fluid mb-5">
           <div class="row h-100">
-            <h2 class="mt-3 d-md-none d-block"><?php echo $_product->get_name() ?></h2>
-            <!-- без слайдера - НАЧАЛО -->
-              <!--<div class="col">-->
-              <!--  <div class="d-flex justify-content-end align-items-end mb-3 mt-xl-0 mt-4">-->
-              <!--    <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">-->
-              <!--      <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">-->
-              <!--        <div class="d-flex"></div>-->
-              <!--        <button class="d-block btn-close me-2 mt-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>-->
-              <!--        <div class="toast-body"> -->
-              <!--          <div class="list-group" id="scollspy"><a class="btn btn-outline-secondary mb-2" href="#" role="button">Редактировать</a><a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a><a class="btn btn-outline-secondary mb-2" href="#" role="button">Администраторы</a><a class="btn btn-outline-secondary mb-2" href="#" role="button">Пригласить</a><a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a></div>-->
-              <!--        </div>-->
-              <!--      </div>-->
-              <!--    </div>-->
-              <!--    <div class="d-flex justify-content-between align-items-center w-100 pt-lg-0 pt-md-4 pt-2"><a href=""> <span class="text-primary fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success me-2">Редактировать</span>-->
-              <!--        <div class="d-inline-block" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">-->
-              <!--          <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>-->
-              <!--            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>-->
-              <!--          </svg>-->
-              <!--        </div></span></div>-->
-              <!--  </div>-->
-              <!--  <div class="row">-->
-              <!--    <div class="col text-lable">-->
-              <!--      <nav class="d-lg-block d-none" aria-label="breadcrumb">-->
-              <!--        <ol class="breadcrumb">-->
-              <!--          <li class="breadcrumb-item"> <a href="#">Главная</a></li>-->
-              <!--          <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>-->
-              <!--          <li class="breadcrumb-item active" aria-current="page">Услуги</li>-->
-              <!--        </ol>-->
-              <!--      </nav>-->
-              <!--      <h2 class="mt-3 d-md-block d-none">Как установить Minecraft TLauncher</h2>-->
-              <!--      <div class="mb-3"></div><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do&#160;eiusmod tempor incididunt ut&#160;labore et&#160;dolore magna aliqua. Ut&#160;enim ad&#160;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&#160;aliquip ex&#160;ea&#160;commodo consequat. Duis aute irure dolor in&#160;reprehenderit in&#160;voluptate velit esse... </span><a role="button" href="" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="collapseExample"><span class="link-primary link-offset-2 text-decoration-underline link-underline-opacity-25 link-underline-opacity-100-hover text-nowrap">Читать далее</span></a>-->
-              <!--      <div class="collapse" id="more">-->
-              <!--        <p>(Краткое описание 105 символов максимально, закголовок 56 символов максимально)</p>-->
-              <!--        <p>Итого все объявление макс 161 символ как в&#160;директе. Заголовок + краткое.</p>-->
-              <!--      </div>-->
-              <!--    </div>-->
-              <!--    <div class="col">-->
-              <!--      <div class="card card-body shadow bg-body-tertiary rounded pt-xxl-5 p-3">-->
-              <!--        <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">-->
-              <!--          <h4 class="text-danger text-nowrap m-0">1234 руб</h4><span class="text-decoration-line-through ps-3">2500 руб</span>-->
-              <!--        </div>-->
-              <!--        <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">-->
-              <!--          <div class="count d-flex flex-md-wrap flex-nowrap">-->
-              <!--            <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}"><span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>-->
-              <!--              <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>-->
-              <!--            </div>-->
-              <!--            <div class="btn-block"><a class="btn btn-primary btn-lg" href="#collapseCart" data-bs-toggle="collapse">-->
-              <!--                <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>-->
-              <!--                </svg><span>в корзину</span></a></div>-->
-              <!--          </div>-->
-              <!--          <div class="soc-button d-flex flex-nowrap gap-2"><a class="btn btn-outline-primary btn-lg" href=""> -->
-              <!--              <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"> </path>-->
-              <!--              </svg></a><a class="btn btn-outline-success btn-lg" href=""> -->
-              <!--              <svg class="bi bi-whatsapp" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>-->
-              <!--              </svg></a><a class="btn btn-outline-secondary btn-lg" href=""> -->
-              <!--              <svg class="bi bi-subtract" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"></path>-->
-              <!--              </svg></a></div>-->
-              <!--        </div>-->
-              <!--      </div>-->
-              <!--    </div>-->
-              <!--  </div>-->
-              <!--</div>-->
-            <!-- без слайдера - КОНЕЦ-->
 
             <!-- одинарный слайдер с горизотнальными изображениями - НАЧАЛО -->
               <!--<div class="col-xl-7">-->
@@ -232,7 +172,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--        </div>-->
               <!--      </div>-->
               <!--    </div>-->
-              <!--    <div class="d-flex justify-content-between align-items-center w-100 pt-lg-0 pt-md-4 pt-2"><a href=""> <span class="text-primary fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success me-2">Редактировать</span>-->
+              <!--    <div class="d-flex justify-content-between align-items-center w-100 pt-lg-0 pt-md-4 pt-2"><a href=""> <span class="text-accent fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success me-2">Редактировать</span>-->
               <!--        <div class="d-inline-block" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">-->
               <!--          <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">-->
               <!--            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>-->
@@ -266,10 +206,10 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--            <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}"><span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>-->
               <!--              <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>-->
               <!--            </div>-->
-              <!--            <div class="btn-block"><a class="btn btn-primary btn-lg" href="#collapseCart" data-bs-toggle="collapse">-->
-              <!--                <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>-->
-              <!--                </svg><span>в корзину</span></a></div>-->
+              <!--            <div class="btn-block"><a class="btn btn-outline-accent btn-lg" href="#collapseCart" data-bs-toggle="collapse">-->
+              <!--                <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
+                                  </svg><span>в корзину</span></a></div>-->
               <!--          </div>-->
               <!--          <div class="soc-button d-flex flex-nowrap gap-2"><a class="btn btn-outline-primary btn-lg" href=""> -->
               <!--              <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
@@ -402,7 +342,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--        </div>-->
               <!--      </div>-->
               <!--    </div>-->
-              <!--    <div class="d-flex justify-content-between align-items-center w-100 pt-lg-0 pt-4"><a href=""> <span class="text-primary fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success me-2">Редактировать</span>-->
+              <!--    <div class="d-flex justify-content-between align-items-center w-100 pt-lg-0 pt-4"><a href=""> <span class="text-accent fw-bold d-lg-none d-block">Услуги</span></a><span><span class="text-success me-2">Редактировать</span>-->
               <!--        <div class="d-inline-block" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">-->
               <!--          <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">-->
               <!--            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>-->
@@ -436,10 +376,10 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--            <div class="count-content collapse pe-2" id="collapseCart" data-bs-delay="{&quot;show&quot;:0,&quot;hide&quot;:150}"><span class="change minus min d-flex justify-content-center align-items-center"><span>-</span></span>-->
               <!--              <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>-->
               <!--            </div>-->
-              <!--            <div class="btn-block"><a class="btn btn-primary btn-lg" href="#collapseCart" data-bs-toggle="collapse">-->
-              <!--                <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
-              <!--                  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>-->
-              <!--                </svg><span>в корзину</span></a></div>-->
+              <!--            <div class="btn-block"><a class="btn btn-outline-accent btn-lg" href="#collapseCart" data-bs-toggle="collapse">-->
+              <!--                <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
+                                  </svg><span>в корзину</span></a></div>-->
               <!--          </div>-->
               <!--          <div class="soc-button d-flex flex-nowrap gap-2"><a class="btn btn-outline-primary btn-lg" href=""> -->
               <!--              <svg class="bi bi-telegram" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">-->
@@ -457,27 +397,20 @@ $_product = wc_get_product( $_GET['edit-id'] );
               <!--  </div>-->
               <!--</div>-->
             <!-- одинарный слайдер с квадратными изображениями - КОНЕЦ -->
-
+            
             <!-- слайдер с табами изображениями - НАЧАЛО -->
-            <div class="col-xxl-7 col-lg-6">
-              <div class="row justify-content-center h-100">
-                <?php
-
-                  $gallery_attachment_ids = $_product->get_gallery_image_ids();
-                  $product_video = get_post_meta( $_product->get_id(), 'product_link_video', true );
-
-                ?>
-                <div class="slider pe-xl-3 px-0">
-                  <div class="swiper slider__images slider__images--main">
+            <div class="col-lg-7">
+              <div class="row justify-content-center">
+                <div class="slider ps-xl-0 px-0">
+                  <div class="swiper slider__images slider__images--main slider__images-cotalog">
                     <div class="swiper-wrapper">
                       <?php
                         if ( $product_video) {
                       ?>
                         <div class="swiper-slide" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?php echo $product_video; ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0">
-                          <div class="youtube ratio ratio-16x9">
+                          <div class="youtube ratio ratio-16x9 h-100">
                             <iframe class="iframe object-fit-cover" src="<?php echo $product_video; ?>" frameborder="0" allowfullscreen></iframe>
                           </div>
-                          <div class="overlay"></div>
                           <div class="fullscrin" data-slider="1" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?php echo $product_video; ?>?rel=0&amp;autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="увеличить окно просмотра" frameborder="0">
                             <svg class="bi bi-aspect-ratio bg-opacity-75 text-bg-secondary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                               <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
@@ -489,6 +422,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
                         }
                         if ( $gallery_attachment_ids) {
                           foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                            if ($total_count > 1) {
                             ?>
                             <div class="swiper-slide" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
                               <div class="image-4x3"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image"><div class="fullscrin" data-slider="3" data-bs-toggle="modal" data-bs-target="#backdrop-1" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" title="увеличить окно просмотра">
@@ -499,35 +433,52 @@ $_product = wc_get_product( $_GET['edit-id'] );
                               </div></div>
                             </div>
                             <?php
+                          } else {
+                            ?>
+                            <div class="swiper-slide" data-slider="2" data-bs-gallery="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>">
+                              <div class="image-4x3 image-one">
+                                <img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'full' ); ?>" alt="image">
+                              </div>
+                            </div>
+                         <?php 
                           }
-                        }
-
+                        }}
 
                       ?>
                     </div>
                     <div class="swiper-button-prev text-white rounded"> </div>
                     <div class="swiper-button-next text-white rounded"></div>
                   </div>
-                  <div class="slider-thumb d-flex px-lg-0 px-2">
+                  <div class="slider-thumb d-flex px-md-0 px-2 mt-lg-0 mt-1">
                     <div class="swiper slider-thumb__images slider-thumb__images--main" thumbsSlider="" style="--swiper-navigation-color:#000;--swiper-pagination-color:#000">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide youtube ratio slide-horizontal">
-                          <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
-                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
-                            <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
-                          </video>
-                          <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
-                        </div>
+                      <?php
+                          if ( $product_video) {
+                        ?>
+                          <div class="swiper-slide youtube ratio slide-horizontal">
+                            <iframe class="iframe" width="560" height="315" src="<?php echo $product_video; ?>" title="YouTube video" frameborder="0"></iframe>
+                            <!-- <video class="iframe object-fit-cover" autoplay muted loop poster="<?= get_stylesheet_directory_uri(); ?>/img/video-thumb.png">
+                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.webm" type="video/webm">
+                              <source src="<?= get_stylesheet_directory_uri(); ?>/assets/video-thumb.mp4" type="video/mp4">
+                            </video> -->
+                            <!-- <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/WAl60Fn--SQ?si=fDU1jMa6qKpuCmjg" title="YouTube video" frameborder="0"></iframe> -->
+                          </div>
 
-                        <?php
+                        <?php }
 
                             if ( $gallery_attachment_ids) {
                               foreach ($gallery_attachment_ids as $gallery_attachment_id) {
+                                if ($total_count > 1) {
                                 ?>
                                   <div class="swiper-slide swiper-item"><img src="<?= wp_get_attachment_url( $gallery_attachment_id, 'thumb' ); ?>" alt="thumb"></div>
 
                                 <?php
-                              }
+                              } else {  
+                                ?>
+                                  <div class="swiper-slide swiper-item"></div>
+                                  
+                                <?php
+                              }}
                             }
 
 
@@ -538,63 +489,27 @@ $_product = wc_get_product( $_GET['edit-id'] );
                 </div>
               </div>
             </div>
-            <div class="col-xxl-5 col-lg-6">
-              <div class="card card-body shadow bg-body-tertiary rounded p-3 pb-0 h-100">
-                <div class="d-flex justify-content-end align-items-end mb-0 mt-0">
-                  <div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3">
-                    <div class="toast position-sticky top-2" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                      <div class="d-flex"></div>
-                      <button class="d-block btn-close me-2 mt-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>
-                      <div class="toast-body">
-                        <div class="list-group" id="scollspy">
-                          <a class="btn btn-outline-secondary mb-2" href="/edit-product/?edit-id=<?php echo $_product->get_id(); ?>" role="button">Редактировать</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Опубликовать</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Администраторы</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Пригласить</a>
-                          <a class="btn btn-outline-secondary mb-2" href="#" role="button">Подписчики</a>
+            <div class="col-lg-5">
+              <div class="card card-body border-0 mt-lg-0 mt-5 pt-lg-0 pt-md-5 py-0 px-lg-3 px-0 h-100">
+                  <?php
+                    if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
+                      <div class="d-flex justify-content-between align-items-center w-100 py-md-0 pt-4 pb-3">
+                        <a href="">
+                          <span class="text-accent fw-bold d-lg-none d-block">Услуги</span>
+                        </a>
+                        <div>
+                          <button type="button" class="btn btn-outline-accent my-3" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
+                          <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-outline-accent">Назад</a>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <?php
-
-
-                  if( current_user_can('edit_pages') || current_user_can('yith_vendor')) { ?>
-                    <!-- <div class="d-flex justify-content-between align-items-center w-100 pt-md-0 pt-4 pb-3">
-                      <a href="">
-                        <span class="text-primary fw-bold d-lg-none d-block">Услуги</span>
-                      </a>
-                      <span>
-                        <span class="text-success badge fw-normal me-0">Редактировать</span>
-                        <div class="d-inline-block align-middle" id="liveToastBtn" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Редактировать">
-                          <svg class="bi bi-pencil-square text-success" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
-                          </svg>
-                        </div>
-                      </span>
-                    </div> -->
                   <?php } ?>
-                </div>
+    
                 <div class="row my-auto">
                   <div class="col-12 text-lable">
-                    <nav class="d-lg-block d-none" aria-label="breadcrumb">
-                      <style>
-                         .wc-breadcrumb .breadcrumb-item:first-child a::before {
-                          display: none;
-                         }
-                      </style>
-                      <?php  // woocommerce_breadcrumb(['home'=>'Главная'])?>
-                      <!-- <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="#">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="#">Мои объявления</a></li>
-                        <li class="breadcrumb-item"><a href="#">Услуги</a></li>
-                      </ol> -->
-                    </nav>
-                    <h1 class="mt-3 d-md-block d-none fs-md-1">
-                      <input type="text" name="product-title" id="product-title" value="<?php echo $_product->get_name() ?>">
+                    <div class="mt-3">
+                      <input type="text" name="product-title" class="form-control" id="product-title" value="<?php echo $_product->get_name() ?>">
 
-                    </h1>
+                    </div>
                     <div class="mb-3"></div>
                       <span>
                         <?php // echo get_the_excerpt() ?>
@@ -608,14 +523,16 @@ $_product = wc_get_product( $_GET['edit-id'] );
                     </div>
                   </div>
                   <div class="col">
-                    <div class="d-flex justify-content-xl-start justify-content-md-center justify-content-start align-items-end mt-4 mb-3">
-                      <h4 class="text-danger text-nowrap m-0">
-                        <input type="text" name="product-price" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <?php echo get_woocommerce_currency_symbol()?>
-                      </h4>
-                      <input type="text" name="product-regular-price" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <?php echo get_woocommerce_currency_symbol()?>
+                    <div class="d-flex justify-content-xl-start justify-content-lg-center justify-content-start align-items-end gap-2 mt-2 mb-3">
+                      <div class="text-danger text-nowrap m-0">
+                        <input type="text" name="product-price" class="form-control" id="product-price" value="<?php echo $_product->get_price() ?>" placeholder="Укажите цену"> <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
+                      </div>
+                      <div>
+                        <input type="text" name="product-regular-price" class="form-control" id="product-regular-price" value="<?php echo $_product->get_regular_price() ?>" placeholder="Укажите цену без скидки" > <span class="fs-4"><?php echo get_woocommerce_currency_symbol()?></span>
+                      </div>
                     </div>
                     <div class="">
-                      Категории
+                      <strong>Категории</strong>
                       <?php
 
 
@@ -704,8 +621,7 @@ $_product = wc_get_product( $_GET['edit-id'] );
 
                       ?>
                     </div>
-                    <button type="button" class="btn btn-primary" id="updateVendorProduct" data-post_id="<?php echo $_product->get_ID() ?>">Сохранить</button>
-                    <a href="<?php echo get_post_permalink( $_product->get_ID() ); ?>" class="btn btn-primary">Назад</a>
+                    
                     <!--
                     <div class="soc-link d-flex align-items-center justify-content-xl-start justify-content-center flex-wrap gap-2 py-3">
                       <div class="count d-flex flex-md-wrap flex-nowrap">
@@ -715,13 +631,13 @@ $_product = wc_get_product( $_GET['edit-id'] );
                         </div>
                         <div class="btn-block">
                           <div class="add-to-cart-container mt-auto">
-                            <a href="?add-to-cart=<?php echo $_product->get_id() ?>" data-quantity="1" class="product_type_simple add_to_cart_button ajax_add_to_cart btn btn-primary btn-lg" data-product_id="<?php echo $_product->get_id() ?>" data-product_sku="<?php echo $_product->get_sku() ?>" aria-label="Add to cart: “bS Isotope”" aria-describedby="" rel="nofollow" product-title="bS Isotope">
+                            <a href="?add-to-cart=<?php echo $_product->get_id() ?>" data-quantity="1" class="product_type_simple add_to_cart_button ajax_add_to_cart btn btn-outline-accent btn-lg" data-product_id="<?php echo $_product->get_id() ?>" data-product_sku="<?php echo $_product->get_sku() ?>" aria-label="Add to cart: “bS Isotope”" aria-describedby="" rel="nofollow" product-title="bS Isotope">
 
                               <div class="btn-loader">
                                 <span class="spinner-border spinner-border-sm"></span>
                               </div>
-                              <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+                              <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
                               </svg>
                               в корзину
                             </a>
@@ -750,14 +666,19 @@ $_product = wc_get_product( $_GET['edit-id'] );
               </div>
             </div>
             <!-- слайдер с табами изображениями -  КОНЕЦ -->
-
+            
             <div class="col-12 ">
-              <div class="description card card-body shadow bg-body-tertiary rounded">
+              <div class="description card card-body border-0 px-0">
                 <div class="row">
-                  <div class="col">
-                    <h2 class="block-title text-nowrap">Описание</h2>
-                    <textarea name="product-description" id="product-description" style="width:100%; min-height: 300px " > <?php echo $_product->get_description() ?> </textarea>
-
+                  <div class="col px-xxl-2 px-md-0">
+                    <div class="mb-5 short-desc">
+                      <h2 class="block-title text-nowrap fs-4">Краткое описание</h2>
+                      <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
+                    </div>
+                    <div class="long-desc">
+                      <h2 class="block-title text-nowrap fs-4">Полное писание</h2>
+                      <textarea name="product-description" id="product-description"> <?php echo $_product->get_description() ?> </textarea>
+                    </div>
                   </div>
                   <div class="col d-none">
                     <h2 class="block-title text-nowrap">Характеристики</h2>
@@ -966,9 +887,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
                             <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                           </div>
                           <div class="btn-block ms-auto" href="#collapseCartCatalog4" data-bs-toggle="collapse">
-                            <button class="btn btn-primary w-100">
-                              <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+                            <button class="btn btn-outline-accent w-100">
+                              <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
                               </svg><span>В корзину</span>
                             </button>
                           </div>
@@ -1136,9 +1057,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
                             <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                           </div>
                           <div class="btn-block ms-auto" href="#collapseCartCatalog5" data-bs-toggle="collapse">
-                            <button class="btn btn-primary w-100">
-                              <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+                            <button class="btn btn-outline-accent w-100">
+                              <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
                               </svg><span>В корзину</span>
                             </button>
                           </div>
@@ -1164,9 +1085,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
                             <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                           </div>
                           <div class="btn-block ms-auto" href="#collapseCartCatalog6" data-bs-toggle="collapse">
-                            <button class="btn btn-primary w-100">
-                              <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+                            <button class="btn btn-outline-accent w-100">
+                              <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
                               </svg><span>В корзину</span>
                             </button>
                           </div>
@@ -1192,9 +1113,9 @@ $_product = wc_get_product( $_GET['edit-id'] );
                             <input type="text" name="productСount" value="1" disabled=""><span class="change plus d-flex justify-content-center align-items-center"><span>+</span></span>
                           </div>
                           <div class="btn-block ms-auto" href="#collapseCartCatalog8" data-bs-toggle="collapse">
-                            <button class="btn btn-primary">
-                              <svg class="bi bi-basket" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+                            <button class="btn btn-outline-accent">
+                              <svg width="16" height="16" viewBox="0 0 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.08337 9.5C3.44171 9.5 2.92254 10.025 2.92254 10.6667C2.92254 11.3083 3.44171 11.8333 4.08337 11.8333C4.72504 11.8333 5.25004 11.3083 5.25004 10.6667C5.25004 10.025 4.72504 9.5 4.08337 9.5ZM0.583374 0.166672V1.33334H1.75004L3.85004 5.76084L3.06254 7.19C2.96921 7.35334 2.91671 7.54584 2.91671 7.75C2.91671 8.39167 3.44171 8.91667 4.08337 8.91667H11.0834V7.75H4.32837C4.24671 7.75 4.18254 7.68584 4.18254 7.60417L4.20004 7.53417L4.72504 6.58334H9.07087C9.50837 6.58334 9.89337 6.34417 10.0917 5.9825L12.18 2.19667C12.2267 2.11501 12.25 2.01584 12.25 1.91667C12.25 1.59584 11.9875 1.33334 11.6667 1.33334H3.03921L2.49087 0.166672H0.583374ZM9.91671 9.5C9.27504 9.5 8.75587 10.025 8.75587 10.6667C8.75587 11.3083 9.27504 11.8333 9.91671 11.8333C10.5584 11.8333 11.0834 11.3083 11.0834 10.6667C11.0834 10.025 10.5584 9.5 9.91671 9.5Z" fill="currentColor"/>
                               </svg><span>В корзину</span>
                             </button>
                           </div>

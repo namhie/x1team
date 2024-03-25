@@ -21,46 +21,46 @@ if (!defined('ABSPATH')) {
     </p>
     <p><?php esc_html_e('Here you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.', 'bootscore'); ?></p>
   </div>
-<div class="woocommerce">
-  <div class="navigation">
-    <nav class="woocommerce-MyAccount-navigation" role="navigation">
-      <div class="list-group mb-4">
-        <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
+  <div class="woocommerce">
+    <div class="navigation">
+      <nav class="woocommerce-MyAccount-navigation" role="navigation">
+        <div class="list-group mb-4">
+          <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
 
-          <?php
-            $menu_href = esc_url(wc_get_account_endpoint_url($endpoint));
+            <?php
+              $menu_href = esc_url(wc_get_account_endpoint_url($endpoint));
 
-            if ( $endpoint == 'sales') {
-              ?>
-                <p class="list-group-item list-group-item-action" style="margin: unset;"><?php echo esc_html($label); ?></p>
-              <?php
-            } else if (  in_array( $endpoint, ['ads', 'ads_add', 'sales-orders'] ) ) {
-              ?>
-                <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action" style="margin: unset; padding-left:45px;"><?php echo esc_html($label); ?></a>
-              <?php
-            } else {
-              ?>
-                <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action"><?php echo esc_html($label); ?></a>
-              <?php
-            }
+              if ( $endpoint == 'sales') {
+                ?>
+                  <p class="list-group-item list-group-item-action" style="margin: unset;"><?php echo esc_html($label); ?></p>
+                <?php
+              } else if (  in_array( $endpoint, ['ads', 'ads_add', 'sales-orders'] ) ) {
+                ?>
+                  <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action" style="margin: unset; padding-left:45px;"><?php echo esc_html($label); ?></a>
+                <?php
+              } else {
+                ?>
+                  <a href="<?php echo $menu_href ?>" class="list-group-item list-group-item-action"><?php echo esc_html($label); ?></a>
+                <?php
+              }
 
 
-          ?>
-        <?php endforeach; ?>
-      </div>
-    </nav>
+            ?>
+          <?php endforeach; ?>
+        </div>
+      </nav>
+    </div>
+    <div class="woocommerce-MyAccount-content">
+      <?php
+      /**
+       * My Account content.
+       *
+       * @since 2.6.0
+       */
+      do_action('woocommerce_account_content');
+      ?>
+    </div>
   </div>
-  <div class="woocommerce-MyAccount-content">
-    <?php
-    /**
-     * My Account content.
-     *
-     * @since 2.6.0
-     */
-    do_action('woocommerce_account_content');
-    ?>
-  </div>
-</div>
 
 <?php } else { ?>
 
@@ -69,7 +69,8 @@ if (!defined('ABSPATH')) {
     <div id="customer_login_1">
 
       <div class="login">
-      <?php endif; ?>
+  <?php endif; ?>
+
       <?php
         if ( function_exists( 'wptelegram_login' ) ) {
             wptelegram_login();
@@ -85,7 +86,7 @@ if (!defined('ABSPATH')) {
 
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide mb-3">
 
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : 'логин, ник игрока, телефон, email'; ?>" /><?php // @codingStandardsIgnoreLine
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" placeholder="логин, ник игрока, телефон, email" name="username" id="username_1" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                         ?>
           </div>
           <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide position-relative mb-3">

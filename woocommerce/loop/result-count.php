@@ -23,10 +23,10 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="row">
+<div class="row position-absolute top-0 end-0 align-items-end w-75 mt-md-0 mt-5 ps-md-0 ps-3">
   <!-- End in orderby.php -->
-  <div class="col-md-6 col-lg-8 col-xxl-9">
-    <p class="woocommerce-result-count">
+  <div class="col-lg-7">
+    <p class="woocommerce-result-count m-0">
       <?php
       if (1 === $total) {
         _e('Showing the single result', 'woocommerce');
